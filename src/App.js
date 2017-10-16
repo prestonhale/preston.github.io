@@ -16,26 +16,26 @@ class App extends Component {
     return (
       <Grid fluid={true} id="body">
         <Row>
-          <div class='color-line'></div>
+          <div className='color-line'></div>
           <Col md={8} mdOffset={2} sm={12}>
             <div id="header">
               <div id="title">
-                <h1 class="text-center">
-                  <span class="the">the</span><span class="preston">PrestonHale</span>
+                <h1 className="text-center">
+                  <span className="the">the</span><span className="preston">PrestonHale</span>
                 </h1>
               </div>
             </div>
 
-            <div class="content-divider">
+            <div className="content-divider">
               <Row>
                 <Col md={5} smHidden>
-                  <div class="rust-line" />
+                  <div className="rust-line" />
                 </Col>
                 <Col md={2} sm={12}>
-                  <h3 class="align-middle text-center">About</h3>
+                  <h3 className="align-middle text-center">About</h3>
                 </Col>
                 <Col md={5} sm={12}>
-                  <div class="align-middle rust-line"></div>
+                  <div className="align-middle rust-line"></div>
                 </Col>
               </Row>
             </div>
@@ -44,22 +44,22 @@ class App extends Component {
               <Row>
                 <Col md={4} mdOffset={4} sm={8} smOffset={2}>
                   <a href="#">
-                    <div class="download-resume text-center">
+                    <div className="download-resume text-center">
                       Download Resume
                     </div>
                   </a>
                 </Col>
               </Row>
-              <div class="about-me-info text-center">
+              <div className="about-me-info text-center">
                 <Row>
                   <Col md={3} sm={12}>
-                    <h4>BEFORE</h4>
+                    <h4>About Me</h4>
                   </Col>
                   <Col md={3} sm={12}>
-                    <h4>NOW</h4>
+                    <h4>What I've Done</h4>
                   </Col>
                   <Col md={3} sm={12}>
-                    <h4>NEXT</h4>
+                    <h4>What I'm Doing</h4>
                   </Col>
                 </Row>
                 <Row>
@@ -82,52 +82,56 @@ class App extends Component {
               </div>
             </div>
             
-            <div class="content-divider">
+            <div className="content-divider">
               <Row>
                 <Col md={5} smHidden>
-                  <div class="rust-line" />
+                  <div className="rust-line" />
                 </Col>
                 <Col md={2} sm={12}>
-                  <h3 class="align-middle text-center">Projects</h3>
+                  <h3 className="align-middle text-center">Projects</h3>
                 </Col>
                 <Col md={5} sm={12}>
-                  <div class="align-middle rust-line"></div>
+                  <div className="align-middle rust-line"></div>
                 </Col>
               </Row>
               <Row>
                 <Col md={3} sm={6}>
-                  <h5 class="project-title text-center">The Great Bear</h5>
-                  <div class="project-box">
+                  <div className="project-box">
+                    <h5 className="project-title text-center">The Great Bear</h5>
+                    <div className="project-overlay" />
                     <img src={greatBear}/>
                   </div>
                 </Col>
                 <Col md={3} sm={6}>
-                  <h5 class="project-title text-center">Keep It Groovy</h5>
-                  <div class="project-box">
-                    <img src={keepItGroovy}/>
+                  <div className="project-box">
+                    <h5 className="project-title text-center">Keep It Groovy</h5>
+                      <div className="project-overlay" />
+                      <img src={keepItGroovy}/>
                   </div>
                 </Col>
                 <Col md={3} sm={6}>
-                  <h5 class="project-title text-center">RPG Priest Simulator: GOTY</h5>
-                  <div class="project-box"></div>
+                  <div className="project-box">
+                    <h5 className="project-title text-center">RPG Priest Simulator: GOTY</h5>
+                  </div>
                 </Col>
                 <Col md={3} sm={6}>
-                  <h5 class="project-title text-center">Gather</h5>
-                  <div class="project-box"></div>
+                  <div className="project-box">
+                    <h5 className="project-title text-center">Gather</h5>
+                  </div>
                 </Col>
               </Row>
             </div>
 
-            <div class="content-divider">
+            <div className="content-divider">
               <Row>
                 <Col md={5} smHidden>
-                  <div class="rust-line" />
+                  <div className="rust-line" />
                 </Col>
                 <Col md={2} sm={12}>
-                  <h3 class="align-middle text-center">Contact</h3>
+                  <h3 className="align-middle text-center">Contact</h3>
                 </Col>
                 <Col md={5} sm={12}>
-                  <div class="align-middle rust-line"></div>
+                  <div className="align-middle rust-line"></div>
                 </Col>
               </Row>
             </div>

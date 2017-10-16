@@ -79,22 +79,45 @@ a:hover {
 }
 
 /* Project Box */
-.project-title {
-  position: relative;
-  font-size: 24px;
-  top: 40px;
-}
 
 .project-box {
+  position: relative;
   height: 200px;
   border: 2px solid #9a9999;
   border-radius: 10px;
 }
 
-.project-box > img {
+.project-box>img {
   max-width: 100%;
   max-height: 100%;
   border-radius: 10px;
+}
+
+.project-box>.project-title {
+  position: absolute;
+  width: 100%;
+  font-size: 24px;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.project-box>.project-overlay {
+  position: absolute;
+  display: inline-block;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  background-color: #964f2c;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project-box:hover>.project-title {
+  opacity: 1;
+}
+
+.project-box:hover>.project-overlay {
+  opacity: 0.3;
 }
 
 @keyframes App-logo-spin {
