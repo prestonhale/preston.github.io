@@ -1,112 +1,140 @@
 import React, { Component } from 'react';
 import Map from './map/Map.js';
+import {Row, Col, Grid} from 'react-bootstrap';
 import logo from './logo.svg';
+import greatBear from './greatBear.png'
+import keepItGroovy from './keepItGroovy.png'
 import './App.css';
-
-
-function Empty(props) {
-    return (
-      <h3>Welcome to the main content schtuff!</h3>
-    )
-}
-
-function Resume(props) {
-  return (
-    <h3>I'm the resume!</h3>
-  )
-}
-
-function About(props) {
-  return (
-    <h3>I'm the about!</h3>
-  )
-}
-
-function Other(props) {
-  return (
-    <h3>I'm the other!</h3>
-  )
-}
-
-class Content extends React.Component {
-  constructor (props){
-    super(props);
-    this.state = {contentType: props.contentType};
-    this.displayResume = this.displayResume.bind(this);
-    this.displayAbout = this.displayAbout.bind(this);
-    this.displayOther = this.displayOther.bind(this);
-  }
-
-  displayResume(e){
-    e.preventDefault();
-    this.setState(prevState => (
-      prevState.contentType=='resume' ? {contentType: 'none'} : {contentType: 'resume'})
-    )
-  }
-  
-  displayAbout(e){
-    e.preventDefault();
-    this.setState(prevState => (
-      prevState.contentType=='about' ? {contentType: 'none'} : {contentType: 'about'})
-    )
-  }
-  
-  displayOther(e){
-    e.preventDefault();
-    this.setState(prevState => (
-      prevState.contentType=='other' ? {contentType: 'none'} : {contentType: 'other'})
-    )
-  }
-
-  render(){
-    let content = null;
-    switch (this.state.contentType) {
-      case 'empty':
-      content = <Empty />
-      break;
-      case 'about':
-      content = <About />
-      break;
-      case 'resume':
-      content = <Resume />
-      break;
-      case 'other':
-      content = <Other />
-      break;
-    }
-    return (
-      <div className="content">
-        <a onClick={this.displayResume}>
-          <h2>Resume</h2>
-        </a>
-        <a onClick={this.displayAbout}>
-          <h2>About</h2>
-        </a>
-        <a onClick={this.displayOther}>
-          <h2>More Stuff</h2>
-        </a>
-        { content }
-      </div>
-    )
-  }
-}
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
+    this.state = {'contentType': 'home'}
   }
-
+  
   render() {
     return (
-      <div>
-        <h1>
-          <a>You found a place!</a>
-        </h1>
-        <Content contentType='empty' />
-        <Map />
-      </div>
+      <Grid fluid={true} id="body">
+        <Row>
+          <div class='color-line'></div>
+          <Col md={8} mdOffset={2} sm={12}>
+            <div id="header">
+              <div id="title">
+                <h1 class="text-center">
+                  <span class="the">the</span><span class="preston">PrestonHale</span>
+                </h1>
+              </div>
+            </div>
+
+            <div class="content-divider">
+              <Row>
+                <Col md={5} smHidden>
+                  <div class="rust-line" />
+                </Col>
+                <Col md={2} sm={12}>
+                  <h3 class="align-middle text-center">About</h3>
+                </Col>
+                <Col md={5} sm={12}>
+                  <div class="align-middle rust-line"></div>
+                </Col>
+              </Row>
+            </div>
+
+            <div id="about">
+              <Row>
+                <Col md={4} mdOffset={4} sm={8} smOffset={2}>
+                  <a href="#">
+                    <div class="download-resume text-center">
+                      Download Resume
+                    </div>
+                  </a>
+                </Col>
+              </Row>
+              <div class="about-me-info text-center">
+                <Row>
+                  <Col md={3} sm={12}>
+                    <h4>BEFORE</h4>
+                  </Col>
+                  <Col md={3} sm={12}>
+                    <h4>NOW</h4>
+                  </Col>
+                  <Col md={3} sm={12}>
+                    <h4>NEXT</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={3} sm={12}>
+                      <p>
+                        I
+                      </p>
+                  </Col>
+                  <Col md={3} sm={12}>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada lacus vitae congue efficitur. Etiam vel neque ultricies, feugiat arcu sit amet, eleifend purus.
+                      </p>
+                  </Col>
+                  <Col md={3} sm={12}>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada lacus vitae congue efficitur. Etiam vel neque ultricies, feugiat arcu sit amet, eleifend purus.
+                      </p>
+                  </Col>
+                </Row>
+              </div>
+            </div>
+            
+            <div class="content-divider">
+              <Row>
+                <Col md={5} smHidden>
+                  <div class="rust-line" />
+                </Col>
+                <Col md={2} sm={12}>
+                  <h3 class="align-middle text-center">Projects</h3>
+                </Col>
+                <Col md={5} sm={12}>
+                  <div class="align-middle rust-line"></div>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={3} sm={6}>
+                  <h5 class="project-title text-center">The Great Bear</h5>
+                  <div class="project-box">
+                    <img src={greatBear}/>
+                  </div>
+                </Col>
+                <Col md={3} sm={6}>
+                  <h5 class="project-title text-center">Keep It Groovy</h5>
+                  <div class="project-box">
+                    <img src={keepItGroovy}/>
+                  </div>
+                </Col>
+                <Col md={3} sm={6}>
+                  <h5 class="project-title text-center">RPG Priest Simulator: GOTY</h5>
+                  <div class="project-box"></div>
+                </Col>
+                <Col md={3} sm={6}>
+                  <h5 class="project-title text-center">Gather</h5>
+                  <div class="project-box"></div>
+                </Col>
+              </Row>
+            </div>
+
+            <div class="content-divider">
+              <Row>
+                <Col md={5} smHidden>
+                  <div class="rust-line" />
+                </Col>
+                <Col md={2} sm={12}>
+                  <h3 class="align-middle text-center">Contact</h3>
+                </Col>
+                <Col md={5} sm={12}>
+                  <div class="align-middle rust-line"></div>
+                </Col>
+              </Row>
+            </div>
+
+          </Col>
+        </Row>
+      </Grid>
     )
   }
 }

@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -20,6 +21,80 @@
 
 .App-intro {
   font-size: large;
+}
+
+#body{
+  margin: 10px auto;
+}
+
+#title {
+  font-family: "Trajan Pro", Times, serif;
+  color: white;
+}
+
+.the {
+  font-size: 36px;
+  color: #606060
+}
+
+.preston {
+  font-size: 64px;
+}
+
+
+/* Content Divider */
+.content-divider {
+  color: #964f2c;
+}
+
+.rust-line {
+  position: relative;
+  top: 28px;
+  height: 4px;
+  background-color:	#606060;
+}
+
+
+/* About Me */
+.download-resume {
+  border: 2px solid #964f2c;
+  padding: 10px;
+  margin: 10px;
+  color: #964f2c;
+  transition: all 0.3s ease;
+}
+
+.download-resume:hover {
+  color: white;
+  background-color: #964f2c;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.about-me-info .col-md-3 {
+  float: none;
+  display: inline-block;
+}
+
+/* Project Box */
+.project-title {
+  position: relative;
+  font-size: 24px;
+  top: 40px;
+}
+
+.project-box {
+  height: 200px;
+  border: 2px solid #9a9999;
+  border-radius: 10px;
+}
+
+.project-box > img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
 }
 
 @keyframes App-logo-spin {
