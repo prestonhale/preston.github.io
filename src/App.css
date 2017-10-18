@@ -27,6 +27,15 @@
   margin: 10px auto;
 }
 
+.container-fluid.full-width {
+  padding:0px;
+}
+
+.color-line {
+  background-color: #964f2c;
+  height: 15px;
+}
+
 #title {
   font-family: "Trajan Pro", Times, serif;
   color: white;
@@ -59,7 +68,7 @@
 .download-resume {
   border: 2px solid #964f2c;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 60px;
   color: #964f2c;
   transition: all 0.3s ease;
 }
@@ -79,12 +88,12 @@ a:hover {
 }
 
 /* Project Box */
-
 .project-box {
   position: relative;
   height: 200px;
   border: 2px solid #9a9999;
   border-radius: 10px;
+  margin: 10px 0;
 }
 
 .project-box>img {
@@ -118,6 +127,57 @@ a:hover {
 
 .project-box:hover>.project-overlay {
   opacity: 0.3;
+}
+
+
+/* Contact Info*/
+#contact-container {
+  margin-top: 50px;
+}
+
+#contact-container .row {
+  margin: 0 15px;
+}
+
+.contact-info {
+  color: white;
+  background-color: #964f2c;
+  padding-bottom: 50px;
+}
+
+.contact-info .rust-line {
+  background-color: white;
+}
+
+.contact-info .rust-line.right {
+  margin-right: 150px;
+}
+
+.contact-info .rust-line.left {
+  margin-left: 150px;
+}
+
+.contact-info .content-divider {
+  color: white;
+}
+
+.contact-info .social-buttons i {
+  color: white;
+  font-size: 36px;
+  width: 50px;
+  height: 50px; 
+}
+
+.contact-info .contact-form .form-group {
+  margin-bottom: 2px;
+}
+.contact-info .contact-form div{
+  padding: 0px;
+}
+
+.contact-info .contact-form #message{
+  height: 105px;
+  width: 220px;
 }
 
 @keyframes App-logo-spin {
