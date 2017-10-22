@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {Row, Col, Grid, Modal, Carousel} from 'react-bootstrap';
-import './GreatBear.css'
-import greatBear from './greatBear.png'
+import freya from './freya.jpg'
+import thumbnail from './thumbnail.jpg'
+import bigBear from './bigBear.jpg'
+import cave from './cave.jpg'
 
 class TheGreatBear extends Component {
   constructor(props) {
@@ -23,37 +25,54 @@ class TheGreatBear extends Component {
     return (
         <div>
             <div className="project-box" onClick={this.showModal}>
-                <h5 className="project-title text-center">The Great Bear</h5>
+                {/* <h5 className="project-title text-center">The Great Bear</h5> */}
                 <div className="project-overlay" />
-                <img src={greatBear}/>
+                <img src={thumbnail}/>
             </div>
             <div>
                 <Modal show={this.state.showModal} onHide={this.closeModal}>
                 <Modal.Body>
                     <Carousel>
-                    <Carousel.Item>
-                        <img width={900} height={500} src={greatBear} />
-                        <Carousel.Caption>
-                        <h4>I'm the Caption 1</h4>
-                        </Carousel.Caption>
-                    </Carousel.Item>
+                        <Carousel.Item>
+                            <img width={900} height={500} src={bigBear} />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img width={900} height={500} src={freya} />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img width={900} height={500} src={cave} />
+                        </Carousel.Item>
                     </Carousel>
                     <Row>
                     <Col md={3}>
                         <h3>Role</h3>
-                        <p>Design, Level Editing, Scripting, Texture Editing</p>
-                        <h3>Tools Used</h3>
-                        <p>Skyrim Creation Kit, Papyrus(Javascript)</p>
+                        <p>
+                            Design
+                            <br/>Level Editing
+                            <br/>Scripting
+                            <br/>Texture Editing
+                        </p>
+                        <h3>Technologies</h3>
+                        <p>
+                            Skyrim Creation Kit,
+                            <br/>Papyrus(Javascript)
+                        </p>
                         <h3>Duration</h3>
                         <p>6 months</p>
                     </Col>
                     <Col md={9}>
+                        <a href="#">
+                            <div className="interact-button download-button text-center">
+                                Download Game
+                            </div>
+                        </a>
                         <h3>Overview</h3>
                         <p>
                         The Great Bear adds a new 40-60 minute quest to Skyrim and includes an entirely new world space and a branching
                         story that ends in a multi-phase boss fight.  Particularly I found Skyrim's bosses to be pretty anti-climactic
                         and wanted to see if I could do better within the constraints of their own level design tools.
                         </p>
+                        <h3>Commentary</h3>
                         <p>
                         The Great Bear quest is probably the project I'm currently most proud of, if only because its been the most
                         iterative.  Shortly after I released it to the Steam Workshop, and definitely before 

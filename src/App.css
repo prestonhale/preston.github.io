@@ -72,17 +72,28 @@
 
 /* About Me */
 .download-resume {
+  margin: 10px 60px;
+}
+
+.interact-button {
   border: 2px solid #964f2c;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px 60px;
   color: #964f2c;
   transition: all 0.3s ease;
 }
 
-.download-resume:hover {
+.interact-button:hover {
   color: white;
   background-color: #964f2c;
+}
+
+.download-button {
+  position: relative;
+  float: right;
+  top: 10px;
+  width: 140px;
+  height: 40px;
 }
 
 a:hover {
@@ -118,7 +129,7 @@ a:hover {
 /* Project Box */
 .project-box {
   position: relative;
-  height: 200px;
+  height: 210px;
   border-radius: 10px;
   margin: 10px 0;
   cursor: pointer;
@@ -219,7 +230,7 @@ a:hover {
 }
 
 .modal .carousel img{
-  width: 900px;
+  width: 970px;
   height: 500px;
 }
 

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {Row, Col, Grid, Modal, Carousel} from 'react-bootstrap';
 import logo from './logo.svg';
 import TheGreatBear from './projectGreatBear/GreatBear.js'
-import keepItGroovy from './keepItGroovy.png'
+import KeepItGroovy from './projectKeepItGroovy/KeepItGroovy.js'
+import Teampay from './projectTeampay/Teampay.js'
 import './App.css';
 
 class App extends Component {
@@ -60,7 +61,7 @@ class App extends Component {
                 <Row>
                   <Col md={4} mdOffset={4} sm={8} smOffset={2}>
                     <a href="#">
-                      <div className="download-resume text-center">
+                      <div className="interact-button download-resume text-center">
                         Download Resume
                       </div>
                     </a>
@@ -112,21 +113,13 @@ class App extends Component {
                 </Row>
                 <Row>
                   <Col md={3} sm={6}>
-                    <div className="project-box">
-                      <h5 className="project-title text-center">Teampay</h5>
-                      <div className="project-overlay" />
-                      <img src=""/>
-                    </div>
+                    <Teampay />
                   </Col>
                   <Col md={3} sm={6}>
                     <TheGreatBear />
                   </Col>
                   <Col md={3} sm={6}>
-                    <div className="project-box">
-                      <h5 className="project-title text-center">Keep It Groovy</h5>
-                        <div className="project-overlay" />
-                        <img src={keepItGroovy}/>
-                    </div>
+                    <KeepItGroovy />
                   </Col>
                   <Col md={3} sm={6}>
                     <div className="project-box">
