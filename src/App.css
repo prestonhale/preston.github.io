@@ -31,9 +31,15 @@
   padding:0px;
 }
 
+.full-width {
+  margin: 0;
+  padding: 0;
+}
+
 .color-line {
   background-color: #964f2c;
   height: 15px;
+  width: 100%;
 }
 
 #title {
@@ -67,6 +73,7 @@
 /* About Me */
 .download-resume {
   border: 2px solid #964f2c;
+  border-radius: 5px;
   padding: 10px;
   margin: 10px 60px;
   color: #964f2c;
@@ -94,6 +101,7 @@ a:hover {
   border: 2px solid #9a9999;
   border-radius: 10px;
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .project-box>img {
@@ -178,6 +186,21 @@ a:hover {
 .contact-info .contact-form #message{
   height: 105px;
   width: 220px;
+}
+
+
+/*Project Modals*/
+.modal .modal-dialog {
+  width: 1000px;
+}
+
+.modal .modal-content {
+  background-color: #282828;
+}
+
+.modal .carousel img{
+  width: 900px;
+  height: 500px;
 }
 
 @keyframes App-logo-spin {

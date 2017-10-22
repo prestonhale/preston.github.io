@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Map from './map/Map.js';
-import {Row, Col, Grid} from 'react-bootstrap';
+import {Row, Col, Grid, Modal, Carousel} from 'react-bootstrap';
 import logo from './logo.svg';
 import greatBear from './greatBear.png'
 import keepItGroovy from './keepItGroovy.png'
@@ -9,15 +8,25 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {'contentType': 'home'}
+    this.state = {'showModal': false}
+    this.showModal = this.showModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
+  }
+
+  showModal() {
+    this.setState({ showModal: true });
   }
   
+  closeModal() {
+    this.setState({ showModal: false });
+  }
+
   render() {
     return (
-      <div classname="content">
+      <div className="content">
         <Grid fluid={true} className="full-width">
           <Row>
-            <Col sm={12}>
+            <Col className="full-width" sm={12}>
               <div className='color-line'></div>
             </Col>
           </Row>
@@ -110,7 +119,7 @@ class App extends Component {
                     </div>
                   </Col>
                   <Col md={3} sm={6}>
-                    <div className="project-box">
+                    <div className="project-box" onClick={this.showModal}>
                       <h5 className="project-title text-center">The Great Bear</h5>
                       <div className="project-overlay" />
                       <img src={greatBear}/>
@@ -159,41 +168,41 @@ class App extends Component {
                   <Row>
                     <h3>Send a Message</h3>
                   </Row>
-                  <form class="form-horizontal">
+                  <form className="form-horizontal">
                     <Row>
                       <Col md={6}>
                         <Row>
                           <Col>
-                              <div class="form-group">
-                                <div class="col-sm-10">
-                                  <input type="name" class="form-control" id="name" placeholder="Name" />
+                              <div className="form-group">
+                                <div className="col-sm-10">
+                                  <input type="name" className="form-control" id="name" placeholder="Name" />
                                 </div>
                               </div>
                           </Col>
                         </Row>
                         <Row>
                           <Col>
-                            <div class="form-group">
-                              <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" placeholder="Email Address" />
+                            <div className="form-group">
+                              <div className="col-sm-10">
+                                <input type="email" className="form-control" id="email" placeholder="Email Address" />
                               </div>
                             </div>
                           </Col>
                         </Row>
                         <Row>
                           <Col>
-                            <div class="form-group">
-                              <div class="col-sm-10"> 
-                                <input type="subject" class="form-control" id="subject" placeholder="Subject" />
+                            <div className="form-group">
+                              <div className="col-sm-10"> 
+                                <input type="subject" className="form-control" id="subject" placeholder="Subject" />
                               </div>
                             </div>
                           </Col>
                         </Row>
                       </Col>
                       <Col md={6}>
-                        <div class="form-group">
-                          <div class="col-sm-10"> 
-                            <input type="message" class="form-control" id="message" placeholder="Message" />
+                        <div className="form-group">
+                          <div className="col-sm-10"> 
+                            <input type="message" className="form-control" id="message" placeholder="Message" />
                           </div>
                         </div>
                       </Col>
@@ -206,21 +215,43 @@ class App extends Component {
                   </Row>
                   <Row>
                     <a href="https://twitter.com/theprestonhale">
-                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                      <i className="fa fa-twitter" aria-hidden="true"></i>
                     </a>
                     <a href="https://www.instagram.com/theprestonhale">
-                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                      <i className="fa fa-instagram" aria-hidden="true"></i>
                     </a>
                   </Row>
                   <Row>
                     <a href="#">
-                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                      <i className="fa fa-facebook" aria-hidden="true"></i>
                     </a>
                   </Row>
                 </Col>
               </Row>
             </div>
           </Grid>
+
+          <div>
+            <Modal show={this.state.showModal} onHide={this.closeModal}>
+              <Modal.Body>
+                <Carousel>
+                  <Carousel.Item>
+                    <img width={900} height={500} src={greatBear} />
+                    <Carousel.Caption>
+                      <h4>I'm the Caption 1</h4>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img width={900} height={500} src={keepItGroovy} />
+                    <Carousel.Caption>
+                      <h4>I'm the Caption 2</h4>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                </Carousel>
+                <p>Descriptions and stuff!</p>
+              </Modal.Body>
+            </Modal>
+          </div>
       </div>
     )
   }
