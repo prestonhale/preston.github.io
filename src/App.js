@@ -68,31 +68,31 @@ class App extends Component {
                 </Row>
                 <div className="about-me-info text-center">
                   <Row>
-                    <Col md={3} sm={12}>
+                    <Col className="no-float" md={3} sm={12}>
                       <h4>About Me</h4>
+                      <div class="small-divider"/>
+                      <div className="about-me-section">
+                        <p>My name is Preston</p>
+                        <p>I'm type code and make worlds. </p>
+                      </div>
                     </Col>
-                    <Col md={3} sm={12}>
+                    <Col className="no-float" md={3} sm={12}>
                       <h4>What I've Done</h4>
+                      <div class="small-divider"/>
+                      <div className="about-me-section">
+                        <p>
+                          I've been forunate enough to have a huge variety of experiences.  Among other things, I've been the Data Director for NYC's first-ever charter school and managed nearly 100 people at the city's largest Cerebral Palsy care center.
+                        </p>
+                      </div>
                     </Col>
-                    <Col md={3} sm={12}>
+                    <Col className="no-float" md={3} sm={12}>
                       <h4>What I'm Doing</h4>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md={3} sm={12}>
+                      <div class="small-divider"/>
+                      <div className="about-me-section">
                         <p>
-                          I
+                          I'm a software engineer at a start-up called Teampay. We solve the corporate card problem by providing users with a virtual card solution.  I do a little bit of everything but our Slack chatbot is my baby.
                         </p>
-                    </Col>
-                    <Col md={3} sm={12}>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada lacus vitae congue efficitur. Etiam vel neque ultricies, feugiat arcu sit amet, eleifend purus.
-                        </p>
-                    </Col>
-                    <Col md={3} sm={12}>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada lacus vitae congue efficitur. Etiam vel neque ultricies, feugiat arcu sit amet, eleifend purus.
-                        </p>
+                      </div>
                     </Col>
                   </Row>
                 </div>
@@ -111,7 +111,7 @@ class App extends Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col md={6} sm={6}>
+                  <Col md={3} sm={6}>
                     <div className="project-box">
                       <h5 className="project-title text-center">Teampay</h5>
                       <div className="project-overlay" />
@@ -135,11 +135,6 @@ class App extends Component {
                   <Col md={3} sm={6}>
                     <div className="project-box">
                       <h5 className="project-title text-center">RPG Priest Simulator: GOTY</h5>
-                    </div>
-                  </Col>
-                  <Col md={3} sm={6}>
-                    <div className="project-box">
-                      <h5 className="project-title text-center">Gather</h5>
                     </div>
                   </Col>
                 </Row>
@@ -248,7 +243,32 @@ class App extends Component {
                     </Carousel.Caption>
                   </Carousel.Item>
                 </Carousel>
-                <p>Descriptions and stuff!</p>
+                <Row>
+                  <Col md={3}>
+                    <h3>Role</h3>
+                    <p>Design, Level Editing, Scripting, Texture Editing</p>
+                    <h3>Tools Used</h3>
+                    <p>Skyrim Creation Kit, Papyrus(Javascript)</p>
+                    <h3>Duration</h3>
+                    <p>6 months</p>
+                  </Col>
+                  <Col md={9}>
+                    <h3>Overview</h3>
+                    <p>
+                      The Great Bear adds a new 40-60 minute quest to Skyrim and includes an entirely new world space and a branching
+                      story that ends in a multi-phase boss fight.  Particularly I found Skyrim's bosses to be pretty anti-climactic
+                      and wanted to see if I could do better within the constraints of their own level design tools.
+                    </p>
+                    <p>
+                      The Great Bear quest is probably the project I'm currently most proud of, if only because its been the most
+                      iterative.  Shortly after I released it to the Steam Workshop, and definitely before 
+                      I was ready, it was featured on the Workshop front-page for a little over 2 weeks.  I immediately got several
+                      thousand players and they were vocal about what was working and what wasn't.  I faced bugs from the gigantic,
+                      dialogue wasn't automatically bundled into the build and didn't work at all, to the horribly specific, a 
+                      leftover console message.
+                    </p>
+                  </Col>
+                </Row>
               </Modal.Body>
             </Modal>
           </div>
