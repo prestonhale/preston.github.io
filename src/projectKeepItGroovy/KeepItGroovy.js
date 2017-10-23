@@ -32,9 +32,6 @@ class TheGreatBear extends Component {
                     <Carousel>
                     <Carousel.Item>
                         <img width={900} height={500} src={thumbnail} />
-                        <Carousel.Caption>
-                        <h4>I'm the Caption 1</h4>
-                        </Carousel.Caption>
                     </Carousel.Item>
                     </Carousel>
                     <Row>
@@ -47,6 +44,11 @@ class TheGreatBear extends Component {
                         <p>3 days</p>
                     </Col>
                     <Col md={9}>
+                        <a href="https://globalgamejam.org/2017/games/keep-it-groovy">
+                            <div className="interact-button download-button text-center">
+                                Download Game
+                            </div>
+                        </a>
                         <h3>Overview</h3>
                         <p>
                             Keep it Groovy is a fast-paced, explicitly multiplayer game.  Two teams compete in two phases.

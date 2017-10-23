@@ -61,7 +61,7 @@ class TheGreatBear extends Component {
                         <p>6 months</p>
                     </Col>
                     <Col md={9}>
-                        <a href="#">
+                        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=285580543">
                             <div className="interact-button download-button text-center">
                                 Download Game
                             </div>

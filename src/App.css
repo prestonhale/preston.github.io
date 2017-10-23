@@ -27,6 +27,12 @@
   margin: 10px auto;
 }
 
+.centered-column {
+  width:960px;
+  float:none;
+  margin: auto;
+}
+
 .container-fluid.full-width {
   padding:0px;
 }
@@ -186,14 +192,6 @@ a:hover {
 
 .contact-info .rust-line {
   background-color: white;
-}
-
-.contact-info .rust-line.right {
-  margin-right: 150px;
-}
-
-.contact-info .rust-line.left {
-  margin-left: 150px;
 }
 
 .contact-info .content-divider {
