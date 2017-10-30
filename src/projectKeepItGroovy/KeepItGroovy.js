@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import {Row, Col, Grid, Modal, Carousel} from 'react-bootstrap';
 import thumbnail from './thumbnail.jpg'
+import straight from './straight.png'
+import title from './title.png'
+import twisted from './twisted.png'
+
 
 class TheGreatBear extends Component {
   constructor(props) {
@@ -31,7 +35,13 @@ class TheGreatBear extends Component {
                 <Modal.Body>
                     <Carousel>
                     <Carousel.Item>
-                        <img width={900} height={500} src={thumbnail} />
+                        <img width={900} height={500} src={twisted} />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img width={900} height={500} src={straight} />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img width={900} height={500} src={title} />
                     </Carousel.Item>
                     </Carousel>
                     <Row>

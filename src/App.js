@@ -3,6 +3,7 @@ import {Row, Col, Grid, Modal, Carousel} from 'react-bootstrap';
 import logo from './logo.svg';
 import TheGreatBear from './projectGreatBear/GreatBear.js'
 import KeepItGroovy from './projectKeepItGroovy/KeepItGroovy.js'
+import PriestSimulator from './projectPriestSimulator/PriestSimulator.js'
 import Teampay from './projectTeampay/Teampay.js'
 import './App.css';
 
@@ -73,8 +74,7 @@ class App extends Component {
                       <h4>About Me</h4>
                       <div class="small-divider"/>
                       <div className="about-me-section">
-                        <p>My name is Preston</p>
-                        <p>I'm type code and make worlds. </p>
+                        <p>I am a programmer of many languages, a virtual world explorer (and sometimes actual world explorer), and enthusiast for all things tech, nerd, gaming, and cold brew. If you want to start a stupid long conversation ask me about my bike or my favorite RPG.</p>
                       </div>
                     </Col>
                     <Col className="no-float" md={3} sm={12}>
@@ -82,7 +82,7 @@ class App extends Component {
                       <div class="small-divider"/>
                       <div className="about-me-section">
                         <p>
-                          I've been forunate enough to have a huge variety of experiences.  Among other things, I've been the Data Director for NYC's first-ever charter school and managed nearly 100 people at the city's largest Cerebral Palsy care center.
+                          I've been forunate enough to have a huge variety of experiences.  Among other things, I've been the Data Director for a charter school, managed nearly 100 people at the city's largest Cerebral Palsy care center, and first-hire at a startup.
                         </p>
                       </div>
                     </Col>
@@ -122,9 +122,7 @@ class App extends Component {
                     <KeepItGroovy />
                   </Col>
                   <Col md={3} sm={6}>
-                    <div className="project-box">
-                      <h5 className="project-title text-center">RPG Priest Simulator: GOTY</h5>
-                    </div>
+                    <PriestSimulator />
                   </Col>
                 </Row>
               </div>
@@ -200,16 +198,16 @@ class App extends Component {
                         <h3>Find Me</h3>
                       </Row>
                       <Row>
+                        <a href="https://github.com/prestonhale">
+                          <i className="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                      </Row>
+                      <Row>
                         <a href="https://twitter.com/theprestonhale">
                           <i className="fa fa-twitter" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.instagram.com/theprestonhale">
                           <i className="fa fa-instagram" aria-hidden="true"></i>
-                        </a>
-                      </Row>
-                      <Row>
-                        <a href="#">
-                          <i className="fa fa-facebook" aria-hidden="true"></i>
                         </a>
                       </Row>
                     </Col>
