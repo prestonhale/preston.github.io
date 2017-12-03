@@ -2,8 +2,28 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: orange;
-  color: blue;
+  border: 5px #2a2a2a;
+  background-color: #f6f6f6;
+  color: #2a2a2a;
+}
+body:before,
+body:after {
+  content: "";
+  position: fixed;
+  background: #2a2a2a;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+body:before {
+  top: 0;
+}
+body:after {
+  bottom: 0;
+}
+body {
+  border-left: 10px solid #2a2a2a;
+  border-right: 10px solid #2a2a2a;
 }
 .App {
   text-align: center;
@@ -16,7 +36,7 @@ body {
   background-color: #222;
   height: 150px;
   padding: 20px;
-  color: grey;
+  color: #606060;
 }
 .App-title {
   font-size: 1.5em;
@@ -32,53 +52,46 @@ body {
   float: none;
   margin: auto;
 }
-.container-fluid.full-width {
-  padding: 0px;
-}
-.full-width {
-  margin: 0;
-  padding: 0;
-}
 .color-line {
-  background-color: blue;
+  background-color: #2a2a2a;
   height: 15px;
   width: 100%;
 }
 #title {
   font-family: "Trajan Pro", Times, serif;
-  color: grey;
+  color: #606060;
 }
 .the {
   font-size: 36px;
-  color: #606060;
+  color: #2a2a2a;
 }
 .preston {
   font-size: 64px;
 }
 /* Content Divider */
 .content-divider {
-  color: blue;
+  color: #2a2a2a;
 }
 .rust-line {
   position: relative;
   top: 28px;
   height: 4px;
-  background-color: #606060;
+  background-color: #2a2a2a;
 }
 /* About Me */
 .download-resume {
   margin: 10px 60px;
 }
 .interact-button {
-  border: 2px solid blue;
+  border: 2px solid #2a2a2a;
   border-radius: 5px;
   padding: 10px;
-  color: blue;
+  color: #2a2a2a;
   transition: all 0.3s ease;
 }
 .interact-button:hover {
-  color: grey;
-  background-color: blue;
+  color: #606060;
+  background-color: #2a2a2a;
 }
 .download-button {
   position: relative;
@@ -111,7 +124,7 @@ a:hover {
   margin: 9px auto;
   height: 2px;
   width: 70px;
-  background-color: #606060;
+  background-color: #2a2a2a;
 }
 /* Project Box */
 .project-box {
@@ -139,15 +152,16 @@ a:hover {
   border-radius: 10px;
   height: 100%;
   width: 100%;
-  background-color: blue;
+  background-color: #2a2a2a;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-.project-box:hover > .project-title {
-  opacity: 1;
+.project-box {
+  transition: filter 0.5s ease;
+  filter: grayscale(100%);
 }
-.project-box:hover > .project-overlay {
-  opacity: 0.3;
+.project-box:hover {
+  filter: grayscale(0%);
 }
 /* Contact Info*/
 #contact-container {
@@ -157,18 +171,18 @@ a:hover {
   margin: 0;
 }
 .contact-info {
-  color: grey;
-  background-color: blue;
+  color: #606060;
+  background-color: #2a2a2a;
   padding-bottom: 50px;
 }
 .contact-info .rust-line {
-  background-color: grey;
+  background-color: #606060;
 }
 .contact-info .content-divider {
-  color: grey;
+  color: #606060;
 }
 .contact-info .social-buttons i {
-  color: grey;
+  color: #606060;
   font-size: 36px;
   width: 50px;
   height: 50px;
@@ -188,7 +202,7 @@ a:hover {
   width: 1000px;
 }
 .modal .modal-content {
-  background-color: orange;
+  background-color: #f6f6f6;
 }
 .modal .carousel img {
   width: 970px;

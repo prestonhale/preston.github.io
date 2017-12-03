@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import {Row, Col, Grid, Modal, Carousel} from 'react-bootstrap';
-import logo from './logo.svg';
-import TheGreatBear from './projectGreatBear/GreatBear.js'
-import KeepItGroovy from './projectKeepItGroovy/KeepItGroovy.js'
-import PriestSimulator from './projectPriestSimulator/PriestSimulator.js'
-import Teampay from './projectTeampay/Teampay.js'
+
+import TheGreatBear from './projectGreatBear/GreatBear.js';
+import KeepItGroovy from './projectKeepItGroovy/KeepItGroovy.js';
+import PriestSimulator from './projectPriestSimulator/PriestSimulator.js';
+import Teampay from './projectTeampay/Teampay.js';
+
+import githubBw from './static/images/github-bw.png';
+
 import './static/css/App.css';
 
 class App extends Component {
@@ -26,20 +29,19 @@ class App extends Component {
   render() {
     return (
       <div className="content">
-        <Grid fluid={true} className="full-width">
-          <Row>
-            <Col className="full-width" sm={12}>
-              <div className='color-line'></div>
-            </Col>
-          </Row>
-        </Grid>
+        <div class="excuses">
+          {/* Q: Why is this written in React?  A: Sorry, yeah.  I was working on a game in React and it just ended up sticking around. The React cruft should disappear the next time I have a free weekend. */}
+        </div>
         <Grid fluid={true} id="body">
           <Row>
             <Col className="centered-column" md={8} mdOffset={2} sm={12}>
               <div id="header">
                 <div id="title">
                   <h1 className="text-center">
-                    <span className="the">the</span><span className="preston">PrestonHale</span>
+                    <div>
+                      <span className="the">the</span><span className="preston">PrestonHale</span>
+                    </div>
+                    <img width={600} title="I was in South Africa for two weeks." src={githubBw} />
                   </h1>
                 </div>
               </div>
@@ -127,95 +129,8 @@ class App extends Component {
                 </Row>
               </div>
             </Col>
-            </Row>
-          </Grid>
-
-          {/* <Grid fluid={true} id="contact-container" className="full-width">
-            <Row>
-              <div className="contact-info">
-                <Col className="centered-column" md={8} sm={12}>
-                  <Row>
-                    <div className="content-divider">
-                      <Col md={5} smHidden>
-                        <div className="rust-line" />
-                      </Col>
-                      <Col md={2} sm={12}>
-                        <h3 className="align-middle text-center">Contact</h3>
-                      </Col>
-                      <Col md={5} sm={12}>
-                        <div className="align-middle rust-line"></div>
-                      </Col>
-                    </div>
-                  </Row>
-                  <Row>
-                    <Col md={6} ms={12} className="contact-form text-center">
-                      <Row>
-                        <h3>Send a Message</h3>
-                      </Row>
-                      <form className="form-horizontal">
-                        <Row>
-                          <Col md={6}>
-                            <Row>
-                              <Col>
-                                  <div className="form-group">
-                                    <div className="col-sm-10">
-                                      <input type="name" className="form-control" id="name" placeholder="Name" />
-                                    </div>
-                                  </div>
-                              </Col>
-                            </Row>
-                            <Row>
-                              <Col>
-                                <div className="form-group">
-                                  <div className="col-sm-10">
-                                    <input type="email" className="form-control" id="email" placeholder="Email Address" />
-                                  </div>
-                                </div>
-                              </Col>
-                            </Row>
-                            <Row>
-                              <Col>
-                                <div className="form-group">
-                                  <div className="col-sm-10"> 
-                                    <input type="subject" className="form-control" id="subject" placeholder="Subject" />
-                                  </div>
-                                </div>
-                              </Col>
-                            </Row>
-                          </Col>
-                          <Col md={6}>
-                            <div className="form-group">
-                              <div className="col-sm-10"> 
-                                <input type="message" className="form-control" id="message" placeholder="Message" />
-                              </div>
-                            </div>
-                          </Col>
-                        </Row>
-                      </form>
-                    </Col>
-                    <Col md={6} sm={12} className="social-buttons text-center">
-                      <Row>
-                        <h3>Find Me</h3>
-                      </Row>
-                      <Row>
-                        <a href="https://github.com/prestonhale">
-                          <i className="fa fa-github" aria-hidden="true"></i>
-                        </a>
-                      </Row>
-                      <Row>
-                        <a href="https://twitter.com/theprestonhale">
-                          <i className="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.instagram.com/theprestonhale">
-                          <i className="fa fa-instagram" aria-hidden="true"></i>
-                        </a>
-                      </Row>
-                    </Col>
-                  </Row>
-                </Col>
-              </div>
-            </Row>
-          </Grid> */}
+          </Row>
+        </Grid>
       </div>
     )
   }

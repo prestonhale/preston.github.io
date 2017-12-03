@@ -1,15 +1,37 @@
-@accent-color: blue;
-@background-color: orange;
-@secondary-color: #606060;
-@primary-color: grey;
+@accent-color: #2a2a2a;
+@background-color: #f6f6f6;
+@secondary-color: #2a2a2a;
+@primary-color: #606060;
+
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  border: 5px @secondary-color;
   background-color: @background-color;
   color: @accent-color
 }
+
+body:before, body:after {
+  content: "";
+  position: fixed;
+  background: @secondary-color;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+body:before {
+  top: 0;
+}
+body:after {
+  bottom: 0;
+}
+body {
+  border-left: 10px solid @secondary-color;
+  border-right: 10px solid @secondary-color;  
+}
+
 
 .App {
     text-align: center;
@@ -43,15 +65,6 @@ body {
     width:960px;
     float:none;
     margin: auto;
-  }
-  
-  .container-fluid.full-width {
-    padding:0px;
-  }
-  
-  .full-width {
-    margin: 0;
-    padding: 0;
   }
   
   .color-line {
@@ -178,14 +191,15 @@ body {
     transition: opacity 0.5s ease;
   }
   
-  .project-box:hover>.project-title {
-    opacity: 1;
-  }
+  .project-box {
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
+
+    &:hover {
+      filter: grayscale(0%);
+    }
   
-  .project-box:hover>.project-overlay {
-    opacity: 0.3;
   }
-  
   
   /* Contact Info*/
   #contact-container {
