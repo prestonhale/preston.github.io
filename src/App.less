@@ -1,3 +1,16 @@
+@accent-color: blue;
+@background-color: orange;
+@secondary-color: #606060;
+@primary-color: grey;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: @background-color;
+  color: @accent-color
+}
+
 .App {
     text-align: center;
   }
@@ -11,7 +24,7 @@
     background-color: #222;
     height: 150px;
     padding: 20px;
-    color: white;
+    color: @primary-color;
   }
   
   .App-title {
@@ -42,19 +55,19 @@
   }
   
   .color-line {
-    background-color: #964f2c;
+    background-color: @accent-color;
     height: 15px;
     width: 100%;
   }
   
   #title {
     font-family: "Trajan Pro", Times, serif;
-    color: white;
+    color: @primary-color;
   }
   
   .the {
     font-size: 36px;
-    color: #606060
+    color: @secondary-color
   }
   
   .preston {
@@ -64,14 +77,14 @@
   
   /* Content Divider */
   .content-divider {
-    color: #964f2c;
+    color: @accent-color;
   }
   
   .rust-line {
     position: relative;
     top: 28px;
     height: 4px;
-    background-color:	#606060;
+    background-color:	@secondary-color;
   }
   
   
@@ -81,16 +94,16 @@
   }
   
   .interact-button {
-    border: 2px solid #964f2c;
+    border: 2px solid @accent-color;
     border-radius: 5px;
     padding: 10px;
-    color: #964f2c;
+    color: @accent-color;
     transition: all 0.3s ease;
   }
   
   .interact-button:hover {
-    color: white;
-    background-color: #964f2c;
+    color: @primary-color;
+    background-color: @accent-color;
   }
   
   .download-button {
@@ -128,7 +141,7 @@
     margin: 9px auto;
     height: 2px;
     width: 70px;
-    background-color: #606060;
+    background-color: @secondary-color;
   }
   
   /* Project Box */
@@ -160,7 +173,7 @@
     border-radius: 10px;
     height: 100%;
     width: 100%;
-    background-color: #964f2c;
+    background-color: @accent-color;
     opacity: 0;
     transition: opacity 0.5s ease;
   }
@@ -184,21 +197,21 @@
   }
   
   .contact-info {
-    color: white;
-    background-color: #964f2c;
+    color: @primary-color;
+    background-color: @accent-color;
     padding-bottom: 50px;
   }
   
   .contact-info .rust-line {
-    background-color: white;
+    background-color: @primary-color;
   }
   
   .contact-info .content-divider {
-    color: white;
+    color: @primary-color;
   }
   
   .contact-info .social-buttons i {
-    color: white;
+    color: @primary-color;
     font-size: 36px;
     width: 50px;
     height: 50px; 
@@ -223,7 +236,7 @@
   }
   
   .modal .modal-content {
-    background-color: #282828;
+    background-color: @background-color;
   }
   
   .modal .carousel img{

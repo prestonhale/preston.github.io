@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: orange;
+  color: blue;
+}
 .App {
   text-align: center;
 }
@@ -9,7 +16,7 @@
   background-color: #222;
   height: 150px;
   padding: 20px;
-  color: white;
+  color: grey;
 }
 .App-title {
   font-size: 1.5em;
@@ -33,13 +40,13 @@
   padding: 0;
 }
 .color-line {
-  background-color: #964f2c;
+  background-color: blue;
   height: 15px;
   width: 100%;
 }
 #title {
   font-family: "Trajan Pro", Times, serif;
-  color: white;
+  color: grey;
 }
 .the {
   font-size: 36px;
@@ -50,7 +57,7 @@
 }
 /* Content Divider */
 .content-divider {
-  color: #964f2c;
+  color: blue;
 }
 .rust-line {
   position: relative;
@@ -63,15 +70,15 @@
   margin: 10px 60px;
 }
 .interact-button {
-  border: 2px solid #964f2c;
+  border: 2px solid blue;
   border-radius: 5px;
   padding: 10px;
-  color: #964f2c;
+  color: blue;
   transition: all 0.3s ease;
 }
 .interact-button:hover {
-  color: white;
-  background-color: #964f2c;
+  color: grey;
+  background-color: blue;
 }
 .download-button {
   position: relative;
@@ -132,7 +139,7 @@ a:hover {
   border-radius: 10px;
   height: 100%;
   width: 100%;
-  background-color: #964f2c;
+  background-color: blue;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -150,18 +157,18 @@ a:hover {
   margin: 0;
 }
 .contact-info {
-  color: white;
-  background-color: #964f2c;
+  color: grey;
+  background-color: blue;
   padding-bottom: 50px;
 }
 .contact-info .rust-line {
-  background-color: white;
+  background-color: grey;
 }
 .contact-info .content-divider {
-  color: white;
+  color: grey;
 }
 .contact-info .social-buttons i {
-  color: white;
+  color: grey;
   font-size: 36px;
   width: 50px;
   height: 50px;
@@ -181,7 +188,7 @@ a:hover {
   width: 1000px;
 }
 .modal .modal-content {
-  background-color: #282828;
+  background-color: orange;
 }
 .modal .carousel img {
   width: 970px;

@@ -5,7 +5,7 @@ import TheGreatBear from './projectGreatBear/GreatBear.js'
 import KeepItGroovy from './projectKeepItGroovy/KeepItGroovy.js'
 import PriestSimulator from './projectPriestSimulator/PriestSimulator.js'
 import Teampay from './projectTeampay/Teampay.js'
-import '../static/css/App.css';
+import './static/css/App.css';
 
 class App extends Component {
   constructor(props) {
@@ -130,7 +130,7 @@ class App extends Component {
             </Row>
           </Grid>
 
-          <Grid fluid={true} id="contact-container" className="full-width">
+          {/* <Grid fluid={true} id="contact-container" className="full-width">
             <Row>
               <div className="contact-info">
                 <Col className="centered-column" md={8} sm={12}>
@@ -215,7 +215,7 @@ class App extends Component {
                 </Col>
               </div>
             </Row>
-          </Grid>
+          </Grid> */}
       </div>
     )
   }
