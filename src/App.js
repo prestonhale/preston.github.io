@@ -5,7 +5,7 @@ import TheGreatBear from './projectGreatBear/GreatBear.js'
 import KeepItGroovy from './projectKeepItGroovy/KeepItGroovy.js'
 import PriestSimulator from './projectPriestSimulator/PriestSimulator.js'
 import Teampay from './projectTeampay/Teampay.js'
-import './App.css';
+import '../static/css/App.css';
 
 class App extends Component {
   constructor(props) {
