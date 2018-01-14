@@ -54,7 +54,7 @@ body {
   background-color: #242424;
   padding: 0px;
 }
-#projects .project-viewer {
+#projects #project-viewer {
   padding-left: 0px;
   background-color: #bcbcbc;
 }

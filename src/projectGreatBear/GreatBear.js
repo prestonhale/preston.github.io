@@ -29,9 +29,8 @@ class TheGreatBear extends Component {
                 <div className="project-overlay" />
                 <img className="project-thumbnail" src={thumbnail}/>
             </div>
-            <div>
-                <Modal show={this.state.showModal} onHide={this.closeModal}>
-                <Modal.Body>
+            <script id="greatBear-template" type="text/x-handlebars-template">
+                <div class="project">
                     <Carousel>
                         <Carousel.Item>
                             <img width={900} height={500} src={bigBear} />
@@ -83,9 +82,8 @@ class TheGreatBear extends Component {
                         </p>
                     </Col>
                     </Row>
-                </Modal.Body>
-                </Modal>
-            </div>
+                </div>
+            </script>
         </div>
     )
   }

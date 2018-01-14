@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Col, Grid, Modal, Carousel} from 'react-bootstrap';
+import {Row, Col, Modal, Carousel} from 'react-bootstrap';
 import insurance from './insurance.jpg'
 import headcrab from './headcrab.png'
 import title from './title.jpg'

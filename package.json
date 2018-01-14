@@ -19,6 +19,7 @@
   "devDependencies": {
     "gh-pages": "^1.0.0",
     "grunt": "~0.4.5",
+    "grunt-browserify": "^5.2.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-nodeunit": "~0.4.1",

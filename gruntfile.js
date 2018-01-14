@@ -17,7 +17,15 @@ module.exports = function(grunt) {
         less: {
             development: {
                 files: {
-                    "src/static/css/App.css": "src/**/*.less"
+                    "src/static/css/index.css": "src/index.less"
+                }
+            }
+        },
+        
+        browserify: {
+            development: {
+                files: {
+                    "src/static/js/index.js": "src/index.js"
                 }
             }
         },
@@ -28,7 +36,7 @@ module.exports = function(grunt) {
                 tasks: ["less"]
             },
             browserifywatcher: {
-                files: ['tp_dash/react/*.js'],
+                files: ['src/**/*.js'],
                 tasks: ['browserify']
             }
         },
@@ -37,6 +45,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-browserify');
 
     // Default task(s).
     grunt.registerTask('default', ['watch']);
