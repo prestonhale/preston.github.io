@@ -3,49 +3,90 @@ body {
   padding: 0;
   font-family: sans-serif;
   border: 5px #2a2a2a;
-  background-color: #f6f6f6;
-  color: #2a2a2a;
+  background-color: #242424;
+  color: #bcbcbc;
 }
-body:before,
-body:after {
-  content: "";
-  position: fixed;
-  background: #2a2a2a;
-  left: 0;
-  right: 0;
-  height: 10px;
-}
-body:before {
-  top: 0;
-}
-body:after {
-  bottom: 0;
-}
-body {
-  border-left: 10px solid #2a2a2a;
-  border-right: 10px solid #2a2a2a;
+#body {
+  padding: 0;
+  margin: 0;
 }
 .App {
   text-align: center;
 }
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.section-title {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding: 0 0 45px 0;
 }
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: #606060;
+#header {
+  background-color: #141414;
+  padding-top: 15px;
+  padding-bottom: 35px;
 }
-.App-title {
-  font-size: 1.5em;
+#header .the {
+  font-size: 36px;
+  color: #23395B;
 }
-.App-intro {
-  font-size: large;
+#header .preston {
+  font-size: 64px;
 }
-#body {
-  margin: 10px auto;
+#projects {
+  background-color: #f6f6f6;
+  padding: 50px 265px 50px 265px;
+  color: #141414;
+}
+#projects .project {
+  background-color: #bcbcbc;
+  padding: 10px;
+}
+#projects .project-selector {
+  background-color: #242424;
+  padding: 0px;
+}
+#projects .project-viewer {
+  padding-left: 0px;
+}
+#projects .project-box {
+  position: relative;
+  cursor: pointer;
+  height: 210px;
+  border-radius: 10px;
+  margin: 10px 0;
+  transition: filter 0.5s ease;
+  filter: grayscale(100%);
+}
+#projects .project-box:hover {
+  filter: grayscale(0%);
+}
+#projects .project-box.selected {
+  background-color: #bcbcbc;
+}
+#projects .project-selector > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#projects .project-box > .project-title {
+  position: absolute;
+  width: 100%;
+  font-size: 24px;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+#projects .project-box > .project-overlay {
+  position: absolute;
+  display: inline-block;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  background-color: #23395B;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#about {
+  padding: 50px 265px 50px 265px;
+  color: #bcbcbc;
+}
+#contact {
+  background-color: #141414;
 }
 .centered-column {
   width: 960px;
@@ -53,7 +94,7 @@ body {
   margin: auto;
 }
 .color-line {
-  background-color: #2a2a2a;
+  background-color: #23395B;
   height: 15px;
   width: 100%;
 }
@@ -61,16 +102,9 @@ body {
   font-family: "Trajan Pro", Times, serif;
   color: #606060;
 }
-.the {
-  font-size: 36px;
-  color: #2a2a2a;
-}
-.preston {
-  font-size: 64px;
-}
 /* Content Divider */
 .content-divider {
-  color: #2a2a2a;
+  color: #23395B;
 }
 .rust-line {
   position: relative;
@@ -83,15 +117,15 @@ body {
   margin: 10px 60px;
 }
 .interact-button {
-  border: 2px solid #2a2a2a;
+  border: 2px solid #23395B;
   border-radius: 5px;
   padding: 10px;
-  color: #2a2a2a;
+  color: #23395B;
   transition: all 0.3s ease;
 }
 .interact-button:hover {
   color: #606060;
-  background-color: #2a2a2a;
+  background-color: #23395B;
 }
 .download-button {
   position: relative;
@@ -124,44 +158,7 @@ a:hover {
   margin: 9px auto;
   height: 2px;
   width: 70px;
-  background-color: #2a2a2a;
-}
-/* Project Box */
-.project-box {
-  position: relative;
-  height: 210px;
-  border-radius: 10px;
-  margin: 10px 0;
-  cursor: pointer;
-}
-.project-box > img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 10px;
-}
-.project-box > .project-title {
-  position: absolute;
-  width: 100%;
-  font-size: 24px;
-  transition: opacity 0.5s ease;
-  opacity: 0;
-}
-.project-box > .project-overlay {
-  position: absolute;
-  display: inline-block;
-  border-radius: 10px;
-  height: 100%;
-  width: 100%;
-  background-color: #2a2a2a;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-.project-box {
-  transition: filter 0.5s ease;
-  filter: grayscale(100%);
-}
-.project-box:hover {
-  filter: grayscale(0%);
+  background-color: #23395B;
 }
 /* Contact Info*/
 #contact-container {
@@ -172,7 +169,7 @@ a:hover {
 }
 .contact-info {
   color: #606060;
-  background-color: #2a2a2a;
+  background-color: #23395B;
   padding-bottom: 50px;
 }
 .contact-info .rust-line {
@@ -202,7 +199,7 @@ a:hover {
   width: 1000px;
 }
 .modal .modal-content {
-  background-color: #f6f6f6;
+  background-color: #242424;
 }
 .modal .carousel img {
   width: 970px;

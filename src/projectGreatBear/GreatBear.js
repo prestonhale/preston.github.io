@@ -24,10 +24,10 @@ class TheGreatBear extends Component {
   render() {
     return (
         <div>
-            <div className="project-box" onClick={this.showModal}>
+            <div onClick={this.showModal}>
                 {/* <h5 className="project-title text-center">The Great Bear</h5> */}
                 <div className="project-overlay" />
-                <img src={thumbnail}/>
+                <img className="project-thumbnail" src={thumbnail}/>
             </div>
             <div>
                 <Modal show={this.state.showModal} onHide={this.closeModal}>

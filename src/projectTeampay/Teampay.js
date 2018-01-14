@@ -21,9 +21,11 @@ class Teampay extends Component {
   render() {
     return (
         <div>
-            <div className="project-box" onClick={this.showModal}>
-                <div className="project-overlay" />
-                <img src={thumbnail}/>
+            <div className="project-background">
+                <div onClick={this.showModal}>
+                    <div className="project-overlay" />
+                    <img src={thumbnail}/>
+                </div>
             </div>
             <div>
                 <Modal show={this.state.showModal} onHide={this.closeModal}>

@@ -25,10 +25,10 @@ class PriestSimulator extends Component {
   render() {
     return (
         <div>
-            <div className="project-box" onClick={this.showModal}>
+            <div onClick={this.showModal}>
                 {/* <h5 className="project-title text-center">Keep It Groovy</h5> */}
                 <div className="project-overlay" />
-                <img src={thumbnail}/>
+                <img class="project-thumbnail" src={thumbnail}/>
             </div>
             <div>
                 <Modal show={this.state.showModal} onHide={this.closeModal}>

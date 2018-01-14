@@ -1,7 +1,13 @@
-@accent-color: #2a2a2a;
-@background-color: #f6f6f6;
+// https://coolors.co/242424-2a2a2a-606060-141414-23395b
+
+@light-font-color: #bcbcbc;
+@dark-font-color: #141414;
+@accent-color: #23395B;
+@background-color: #242424;
 @secondary-color: #2a2a2a;
 @primary-color: #606060;
+@off-black: #141414;
+@off-white: #f6f6f6;
 
 
 body {
@@ -10,56 +16,110 @@ body {
   font-family: sans-serif;
   border: 5px @secondary-color;
   background-color: @background-color;
-  color: @accent-color
+  color: @light-font-color;
 }
 
-body:before, body:after {
-  content: "";
-  position: fixed;
-  background: @secondary-color;
-  left: 0;
-  right: 0;
-  height: 10px;
+#body {
+  padding: 0;
+  margin: 0;
 }
-body:before {
-  top: 0;
-}
-body:after {
-  bottom: 0;
-}
-body {
-  border-left: 10px solid @secondary-color;
-  border-right: 10px solid @secondary-color;  
-}
-
 
 .App {
-    text-align: center;
+  text-align: center;
+}
+  
+.section-title {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding: 0 0 45px 0;
+}
+
+#header {
+  background-color: @off-black;
+  padding-top: 15px;
+  padding-bottom: 35px;
+  
+  .the {
+    font-size: 36px;
+    color: @accent-color
   }
   
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
+  .preston {
+    font-size: 64px;
   }
-  
-  .App-header {
-    background-color: #222;
-    height: 150px;
-    padding: 20px;
-    color: @primary-color;
+}
+
+#projects {
+  background-color: @off-white;
+  padding: 50px 265px 50px 265px;
+  color: @dark-font-color;
+
+  .project {
+    background-color: @light-font-color;
+    padding: 10px;
   }
-  
-  .App-title {
-    font-size: 1.5em;
+
+  .project-selector {
+    background-color: @background-color;
+    padding: 0px;
   }
-  
-  .App-intro {
-    font-size: large;
+
+  .project-viewer {
+    padding-left: 0px;
   }
-  
-  #body{
-    margin: 10px auto;
+
+  .project-box {
+    position: relative;
+    cursor: pointer;
+    height: 210px;
+    border-radius: 10px;
+    margin: 10px 0;
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+
+    &.selected {
+      background-color: @light-font-color;
+    }
+
   }
+
+  .project-selector>img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .project-box>.project-title {
+    position: absolute;
+    width: 100%;
+    font-size: 24px;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+  }
+
+  .project-box>.project-overlay {
+    position: absolute;
+    display: inline-block;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    background-color: @accent-color;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+}
+
+#about {
+  padding: 50px 265px 50px 265px;
+  color: @light-font-color;
+
+}
+
+#contact {
+  background-color: @off-black;
+}
   
   .centered-column {
     width:960px;
@@ -78,14 +138,6 @@ body {
     color: @primary-color;
   }
   
-  .the {
-    font-size: 36px;
-    color: @secondary-color
-  }
-  
-  .preston {
-    font-size: 64px;
-  }
   
   
   /* Content Divider */
@@ -154,51 +206,7 @@ body {
     margin: 9px auto;
     height: 2px;
     width: 70px;
-    background-color: @secondary-color;
-  }
-  
-  /* Project Box */
-  .project-box {
-    position: relative;
-    height: 210px;
-    border-radius: 10px;
-    margin: 10px 0;
-    cursor: pointer;
-  }
-  
-  .project-box>img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
-  }
-  
-  .project-box>.project-title {
-    position: absolute;
-    width: 100%;
-    font-size: 24px;
-    transition: opacity 0.5s ease;
-    opacity: 0;
-  }
-  
-  .project-box>.project-overlay {
-    position: absolute;
-    display: inline-block;
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
     background-color: @accent-color;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  
-  .project-box {
-    transition: filter 0.5s ease;
-    filter: grayscale(100%);
-
-    &:hover {
-      filter: grayscale(0%);
-    }
-  
   }
   
   /* Contact Info*/
