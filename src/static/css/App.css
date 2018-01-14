@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  border: 5px #2a2a2a;
   background-color: #242424;
   color: #bcbcbc;
 }
@@ -13,6 +12,9 @@ body {
 .App {
   text-align: center;
 }
+.row {
+  margin: 0px;
+}
 .row.is-flex {
   display: flex;
   flex-wrap: wrap;
@@ -21,9 +23,12 @@ body {
   display: flex;
   flex-direction: column;
 }
-.section-title {
+.section-header {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   padding: 0 0 45px 0;
+}
+.section-title {
+  margin-bottom: 0px;
 }
 #header {
   background-color: #141414;
@@ -32,7 +37,7 @@ body {
 }
 #header .the {
   font-size: 36px;
-  color: #23395B;
+  color: #315080;
 }
 #header .preston {
   font-size: 64px;
@@ -65,7 +70,7 @@ body {
 }
 #projects .project-box.selected {
   filter: grayscale(0%);
-  background-color: #23395B;
+  background-color: #315080;
 }
 #projects .project-box img {
   max-width: 100%;
@@ -84,7 +89,7 @@ body {
   border-radius: 10px;
   height: 100%;
   width: 100%;
-  background-color: #23395B;
+  background-color: #315080;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -101,7 +106,7 @@ body {
   margin: auto;
 }
 .color-line {
-  background-color: #23395B;
+  background-color: #315080;
   height: 15px;
   width: 100%;
 }
@@ -109,9 +114,23 @@ body {
   font-family: "Trajan Pro", Times, serif;
   color: #606060;
 }
+/* Short Bar */
+.short-bar {
+  background-color: #315080;
+  height: 4px;
+  width: 40px;
+}
+.short-bar.project-bar {
+  position: relative;
+  left: -57px;
+}
+.short-bar.about-bar {
+  position: relative;
+  left: -33px;
+}
 /* Content Divider */
 .content-divider {
-  color: #23395B;
+  color: #315080;
 }
 .rust-line {
   position: relative;
@@ -124,15 +143,15 @@ body {
   margin: 10px 60px;
 }
 .interact-button {
-  border: 2px solid #23395B;
+  border: 2px solid #315080;
   border-radius: 5px;
   padding: 10px;
-  color: #23395B;
+  color: #315080;
   transition: all 0.3s ease;
 }
 .interact-button:hover {
   color: #606060;
-  background-color: #23395B;
+  background-color: #315080;
 }
 .download-button {
   position: relative;
@@ -165,41 +184,7 @@ a:hover {
   margin: 9px auto;
   height: 2px;
   width: 70px;
-  background-color: #23395B;
-}
-/* Contact Info*/
-#contact-container {
-  margin-top: 50px;
-}
-#contact-container .row {
-  margin: 0;
-}
-.contact-info {
-  color: #606060;
-  background-color: #23395B;
-  padding-bottom: 50px;
-}
-.contact-info .rust-line {
-  background-color: #606060;
-}
-.contact-info .content-divider {
-  color: #606060;
-}
-.contact-info .social-buttons i {
-  color: #606060;
-  font-size: 36px;
-  width: 50px;
-  height: 50px;
-}
-.contact-info .contact-form .form-group {
-  margin-bottom: 2px;
-}
-.contact-info .contact-form div {
-  padding: 0px;
-}
-.contact-info .contact-form #message {
-  height: 105px;
-  width: 220px;
+  background-color: #315080;
 }
 /*Project Modals*/
 .modal .modal-dialog {

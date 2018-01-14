@@ -49,12 +49,19 @@ class App extends Component {
           </div>
 
           <div id="projects">
-            <Row>
-              <Col align="center" md={12}>
-                <h2 className="section-title text-center">PROJECTS</h2>
-              </Col>
+            <div class="section-header">
+              <Row>
+                <Col align="center" md={12}>
+                  <h2 className="section-title text-center">PROJECTS</h2>
+                </Col>
               </Row>
-              <Row className='is-flex'>
+              <Row>
+                <Col align="center" md={12}>
+                  <div class="project-bar short-bar"></div>
+                </Col>
+              </Row>
+            </div>
+            <Row className='is-flex'>
               <Col className="project-selector" md={3} sm={12}>
                 <Col className="project-box selected" md={12}>
                   <TheGreatBear />
@@ -76,11 +83,18 @@ class App extends Component {
           </div>
 
           <div id="about">
-            <Row>
-              <Col align="center" md={12}>
-                <h2 className="section-title text-center">ABOUT</h2>
-              </Col>
-            </Row>
+            <div class="section-header">
+              <Row>
+                <Col align="center" md={12}>
+                  <h2 className="section-title text-center">ABOUT</h2>
+                </Col>
+              </Row>
+              <Row>
+                <Col align="center" md={12}>
+                  <div class="short-bar about-bar"></div>
+                </Col>
+              </Row>
+            </div>
             <div className="about-me-info text-center">
               <Row>
                 <Col className="no-float" md={3} sm={12}>
