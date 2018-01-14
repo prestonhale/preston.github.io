@@ -53,10 +53,10 @@ class App extends Component {
               <Col align="center" md={12}>
                 <h2 className="section-title text-center">PROJECTS</h2>
               </Col>
-            </Row>
-            <Row>
+              </Row>
+              <Row className='is-flex'>
               <Col className="project-selector" md={3} sm={12}>
-                <Col className="project-box" md={12}>
+                <Col className="project-box selected" md={12}>
                   <TheGreatBear />
                 </Col>
                 <Col className="project-box" md={12}>
