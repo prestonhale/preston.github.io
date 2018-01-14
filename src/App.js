@@ -33,10 +33,10 @@ class App extends Component {
         <div class="excuses">
           {/* Q: Why is this written in React?  A: Sorry, yeah.  I was working on a game in React and it just ended up sticking around. The React cruft should disappear the next time I have a free weekend. */}
         </div>
-        <Grid fluid={true} id="body">
+        <div fluid={true} id="body">
 
           <div id="header">
-            <Row>
+            <div class="row">
               <div id="title">
                 <h1 className="text-center">
                   <div>
@@ -45,85 +45,85 @@ class App extends Component {
                   <img width={600} title="I was in South Africa for two weeks." src={githubBw} />
                 </h1>
               </div>
-            </Row>
+            </div>
           </div>
 
           <div id="projects">
             <div class="section-header">
-              <Row>
-                <Col align="center" md={12}>
+              <div class="row">
+                <div class="col-md-12" align="center">
                   <h2 className="section-title text-center">PROJECTS</h2>
-                </Col>
-              </Row>
-              <Row>
-                <Col align="center" md={12}>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12" align="center">
                   <div class="project-bar short-bar"></div>
-                </Col>
-              </Row>
+                </div>
+              </div>
             </div>
-            <Row className='is-flex'>
-              <Col className="project-selector" md={3} sm={12}>
-                <Col className="project-box selected" md={12}>
+            <div class="row is-flex">
+              <div class="project-selector col-md-3 col-sm-12">
+                <div class="col-md-12 project-box selected">
                   <TheGreatBear />
-                </Col>
-                <Col className="project-box" md={12}>
+                </div>
+                <div class="col-md-12 project-box">
                   <Teampay />
-                </Col>
-                <Col className="project-box" md={12}>
+                </div>
+                <div class="col-md-12 project-box">
                   <KeepItGroovy />
-                </Col>
-                <Col className="project-box" md={12}>
+                </div>
+                <div class="col-md-12 project-box">
                   <PriestSimulator />
-                </Col>
-              </Col>
-              <Col className="project-viewer" md={9} sm={12}>
+                </div>
+              </div>
+              <div className="col-md-9 col-sm-12 project-viewer">
                   <LargeTheGreatBear />
-              </Col>
-            </Row>
+              </div>
+            </div>
           </div>
 
           <div id="about">
             <div class="section-header">
-              <Row>
-                <Col align="center" md={12}>
+              <div class="row">
+                <div class="col-md-12" align="center">
                   <h2 className="section-title text-center">ABOUT</h2>
-                </Col>
-              </Row>
-              <Row>
-                <Col align="center" md={12}>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12" align="center">
                   <div class="short-bar about-bar"></div>
-                </Col>
-              </Row>
+                </div>
+              </div>
             </div>
             <div className="about-me-info text-center">
-              <Row>
-                <Col className="no-float" md={3} sm={12}>
+              <div class="row">
+                <div class="col-md-3 col-sm-12 no-float">
                   <p>
                     I'm a software engineer at a start-up called Teampay. We solve the corporate card problem by providing users with a virtual card solution.  I do a little bit of everything but our Slack chatbot is my baby.
                   </p>
-                </Col>
-              </Row>
-              <Row>
-                <Col md={4} mdOffset={4} sm={8} smOffset={2}>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset=2">
                   <a href="#">
                     <div className="interact-button download-resume text-center">
                       Download Resume
                     </div>
                   </a>
-                </Col>
-              </Row>
+                </div>
+              </div>
             </div>
           </div>
 
           <div id="contact">
-            <Row>
-              <Col>
+            <div class="row">
+              <div class="col-md-12">
                 <p>Some content</p>
-              </Col>
-            </Row>
+              </div>
+            </div>
           </div>
 
-        </Grid>
+        </div>
       </div>
      )
    }
