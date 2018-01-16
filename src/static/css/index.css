@@ -9,9 +9,6 @@ body {
   padding: 0;
   margin: 0;
 }
-.App {
-  text-align: center;
-}
 .row {
   margin: 0px;
 }
@@ -51,6 +48,7 @@ body {
   padding: 10px;
 }
 #projects .project-selector {
+  min-height: 800px;
   background-color: #242424;
   padding: 0px;
 }
@@ -62,11 +60,13 @@ body {
   position: relative;
   cursor: pointer;
   transition: filter 0.5s ease;
+  transition: background-color 0.5s linear;
   padding-right: 0px;
   filter: grayscale(100%);
 }
 #projects .project-box:hover {
   filter: grayscale(0%);
+  background-color: #606060;
 }
 #projects .project-box.selected {
   filter: grayscale(0%);
@@ -128,16 +128,6 @@ body {
   position: relative;
   left: -33px;
 }
-/* Content Divider */
-.content-divider {
-  color: #315080;
-}
-.rust-line {
-  position: relative;
-  top: 28px;
-  height: 4px;
-  background-color: #2a2a2a;
-}
 /* About Me */
 .download-resume {
   margin: 10px 60px;
@@ -185,23 +175,4 @@ a:hover {
   height: 2px;
   width: 70px;
   background-color: #315080;
-}
-/*Project Modals*/
-.modal .modal-dialog {
-  width: 1000px;
-}
-.modal .modal-content {
-  background-color: #242424;
-}
-.modal .carousel img {
-  width: 970px;
-  height: 500px;
-}
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

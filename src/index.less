@@ -2,7 +2,6 @@
 
 @light-font-color: #bcbcbc;
 @dark-font-color: #141414;
-// @accent-color: #23395B;
 @accent-color: #315080;
 @background-color: #242424;
 @secondary-color: #2a2a2a;
@@ -22,10 +21,6 @@ body {
 #body {
   padding: 0;
   margin: 0;
-}
-
-.App {
-  text-align: center;
 }
 
 .row {
@@ -76,6 +71,7 @@ body {
   }
 
   .project-selector {
+    min-height: 800px;
     background-color: @background-color;
     padding: 0px;
   }
@@ -89,11 +85,13 @@ body {
     position: relative;
     cursor: pointer;
     transition: filter 0.5s ease;
+    transition: background-color 0.5s linear;
     padding-right: 0px;
     filter: grayscale(100%);
 
     &:hover {
       filter: grayscale(0%);
+      background-color: @primary-color;
     }
 
     &.selected {
@@ -138,125 +136,93 @@ body {
   background-color: @off-black;
 }
   
-  .centered-column {
-    width:960px;
-    float:none;
-    margin: auto;
-  }
+.centered-column {
+  width:960px;
+  float:none;
+  margin: auto;
+}
   
-  .color-line {
-    background-color: @accent-color;
-    height: 15px;
-    width: 100%;
-  }
-  
-  #title {
-    font-family: "Trajan Pro", Times, serif;
-    color: @primary-color;
-  }
-  
-  /* Short Bar */
-  .short-bar {
-    background-color: @accent-color;
-    height: 4px;
-    width: 40px;
+.color-line {
+  background-color: @accent-color;
+  height: 15px;
+  width: 100%;
+}
 
-    &.project-bar {
-      position: relative;
-      left: -57px;
-    }
-    
-    &.about-bar {
-      position: relative;
-      left: -33px;
-    }
-  }
+#title {
+  font-family: "Trajan Pro", Times, serif;
+  color: @primary-color;
+}
   
-  
-  /* Content Divider */
-  .content-divider {
-    color: @accent-color;
-  }
-  
-  .rust-line {
+/* Short Bar */
+.short-bar {
+  background-color: @accent-color;
+  height: 4px;
+  width: 40px;
+
+  &.project-bar {
     position: relative;
-    top: 28px;
-    height: 4px;
-    background-color:	@secondary-color;
+    left: -57px;
   }
   
-  
-  /* About Me */
-  .download-resume {
-    margin: 10px 60px;
-  }
-  
-  .interact-button {
-    border: 2px solid @accent-color;
-    border-radius: 5px;
-    padding: 10px;
-    color: @accent-color;
-    transition: all 0.3s ease;
-  }
-  
-  .interact-button:hover {
-    color: @primary-color;
-    background-color: @accent-color;
-  }
-  
-  .download-button {
+  &.about-bar {
     position: relative;
-    float: right;
-    top: 10px;
-    width: 140px;
-    height: 40px;
+    left: -33px;
   }
+}
   
-  a:hover {
-    text-decoration: none;
-  }
   
-  .about-me-info .col-md-3 {
-    float: none;
-    display: inline-block;
-  }
-  
-  .container {
-    display:table;
-    width: 100%;
-    margin-top: -50px;
-    padding: 50px 0 0 0; /*set left/right padding according to needs*/
-    box-sizing: border-box;
-  }
-  
-  .row .no-float {
-    display: table-cell;
-    float: none;
-  }
-  
-  .small-divider {
-    display: block;
-    margin: 9px auto;
-    height: 2px;
-    width: 70px;
-    background-color: @accent-color;
-  }
-  
-  /*Project Modals*/
-  .modal .modal-dialog {
-    width: 1000px;
-  }
-  
-  .modal .modal-content {
-    background-color: @background-color;
-  }
-  
-  .modal .carousel img{
-    width: 970px;
-    height: 500px;
-  }
-  
-  @keyframes App-logo-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+/* About Me */
+.download-resume {
+  margin: 10px 60px;
+}
+
+.interact-button {
+  border: 2px solid @accent-color;
+  border-radius: 5px;
+  padding: 10px;
+  color: @accent-color;
+  transition: all 0.3s ease;
+}
+
+.interact-button:hover {
+  color: @primary-color;
+  background-color: @accent-color;
+}
+
+.download-button {
+  position: relative;
+  float: right;
+  top: 10px;
+  width: 140px;
+  height: 40px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.about-me-info .col-md-3 {
+  float: none;
+  display: inline-block;
+}
+
+.container {
+  display:table;
+  width: 100%;
+  margin-top: -50px;
+  padding: 50px 0 0 0; /*set left/right padding according to needs*/
+  box-sizing: border-box;
+}
+
+.row .no-float {
+  display: table-cell;
+  float: none;
+}
+
+.small-divider {
+  display: block;
+  margin: 9px auto;
+  height: 2px;
+  width: 70px;
+  background-color: @accent-color;
+}
