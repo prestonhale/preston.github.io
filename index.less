@@ -2,7 +2,8 @@
 
 @light-font-color: #bcbcbc;
 @dark-font-color: #141414;
-@accent-color: #315080;
+// @accent-color: #315080;
+@accent-color: #CE7800;
 @background-color: #242424;
 @secondary-color: #2a2a2a;
 @primary-color: #606060;
@@ -63,7 +64,7 @@ body {
 
 #projects {
   background-color: @off-white;
-  padding: 50px 265px 50px 265px;
+  padding: 50px 265px 120px 265px;
   color: @dark-font-color;
 
   .project {
@@ -84,9 +85,8 @@ body {
   .project-box {
     position: relative;
     cursor: pointer;
-    transition: filter 0.5s ease;
-    transition: background-color 0.5s linear;
-    padding-right: 0px;
+    transition: filter 0.3s ease, background-color 0.3s ease;
+    padding: 0px 0px 0px 8px;
     filter: grayscale(100%);
 
     &:hover {
@@ -133,7 +133,28 @@ body {
 }
 
 #contact {
+  padding: 25px 265px 25px 265px;
+  color: @light-font-color;
   background-color: @off-black;
+  font-size: 16px;
+
+  .fa-lg {
+    margin-right: 5px;
+  }
+
+  a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: @light-font-color;
+  }
+
+  span {
+    margin-right: 40px;
+  }
+
+  i {
+    color: @accent-color;
+  }
+
 }
   
 .centered-column {

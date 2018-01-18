@@ -34,14 +34,14 @@ body {
 }
 #header .the {
   font-size: 36px;
-  color: #315080;
+  color: #CE7800;
 }
 #header .preston {
   font-size: 64px;
 }
 #projects {
   background-color: #f6f6f6;
-  padding: 50px 265px 50px 265px;
+  padding: 50px 265px 120px 265px;
   color: #141414;
 }
 #projects .project {
@@ -59,9 +59,8 @@ body {
 #projects .project-box {
   position: relative;
   cursor: pointer;
-  transition: filter 0.5s ease;
-  transition: background-color 0.5s linear;
-  padding-right: 0px;
+  transition: filter 0.3s ease, background-color 0.3s ease;
+  padding: 0px 0px 0px 8px;
   filter: grayscale(100%);
 }
 #projects .project-box:hover {
@@ -70,7 +69,7 @@ body {
 }
 #projects .project-box.selected {
   filter: grayscale(0%);
-  background-color: #315080;
+  background-color: #CE7800;
 }
 #projects .project-box img {
   max-width: 100%;
@@ -89,7 +88,7 @@ body {
   border-radius: 10px;
   height: 100%;
   width: 100%;
-  background-color: #315080;
+  background-color: #CE7800;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -98,7 +97,26 @@ body {
   color: #bcbcbc;
 }
 #contact {
+  padding: 25px 265px 25px 265px;
+  color: #bcbcbc;
   background-color: #141414;
+  font-size: 16px;
+}
+#contact .fa-lg {
+  margin-right: 5px;
+}
+#contact a:link,
+#contact a:visited,
+#contact a:hover,
+#contact a:active {
+  text-decoration: none;
+  color: #bcbcbc;
+}
+#contact span {
+  margin-right: 40px;
+}
+#contact i {
+  color: #CE7800;
 }
 .centered-column {
   width: 960px;
@@ -106,7 +124,7 @@ body {
   margin: auto;
 }
 .color-line {
-  background-color: #315080;
+  background-color: #CE7800;
   height: 15px;
   width: 100%;
 }
@@ -116,7 +134,7 @@ body {
 }
 /* Short Bar */
 .short-bar {
-  background-color: #315080;
+  background-color: #CE7800;
   height: 4px;
   width: 40px;
 }
@@ -133,15 +151,15 @@ body {
   margin: 10px 60px;
 }
 .interact-button {
-  border: 2px solid #315080;
+  border: 2px solid #CE7800;
   border-radius: 5px;
   padding: 10px;
-  color: #315080;
+  color: #CE7800;
   transition: all 0.3s ease;
 }
 .interact-button:hover {
   color: #606060;
-  background-color: #315080;
+  background-color: #CE7800;
 }
 .download-button {
   position: relative;
@@ -174,5 +192,5 @@ a:hover {
   margin: 9px auto;
   height: 2px;
   width: 70px;
-  background-color: #315080;
+  background-color: #CE7800;
 }
