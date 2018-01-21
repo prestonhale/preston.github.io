@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         less: {
             development: {
                 files: {
-                    "src/static/css/index.css": "src/index.less"
+                    "static/css/index.css": "./index.less"
                 }
             }
         },
@@ -25,18 +25,18 @@ module.exports = function(grunt) {
         browserify: {
             development: {
                 files: {
-                    "src/static/js/index.js": "src/index.js"
+                    "static/js/index.js": "index.js"
                 }
             }
         },
 
         watch: {
             less: {
-                files: ["src/**/*.less"],
+                files: ["*.less"],
                 tasks: ["less"]
             },
             browserifywatcher: {
-                files: ['src/**/*.js'],
+                files: ['*.js'],
                 tasks: ['browserify']
             }
         },
