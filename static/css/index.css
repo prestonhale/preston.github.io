@@ -42,9 +42,12 @@ body {
 #header .preston {
   font-size: 64px;
 }
+#header img {
+  max-width: 100%;
+}
 #projects {
   background-color: #f6f6f6;
-  padding: 50px 265px 120px 265px;
+  padding: 50px 0px 100px 0px;
   color: #141414;
 }
 #projects .project {
@@ -95,14 +98,14 @@ body {
   transition: opacity 0.5s ease;
 }
 #about {
-  padding: 50px 265px 50px 265px;
+  padding: 50px 0px 50px 0px;
   color: #bcbcbc;
   box-shadow: 0 0 5px 3px grey;
   position: relative;
   z-index: 1;
 }
 #contact {
-  padding: 25px 265px 25px 265px;
+  padding: 25px 0px 25px 0px;
   color: #bcbcbc;
   background-color: #141414;
   font-size: 16px;
