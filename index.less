@@ -86,13 +86,19 @@ body {
 
   #project-viewer {
     background-color: @light-font-color;
+    padding: 15px;
+
+    img {
+      max-height: 400px;
+    }
+
   }
 
   .project-box {
     position: relative;
-    cursor: pointer;
-    transition: filter 0.3s ease, background-color 0.3s ease;
     padding: 0px 0px 0px 8px;
+    transition: filter 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
     filter: grayscale(100%);
 
     &:hover {
@@ -221,12 +227,22 @@ body {
   background-color: @accent-color;
 }
 
-.download-button {
+.download-link {
   position: relative;
   float: right;
   top: 10px;
-  width: 140px;
-  height: 40px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+
+  .download-button {
+    width: 140px;
+    height: 40px;
+  }
+
+  .controller-warning {
+    font-size: 11px;
+  }
+
 }
 
 a:hover {

@@ -11,6 +11,8 @@ $(document).ready(function() {
     var priestSimulatorSource = document.getElementById("priestSimulator-template").innerHTML;
     var priestSimulatorTemplate = handlebars.compile(priestSimulatorSource);
 
+    var dancemissionSource = document.getElementById("dancemission-template").innerHTML;
+    var dancemissionTemplate = handlebars.compile(dancemissionSource);
 
     $('.project-box').on('click', function() {
         var project = this.dataset.project;
@@ -30,6 +32,9 @@ $(document).ready(function() {
                 break;
             case 'priestSimulator':
                 template = priestSimulatorTemplate({})
+                break;
+            case 'dancemission':
+                template = dancemissionTemplate({})
                 break;
         }
         document.getElementById('project-viewer').innerHTML = template;

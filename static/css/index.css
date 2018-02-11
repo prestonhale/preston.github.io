@@ -60,12 +60,16 @@ body {
 }
 #projects #project-viewer {
   background-color: #bcbcbc;
+  padding: 15px;
+}
+#projects #project-viewer img {
+  max-height: 400px;
 }
 #projects .project-box {
   position: relative;
-  cursor: pointer;
-  transition: filter 0.3s ease, background-color 0.3s ease;
   padding: 0px 0px 0px 8px;
+  transition: filter 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
   filter: grayscale(100%);
 }
 #projects .project-box:hover {
@@ -171,12 +175,19 @@ body {
   color: #606060;
   background-color: #CE7800;
 }
-.download-button {
+.download-link {
   position: relative;
   float: right;
   top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.download-link .download-button {
   width: 140px;
   height: 40px;
+}
+.download-link .controller-warning {
+  font-size: 11px;
 }
 a:hover {
   text-decoration: none;
