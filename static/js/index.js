@@ -32,12 +32,12 @@ function bindProjectDisplayEvents(){
 }
 
 function displayProject(projectName){
-    console.log(projectName);
     project = projectData[projectName];
 
-    var templateData = project;
-    templateData.description.join('\n');
-    templateData.commentary.join('\n');
+    var templateData = {};
+    $.extend(true, templateData, project);
+    templateData.description = templateData.description.reduce(function(x, y){return x + y;});
+    templateData.commentary = templateData.commentary.reduce(function(x, y){return x + y;});
 
     var projectSource = document.getElementById("project-template").innerHTML;
     var projectTemplate = handlebars.compile(projectSource);

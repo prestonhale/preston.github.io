@@ -11,7 +11,7 @@
             "Papyrus (Javascript)"
         ],
         "download_link": "https://steamcommunity.com/sharedfiles/filedetails/?id=285580543",
-        "controller_warning": false,
+        "controller_warning": "",
         "carousel_images": [
             "static/images/greatBear/bigBear.jpg",
             "static/images/greatBear/freya.jpg",
@@ -26,12 +26,12 @@
         ],
         "commentary": [
           "The Great Bear quest is probably the project I'm currently most proud of, if only because its been the most",
-          "iterative.  Shortly after I released it to the Steam Workshop, and definitely before" ,
-          "I was ready, it was featured on the Workshop front-page for a little over 2 weeks. " ,
+          "iterative.  Shortly after I released it to the Steam Workshop, and definitely before",
+          "I was ready, it was featured on the Workshop front-page for a little over 2 weeks. ",
           "<br>",
           "<br>",
           "I immediately got several thousand players and they were vocal about what was working and what wasn't.",
-          "The next several weeks were spent burning through a gigantic backlog of changes and bugs.  I encountered" ,
+          "The next several weeks were spent burning through a gigantic backlog of changes and bugs.  I encountered",
           "things from the incredibly specific: a leftover console message.  All the way to gigantic game-breakers:",
           "dialogue wasn't automatically bundled into the build and didn't work at all.",
           "<br>",
@@ -50,7 +50,7 @@
             "C#"
         ],
         "download_link": "https://globalgamejam.org/2017/games/keep-it-groovy",
-        "controller_warning": "2 Controllers Required",
+        "controller_warning": "4 Controllers Required",
         "carousel_images": [
             "static/images/keepItGroovy/title.png",
             "static/images/keepItGroovy/straight.png",
@@ -83,36 +83,72 @@
     },
 
     "priestSimulator": {
-            "roles": [
-                "Programming"
-            ],
-            "technologies": [
-                "Unity Engine",
-                "C#"
-            ],
-            "download_link": "https://globalgamejam.org/2017/games/rpg-priest-simulator",
-            "controller_warning": "4 Controllers Required",
-            "carousel_images": [
-                "static/images/priestSimulator/title.jpg",
-                "static/images/priestSimulator/insurance.jpg",
-                "static/images/priestSimulator/headcrab.png"
-            ],
-            "duration": "3 Days",
-            "description": [
-                "In RPG Priest Simulator, you're not the hero, you're the guy who who has to deal with the",
-                "heroes.  Play as that enduring RPG role, the village priest.  While you may not get the slay",
-                "the dragons, you'll see the results of other people's attempts and if you're quick, make a" ,
-                "some cold, hard, gp in the porcess."
-            ],
-            "commentary": [
-                "We may have been tempting fate adding \"Game of the Year Edition\" to the end there.  I wish" ,
-                "RPG priest simulator game together better than it did.  This was my first in-person jam and",
-                "the group working on it was actually phenomenal, there was no reason for it not to come together",
-                "better.",
-                "<br><br>",
-                "In the end, our core mistake was not nailing down the gameplay loop sooner.  We ended up with a",
-                "ton of excellent code, art, writing, and ideas that never meshed because there was no gameplay",
-                "on which to hang them."
-            ]
-        }
+        "roles": [
+            "Programming"
+        ],
+        "technologies": [
+            "Unity Engine",
+            "C#"
+        ],
+        "download_link": "https://globalgamejam.org/2017/games/rpg-priest-simulator",
+        "controller_warning": "",
+        "carousel_images": [
+            "static/images/priestSimulator/title.jpg",
+            "static/images/priestSimulator/insurance.jpg",
+            "static/images/priestSimulator/headcrab.png"
+        ],
+        "duration": "3 Days",
+        "description": [
+            "In RPG Priest Simulator, you're not the hero, you're the guy who who has to deal with the",
+            "heroes.  Play as that enduring RPG role, the village priest.  While you may not get the slay",
+            "the dragons, you'll see the results of other people's attempts and if you're quick, make a" ,
+            "some cold, hard, gp in the porcess."
+        ],
+        "commentary": [
+            "We may have been tempting fate adding \"Game of the Year Edition\" to the end there.  I wish",
+            "RPG priest simulator game together better than it did.  This was my first in-person jam and",
+            "the group working on it was actually phenomenal, there was no reason for it not to come together",
+            "better.",
+            "<br><br>",
+            "In the end, our core mistake was not nailing down the gameplay loop sooner.  We ended up with a",
+            "ton of excellent code, art, writing, and ideas that never meshed because there was no gameplay",
+            "on which to hang them."
+        ]
+    },
+    
+    "dancemission": {
+        "roles": [
+            "Programming"
+        ],
+        "technologies": [
+            "Unity Engine",
+            "C#"
+        ],
+        "download_link": "static/executables/Dancemission.exe",
+        "controller_warning": "2 Controllers Required",
+        "carousel_images": [
+            "static/images/dancemission/game.png",
+            "static/images/dancemission/main.png"
+        ],
+        "duration": "2 Days",
+        "description": [
+            "Dancemission is a game about keeping the beat and not getting caught. In asymetrical roles, ",
+            "one player needs to keep moving, and convert other dancers with his move. Plapyer controls a searchlight ",
+            "constantly trying to identify the rogue dancer. The catch, the player-controlled dancer is the only one ",
+            "moving to the beat."
+        ],
+        "commentary": [
+            "Dancemission started with the idea of making a rhythm game that wasn't about tapping keys in time ",
+            "to the music. We honed that idea into a game about identifying rhythm rather than reacting to it.",
+            "<br><br>",
+            "In any weekend project immediate iteration is going to create a better game. Dancemission's source ",
+            "is literally littered with feature flag that allowed each tester to play a slightly different game.",
+            "Some of these flags were simple diffculty tweaks and others were much larger gameplay tweaks like ",
+            "whether or not the 'dancer' player was aware of their own position at the beginning of the game.",
+            "<br><br>",
+            "Being able to ask testers if they'd like to try a different version of the game let us jump ",
+            "quickly into the designer mindset and achieve something that was as fun as functional."
+        ]
+    }
+
 }
