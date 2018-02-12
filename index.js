@@ -1,44 +1,48 @@
+var projectData;
+var handlebars;
 
 $(document).ready(function() {
-    var handlebars = require('handlebars');  // Templating
+    handlebars = require('handlebars');  // Templating
+    getProjectData();
+});
 
-    var greatBearSource = document.getElementById("greatBear-template").innerHTML;
-    var greatBearTemplate = handlebars.compile(greatBearSource);
+function getProjectData() {
+    $.getJSON(
+        'static/data/projects.json',
+        function(data){
+            projectData = data;
+            bindProjectDisplayEvents();
+            displayProject('greatBear');
+        }
+    );
+}
 
-    var keepItGroovySource = document.getElementById("keepItGroovy-template").innerHTML;
-    var keepItGroovyTemplate = handlebars.compile(keepItGroovySource);
-
-    var priestSimulatorSource = document.getElementById("priestSimulator-template").innerHTML;
-    var priestSimulatorTemplate = handlebars.compile(priestSimulatorSource);
-
-    var dancemissionSource = document.getElementById("dancemission-template").innerHTML;
-    var dancemissionTemplate = handlebars.compile(dancemissionSource);
-
+function bindProjectDisplayEvents(){
     $('.project-box').on('click', function() {
         var project = this.dataset.project;
-        var template = "";
 
         $(this).siblings().each(function(i, elem){
             $(elem).removeClass('selected');
         })
         $(this).addClass("selected");
 
-        switch(project){
-            case 'greatBear':
-                template = greatBearTemplate({});
-                break;
-            case 'keepItGroovy':
-                template = keepItGroovyTemplate({})
-                break;
-            case 'priestSimulator':
-                template = priestSimulatorTemplate({})
-                break;
-            case 'dancemission':
-                template = dancemissionTemplate({})
-                break;
-        }
-        document.getElementById('project-viewer').innerHTML = template;
+        displayProject(project);
     })
-    
-    document.getElementById('project-viewer').innerHTML = greatBearTemplate({});
-});
+}
+
+function displayProject(projectName){
+    console.log(projectName);
+    project = projectData[projectName];
+
+    var templateData = project;
+    templateData.description.join('\n');
+    templateData.commentary.join('\n');
+
+    var projectSource = document.getElementById("project-template").innerHTML;
+    var projectTemplate = handlebars.compile(projectSource);
+    var template = projectTemplate(templateData);
+    document.getElementById('project-viewer').innerHTML = template;
+
+    // Ensure carousel is active
+    $('.carousel-inner .item:first').addClass('active');
+}

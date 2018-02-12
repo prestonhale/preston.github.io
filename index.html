@@ -5,8 +5,10 @@
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="theme-color" content="#000000">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/769322895b.js"></script>
     <script src="static/js/index.js"></script>
@@ -155,9 +157,9 @@
     </div>
 
   </div>
-
-  <!-- Great Bear Project -->
-  <script id="greatBear-template" type="text/x-handlebars-template">
+  
+  <!-- Project -->
+  <script id="project-template" type="text/x-handlebars-template">
     <div class="project">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
@@ -169,17 +171,11 @@
         
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-            <div class="item active">
-              <img width=900 height=500 src="static/images/greatBear/bigBear.jpg">
-            </div>
-        
-            <div class="item">
-              <img width=900 height=500 src="static/images/greatBear/freya.jpg">
-            </div>
-        
-            <div class="item">
-              <img width=900 height=500 src="static/images/greatBear/cave.jpg">
-            </div>
+            {{#each carousel_images}}
+              <div class="item">
+                <img width=900 height=500 src="{{this}}">
+              </div>
+            {{/each}}
           </div>
         
           <!-- Left and right controls -->
@@ -196,18 +192,18 @@
         <div class="col-md-3">
           <h3>Role</h3>
           <p>
-              Design
-              <br/>Level Editing
-              <br/>Scripting
-              <br/>Texture Editing
+            {{#each roles}}
+              {{ this }}<br>
+            {{/each}}
           </p>
           <h3>Technologies</h3>
           <p>
-              Skyrim Creation Kit,
-              <br/>Papyrus(Javascript)
+            {{#each technologies}}
+              {{this}}<br>
+            {{/each}}
           </p>
           <h3>Duration</h3>
-          <p>6 months</p>
+          <p>{{duration}}</p>
         </div>
         <div class="col-md-9">
           <div class="download-link text-center">
@@ -218,264 +214,13 @@
             </a>
           </div>
           <h3>Overview</h3>
-          <p>
-              The Great Bear adds an epic quest to Skyrim. It is a retelling of the Ursa Major creation myth and 
-              takes the player on a quest through the mountain caves and darkened grottos near Falkreath in search 
-              of mythical and dangerous beast. Along the way the player will make choices that decide the fate of 
-              those involved with the creature's plight.
-          </p>
+          {{{description}}}
           <h3>Commentary</h3>
-          <p>
-          The Great Bear quest is probably the project I'm currently most proud of, if only because its been the most
-          iterative.  Shortly after I released it to the Steam Workshop, and definitely before 
-          I was ready, it was featured on the Workshop front-page for a little over 2 weeks.  
-          <br><br>
-          I immediately got several thousand players and they were vocal about what was working and what wasn't.
-          The next several weeks were spent burning through a gigantic backlog of changes and bugs.  I encountered 
-          things from the incredibly specific: a leftover console message.  All the way to gigantic game-breakers:
-          dialogue wasn't automatically bundled into the build and didn't work at all.
-          <br><br>
-          Releasing to, and being featured on, the Steam Workshop was an eye-opening experience in adapting to the
-          experiences and desires of a massive audience.
-          </p>
+          {{{commentary}}}
         </div>
       </div>
     </div>
   </script>
-
-  <!-- Keep It Groovy Project -->
-  <script id="keepItGroovy-template" type="text/x-handlebars-template">
-    <div class="project">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-        
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <img width=900 height=500 src="static/images/keepItGroovy/title.png">
-            </div>
-        
-            <div class="item">
-              <img width=900 height=500 src="static/images/keepItGroovy/straight.png">
-            </div>
-        
-            <div class="item">
-              <img width=900 height=500 src="static/images/keepItGroovy/twisted.png">
-            </div>
-          </div>
-        
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <div class="row">
-          <div class="col-md-3">
-              <h3>Role</h3>
-              <p>Programming</p>
-              <h3>Technologies</h3>
-              <p>C#, Unity</p>
-              <h3>Duration</h3>
-              <p>3 days</p>
-          </div>
-          <div class="col-md-9">
-              <div class="download-link text-center">
-                <a href="https://globalgamejam.org/2017/games/keep-it-groovy">
-                    <div class="interact-button download-button text-center">
-                        Download Game
-                    </div>
-                </a>
-                <span class="controller-warning">4 Controllers Required</span>
-              </div>
-              <h3>Overview</h3>
-              <p>
-                  Keep it Groovy is a fast-paced, explicitly multiplayer game.  Two teams compete in two phases.
-                  In the first phase Team A draws grooves into the track of a record and Team B tries to trace 
-                  those grooves.  In the second phase the roles reverse.  Who ever lasts longest wins/is the grooviest.
-                  Its a simple concept and a 100% original soundtrack (and effects!), themetically on-point art and 
-                  a hyper-speed competition-fueling gameplay bring it all home.
-              </p>
-              <h3>Commentary</h3>
-              <p>
-                  Keep it Groovy is probably the most fun, and the most success, I've had at a game jam.  There were
-                  a couple clear takeaways:
-                  <br><br>
-                  First, nailing down the concept allowed a diverse team to work well independently. The team didn't
-                  even work in the same building for a lot of the jam.  At the start, we went through
-                  a number of ideas before landing on the 70s kitsch vibe.  Once we had it down though the entire 
-                  team was able to work on different pieces of the game with the assurance that the final product
-                  would stay cohesive.
-                  <br><br>
-                  Two, 90% of the design experience happens after the core loop is done.  In previous jams my teams
-                  would wait until we had something that looked decent before we put it in front of players.  This 
-                  time we made our testers suffer through some truly terrible "programmer-art".  And it paid off.
-                  We spent more than half of our development time tweaking controls and messaging. The game was 
-                  fun way before it looked good. 
-              </p>
-          </div>
-        </div>
-      </div>
-    </script>
-  
-    <!-- Priest Simulator Project -->
-    <script id="priestSimulator-template" type="text/x-handlebars-template">
-      <div class="project">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-          
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-              <div class="item active">
-                <img width=900 height=500 src="static/images/priestSimulator/title.jpg">
-              </div>
-          
-              <div class="item">
-                <img width=900 height=500 src="static/images/priestSimulator/headcrab.png">
-              </div>
-          
-              <div class="item">
-                <img width=900 height=500 src="static/images/priestSimulator/insurance.jpg">
-              </div>
-            </div>
-          
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <h3>Role</h3>
-              <p>Programming</p>
-              <h3>Technologies</h3>
-              <p>C#, Unity</p>
-              <h3>Duration</h3>
-              <p>3 days</p>
-            </div>
-            <div class="col-md-9">
-                <div class="download-link text-center">
-                  <a href="https://globalgamejam.org/2017/games/rpg-priest-simulator">
-                      <div class="interact-button download-button text-center">
-                          Download Game
-                      </div>
-                  </a>
-                </div>
-                <h3>Overview</h3>
-                <p>
-                  In RPG Priest Simulator, you're not the hero, you're the guy who who has to deal with the
-                  heroes.  Play as that enduring RPG role, the village priest.  While you may not get the slay
-                  the dragons, you'll see the results of other people's attempts and if you're quick, make a 
-                  some cold, hard, gp in the porcess.
-                </p>
-                <h3>Commentary</h3>
-                <p>
-                  We may have been tempting fate adding "Game of the Year Edition" to the end there.  I wish 
-                  RPG priest simulator game together better than it did.  This was my first in-person jam and
-                  the group working on it was actually phenomenal, there was no reason for it not to come together
-                  better.
-                  <br />
-                  <br />
-                  In the end, our core mistake was not nailing down the gameplay loop sooner.  We ended up with a
-                  ton of excellent code, art, writing, and ideas that never meshed because there was no gameplay
-                  on which to hang them.
-                </p>
-            </div>
-          </div>
-        </div>
-      </script>
-    
-      <!-- Dancemission Project -->
-      <script id="dancemission-template" type="text/x-handlebars-template">
-        <div class="project">
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-              </ol>
-            
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner">
-                <div class="item active">
-                  <img width="900" height="500" src="static/images/dancemission/game.png">
-                </div>
-                <div class="item">
-                  <img width="900" height="500" src="static/images/dancemission/main.png">
-                </div>
-              </div>
-            
-              <!-- Left and right controls -->
-              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
-                <h3>Role</h3>
-                <p>Programming</p>
-                <h3>Technologies</h3>
-                <p>C#, Unity</p>
-                <h3>Duration</h3>
-                <p>3 days</p>
-              </div>
-              <div class="col-md-9">
-                  <div class="download-link text-center">
-                    <a href="static/executables/Dancemission.exe">
-                        <div class="interact-button download-buttonr">
-                            Download Game
-                        </div>
-                    </a>
-                    <span class="controller-warning">2 Controllers Required</span>
-                  </div>
-                  <h3>Overview</h3>
-                  <p>
-                    In RPG Priest Simulator, you're not the hero, you're the guy who who has to deal with the
-                    heroes.  Play as that enduring RPG role, the village priest.  While you may not get the slay
-                    the dragons, you'll see the results of other people's attempts and if you're quick, make a 
-                    some cold, hard, gp in the porcess.
-                  </p>
-                  <h3>Commentary</h3>
-                  <p>
-                    We may have been tempting fate adding "Game of the Year Edition" to the end there.  I wish 
-                    RPG priest simulator game together better than it did.  This was my first in-person jam and
-                    the group working on it was actually phenomenal, there was no reason for it not to come together
-                    better.
-                    <br />
-                    <br />
-                    In the end, our core mistake was not nailing down the gameplay loop sooner.  We ended up with a
-                    ton of excellent code, art, writing, and ideas that never meshed because there was no gameplay
-                    on which to hang them.
-                  </p>
-              </div>
-            </div>
-          </div>
-        </script>
 
 </body>
 

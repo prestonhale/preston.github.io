@@ -1,48 +1,52 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var projectData;
+var handlebars;
 
 $(document).ready(function() {
-    var handlebars = require('handlebars');  // Templating
+    handlebars = require('handlebars');  // Templating
+    getProjectData();
+});
 
-    var greatBearSource = document.getElementById("greatBear-template").innerHTML;
-    var greatBearTemplate = handlebars.compile(greatBearSource);
+function getProjectData() {
+    $.getJSON(
+        'static/data/projects.json',
+        function(data){
+            projectData = data;
+            bindProjectDisplayEvents();
+            displayProject('greatBear');
+        }
+    );
+}
 
-    var keepItGroovySource = document.getElementById("keepItGroovy-template").innerHTML;
-    var keepItGroovyTemplate = handlebars.compile(keepItGroovySource);
-
-    var priestSimulatorSource = document.getElementById("priestSimulator-template").innerHTML;
-    var priestSimulatorTemplate = handlebars.compile(priestSimulatorSource);
-
-    var dancemissionSource = document.getElementById("dancemission-template").innerHTML;
-    var dancemissionTemplate = handlebars.compile(dancemissionSource);
-
+function bindProjectDisplayEvents(){
     $('.project-box').on('click', function() {
         var project = this.dataset.project;
-        var template = "";
 
         $(this).siblings().each(function(i, elem){
             $(elem).removeClass('selected');
         })
         $(this).addClass("selected");
 
-        switch(project){
-            case 'greatBear':
-                template = greatBearTemplate({});
-                break;
-            case 'keepItGroovy':
-                template = keepItGroovyTemplate({})
-                break;
-            case 'priestSimulator':
-                template = priestSimulatorTemplate({})
-                break;
-            case 'dancemission':
-                template = dancemissionTemplate({})
-                break;
-        }
-        document.getElementById('project-viewer').innerHTML = template;
+        displayProject(project);
     })
-    
-    document.getElementById('project-viewer').innerHTML = greatBearTemplate({});
-});
+}
+
+function displayProject(projectName){
+    console.log(projectName);
+    project = projectData[projectName];
+
+    var templateData = project;
+    templateData.description.join('\n');
+    templateData.commentary.join('\n');
+
+    var projectSource = document.getElementById("project-template").innerHTML;
+    var projectTemplate = handlebars.compile(projectSource);
+    var template = projectTemplate(templateData);
+    document.getElementById('project-viewer').innerHTML = template;
+
+    // Ensure carousel is active
+    $('.carousel-inner .item:first').addClass('active');
+}
 },{"handlebars":33}],2:[function(require,module,exports){
 (function (process,__filename){
 /** vim: et:ts=4:sw=4:sts=4

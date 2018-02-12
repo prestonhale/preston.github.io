@@ -1,0 +1,118 @@
+{
+    "greatBear": {
+        "roles": [
+            "Design",
+            "Level Editing",
+            "Scripting",
+            "Texture Editing"
+        ],
+        "technologies": [
+            "Skyrim Creation Kit",
+            "Papyrus (Javascript)"
+        ],
+        "download_link": "https://steamcommunity.com/sharedfiles/filedetails/?id=285580543",
+        "controller_warning": false,
+        "carousel_images": [
+            "static/images/greatBear/bigBear.jpg",
+            "static/images/greatBear/freya.jpg",
+            "static/images/greatBear/cave.jpg"
+        ],
+        "duration": "6 months",
+        "description": [
+            "The Great Bear adds an epic quest to Skyrim. It is a retelling of the Ursa Major creation myth and ",
+            "takes the player on a quest through the mountain caves and darkened grottos near Falkreath in search ",
+            "of mythical and dangerous beast. Along the way the player will make choices that decide the fate of ",
+            "those involved with the creature's plight."
+        ],
+        "commentary": [
+          "The Great Bear quest is probably the project I'm currently most proud of, if only because its been the most",
+          "iterative.  Shortly after I released it to the Steam Workshop, and definitely before" ,
+          "I was ready, it was featured on the Workshop front-page for a little over 2 weeks. " ,
+          "<br>",
+          "<br>",
+          "I immediately got several thousand players and they were vocal about what was working and what wasn't.",
+          "The next several weeks were spent burning through a gigantic backlog of changes and bugs.  I encountered" ,
+          "things from the incredibly specific: a leftover console message.  All the way to gigantic game-breakers:",
+          "dialogue wasn't automatically bundled into the build and didn't work at all.",
+          "<br>",
+          "<br>",
+          "Releasing to, and being featured on, the Steam Workshop was an eye-opening experience in adapting to the",
+          "experiences and desires of a massive audience."
+        ]
+    },
+
+    "keepItGroovy": {
+        "roles": [
+            "Programming"
+        ],
+        "technologies": [
+            "Unity Engine",
+            "C#"
+        ],
+        "download_link": "https://globalgamejam.org/2017/games/keep-it-groovy",
+        "controller_warning": "2 Controllers Required",
+        "carousel_images": [
+            "static/images/keepItGroovy/title.png",
+            "static/images/keepItGroovy/straight.png",
+            "static/images/keepItGroovy/twisted.png"
+        ],
+        "duration": "3 Days",
+        "description": [
+            "Keep it Groovy is a fast-paced, explicitly multiplayer game.  Two teams compete in two phases.",
+            "In the first phase Team A draws grooves into the track of a record and Team B tries to trace",
+            "those grooves.  In the second phase the roles reverse.  Who ever lasts longest wins/is the grooviest.",
+            "Its a simple concept and a 100% original soundtrack (and effects!), themetically on-point art and",
+            "a hyper-speed competition-fueling gameplay bring it all home."
+        ],
+        "commentary": [
+            "Keep it Groovy is probably the most fun, and the most success, I've had at a game jam.  There were",
+            "a couple clear takeaways:",
+            "<br><br>",
+            "First, nailing down the concept allowed a diverse team to work well independently. The team didn't",
+            "even work in the same building for a lot of the jam.  At the start, we went through",
+            "a number of ideas before landing on the 70s kitsch vibe.  Once we had it down though the entire" ,
+            "team was able to work on different pieces of the game with the assurance that the final product",
+            "would stay cohesive.",
+            "<br><br>",
+            "Two, 90% of the design experience happens after the core loop is done.  In previous jams my teams",
+            "would wait until we had something that looked decent before we put it in front of players.  This" ,
+            "time we made our testers suffer through some truly terrible 'programmer-art'.  And it paid off.",
+            "We spent more than half of our development time tweaking controls and messaging. The game was" ,
+            "fun way before it looked good."
+        ]
+    },
+
+    "priestSimulator": {
+            "roles": [
+                "Programming"
+            ],
+            "technologies": [
+                "Unity Engine",
+                "C#"
+            ],
+            "download_link": "https://globalgamejam.org/2017/games/rpg-priest-simulator",
+            "controller_warning": "4 Controllers Required",
+            "carousel_images": [
+                "static/images/priestSimulator/title.jpg",
+                "static/images/priestSimulator/insurance.jpg",
+                "static/images/priestSimulator/headcrab.png"
+            ],
+            "duration": "3 Days",
+            "description": [
+                "In RPG Priest Simulator, you're not the hero, you're the guy who who has to deal with the",
+                "heroes.  Play as that enduring RPG role, the village priest.  While you may not get the slay",
+                "the dragons, you'll see the results of other people's attempts and if you're quick, make a" ,
+                "some cold, hard, gp in the porcess."
+            ],
+            "commentary": [
+                "We may have been tempting fate adding \"Game of the Year Edition\" to the end there.  I wish" ,
+                "RPG priest simulator game together better than it did.  This was my first in-person jam and",
+                "the group working on it was actually phenomenal, there was no reason for it not to come together",
+                "better.",
+                "<br><br>",
+                "In the end, our core mistake was not nailing down the gameplay loop sooner.  We ended up with a",
+                "ton of excellent code, art, writing, and ideas that never meshed because there was no gameplay",
+                "on which to hang them."
+            ]
+        }
+}
