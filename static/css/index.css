@@ -65,6 +65,10 @@ body {
 #projects #project-viewer img {
   max-height: 400px;
 }
+#projects #project-viewer iframe {
+  width: 645px;
+  height: 400px;
+}
 #projects .project-box {
   position: relative;
   padding: 0px 0px 0px 8px;

@@ -25,15 +25,15 @@
             "those involved with the creature's plight."
         ],
         "commentary": [
-          "The Great Bear quest is probably the project I'm currently most proud of, if only because its been the most",
-          "iterative.  Shortly after I released it to the Steam Workshop, and definitely before",
+          "The Great Bear quest is probably the project I'm currently most proud of, if only because its been the most ",
+          "iterative.  Shortly after I released it to the Steam Workshop, and definitely before ",
           "I was ready, it was featured on the Workshop front-page for a little over 2 weeks. ",
           "<br>",
           "<br>",
-          "I immediately got several thousand players and they were vocal about what was working and what wasn't.",
-          "The next several weeks were spent burning through a gigantic backlog of changes and bugs.  I encountered",
-          "things from the incredibly specific: a leftover console message.  All the way to gigantic game-breakers:",
-          "dialogue wasn't automatically bundled into the build and didn't work at all.",
+          "I immediately got several thousand players and they were vocal about what was working and what wasn't. ",
+          "The next several weeks were spent burning through a gigantic backlog of changes and bugs.  I encountered ",
+          "things from the incredibly specific and easy to address, such as a leftover console message, all the way to ",
+          "gigantic game-breakers, e.g.  dialogue wasn't automatically bundled into the build and didn't work at all.",
           "<br>",
           "<br>",
           "Releasing to, and being featured on, the Steam Workshop was an eye-opening experience in adapting to the",
@@ -58,26 +58,26 @@
         ],
         "duration": "3 Days",
         "description": [
-            "Keep it Groovy is a fast-paced, explicitly multiplayer game.  Two teams compete in two phases.",
-            "In the first phase Team A draws grooves into the track of a record and Team B tries to trace",
-            "those grooves.  In the second phase the roles reverse.  Who ever lasts longest wins/is the grooviest.",
-            "Its a simple concept and a 100% original soundtrack (and effects!), themetically on-point art and",
+            "Keep it Groovy is a fast-paced, explicitly multiplayer game.  Two teams compete in two phases. ",
+            "In the first phase Team A draws grooves into the track of a record and Team B tries to trace ",
+            "those grooves.  In the second phase the roles reverse.  Who ever lasts longest wins/is the grooviest. ",
+            "Its a simple concept and a 100% original soundtrack (and effects!), themetically on-point art and ",
             "a hyper-speed competition-fueling gameplay bring it all home."
         ],
         "commentary": [
             "Keep it Groovy is probably the most fun, and the most success, I've had at a game jam.  There were",
             "a couple clear takeaways:",
             "<br><br>",
-            "First, nailing down the concept allowed a diverse team to work well independently. The team didn't",
-            "even work in the same building for a lot of the jam.  At the start, we went through",
-            "a number of ideas before landing on the 70s kitsch vibe.  Once we had it down though the entire" ,
-            "team was able to work on different pieces of the game with the assurance that the final product",
+            "First, nailing down the concept allowed a diverse team to work well independently. The team didn't ",
+            "even work in the same building for a lot of the jam.  At the start, we went through ",
+            "a number of ideas before landing on the 70s kitsch vibe.  Once we had it down though the entire ",
+            "team was able to work on different pieces of the game with the assurance that the final product ",
             "would stay cohesive.",
             "<br><br>",
-            "Two, 90% of the design experience happens after the core loop is done.  In previous jams my teams",
-            "would wait until we had something that looked decent before we put it in front of players.  This" ,
-            "time we made our testers suffer through some truly terrible 'programmer-art'.  And it paid off.",
-            "We spent more than half of our development time tweaking controls and messaging. The game was" ,
+            "Two, 90% of the design experience happens after the core loop is done.  In previous jams my teams ",
+            "would wait until we had something that looked decent before we put it in front of players.  This " ,
+            "time we made our testers suffer through some truly terrible 'programmer-art'.  And it paid off. ",
+            "We spent more than half of our development time tweaking controls and messaging. The game was " ,
             "fun way before it looked good."
         ]
     },
@@ -99,19 +99,19 @@
         ],
         "duration": "3 Days",
         "description": [
-            "In RPG Priest Simulator, you're not the hero, you're the guy who who has to deal with the",
-            "heroes.  Play as that enduring RPG role, the village priest.  While you may not get the slay",
-            "the dragons, you'll see the results of other people's attempts and if you're quick, make a" ,
+            "In RPG Priest Simulator, you're not the hero, you're the guy who who has to deal with the ",
+            "heroes.  Play as that enduring RPG role, the village priest.  While you may not get the slay ",
+            "the dragons, you'll see the results of other people's attempts and if you're quick, make a ",
             "some cold, hard, gp in the porcess."
         ],
         "commentary": [
-            "We may have been tempting fate adding \"Game of the Year Edition\" to the end there.  I wish",
-            "RPG priest simulator game together better than it did.  This was my first in-person jam and",
-            "the group working on it was actually phenomenal, there was no reason for it not to come together",
+            "We may have been tempting fate adding \"Game of the Year Edition\" to the end there.  I wish ",
+            "RPG priest simulator game together better than it did.  This was my first in-person jam and ",
+            "the group working on it was actually phenomenal, there was no reason for it not to come together ",
             "better.",
             "<br><br>",
-            "In the end, our core mistake was not nailing down the gameplay loop sooner.  We ended up with a",
-            "ton of excellent code, art, writing, and ideas that never meshed because there was no gameplay",
+            "In the end, our core mistake was not nailing down the gameplay loop sooner.  We ended up with a ",
+            "ton of excellent code, art, writing, and ideas that never meshed because there was no gameplay ",
             "on which to hang them."
         ]
     },
@@ -142,12 +142,46 @@
             "to the music. We honed that idea into a game about identifying rhythm rather than reacting to it.",
             "<br><br>",
             "In any weekend project immediate iteration is going to create a better game. Dancemission's source ",
-            "is literally littered with feature flag that allowed each tester to play a slightly different game.",
+            "is littered with feature flag that allowed each tester to play a slightly different game.",
             "Some of these flags were simple diffculty tweaks and others were much larger gameplay tweaks like ",
             "whether or not the 'dancer' player was aware of their own position at the beginning of the game.",
             "<br><br>",
             "Being able to ask testers if they'd like to try a different version of the game let us jump ",
             "quickly into the designer mindset and achieve something that was as fun as functional."
+        ]
+    },
+
+    "scrollTown": {
+        "roles": [
+            "Programming",
+            "Terrible Models"
+        ],
+        "technologies": [
+            "Unity Engine",
+            "C#"
+        ],
+        "download_link": "",
+        "controller_warning": "",
+        "carousel_images": [
+        ],
+        "duration": "5 days",
+        "raw_content": [
+            "<iframe frameBorder=0 scrolling=no src='static/projects/scrolltown_webgl/index.html'>You have really old browser and can't see ",
+            "this awesome content!</iframe>"
+        ],
+        "description": [
+            "Scrolltown is a town that scrolls."
+        ],
+        "commentary": [
+            "Scrolltown is a quick project to test basic procedural generation techniques. The town generates ",
+            "according to basic rules such as ensuring that city parks only appear in cities, and that mountain ",
+            "ranges are contiguous. The rules are easy to tweak to build cities that flow logically (even if they're ",
+            "a bit blocky).",
+            "<br><br>",
+            "It also resulted in learning a lot about shadowmapping due to an early bug that caused slideshow ",
+            "level framerates. The issue was using Unity's primitive shapes which, ",
+            "as they're not contiguous models, don't have back-faces removed. Combined with a very, very large ",
+            "default shadowmap, meant that the default scene rendered upwards of 90k shadowcasters."
         ]
     }
 
