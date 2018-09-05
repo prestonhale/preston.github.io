@@ -11,6 +11,10 @@
 @off-white: #f6f6f6;
 
 
+// Responsiveness Variables
+@small-screen: ~"only screen and (max-width: 950px)";
+@large-screen: ~"only screen and (min-width: 1000px)";
+
 body {
   margin: 0;
   padding: 0;
@@ -38,9 +42,22 @@ body {
   flex-direction: column;
 }
 
+.force-inline-block {
+    display: inline-block;
+}
+
+.remove-margin-on-small-screen {
+    @media @small-screen {
+        margin: 0 -15px 0 -15px;
+    }
+}
+
 .section-header {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   padding: 0 0 45px 0;
+  @media @small-screen {
+      padding: 0 0 15px 0;
+  }
 }
 
 .section-title {
@@ -82,6 +99,9 @@ body {
     min-height: 800px;
     background-color: @background-color;
     padding: 0px;
+    @media @small-screen{
+        display: none;
+    }
   }
 
   #project-viewer {
