@@ -91,6 +91,10 @@ body {
   padding: 50px 0px 100px 0px;
   color: @dark-font-color;
 
+  @media @small-screen {
+      padding: 50px 0 0 0;
+  }
+
   .project {
     padding: 10px;
   }
@@ -108,6 +112,10 @@ body {
     background-color: @light-font-color;
     padding: 15px;
 
+    @media @small-screen {
+        padding: 0px;
+    }
+
     img {
       max-height: 400px;
     }
@@ -117,6 +125,12 @@ body {
       height: 400px;
     }
 
+  }
+
+  #project-carousel {
+      @media @small-screen {
+          margin: 0 -15px 0 -15px;
+      }
   }
 
   .project-box {

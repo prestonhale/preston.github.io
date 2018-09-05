@@ -52,9 +52,8 @@
             <div class="section-header">
             <div class="row">
               <div class="col-md-12" align="center">
-                <span class="dropdown-icon glyphicon glyphicon-chevron-down"></span>
+                <span class="dropdown-icon glyphicon glyphicon-menu-hamburger"></span>
                 <h2 class="force-inline-block section-title text-center">PROJECTS</h2>
-                <span class="dropdown-icon glyphicon glyphicon-chevron-down"></span>
               </div>
             </div>
             <div class="row">
@@ -171,10 +170,11 @@
     <div class="project">
       <!-- Main Content -->
       <!-- TODO: Clean up data model for this -->
+      <h3>{{ title }}</h3>
 
       {{#if carousel_images}}
         <!-- Carousel -->
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div id="project-carousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

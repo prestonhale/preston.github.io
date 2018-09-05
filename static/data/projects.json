@@ -1,5 +1,6 @@
 {
     "greatBear": {
+        "title": "The Great Bear",
         "roles": [
             "Design",
             "Level Editing",
@@ -42,6 +43,7 @@
     },
 
     "keepItGroovy": {
+        "title": "Keep It Groovy",
         "roles": [
             "Programming"
         ],
@@ -84,6 +86,7 @@
     },
 
     "priestSimulator": {
+        "title": "Priest Simulator",
         "roles": [
             "Programming"
         ],
@@ -117,6 +120,7 @@
     },
     
     "dancemission": {
+        "title": "Dancemission",
         "roles": [
             "Programming"
         ],
@@ -152,6 +156,7 @@
     },
 
     "scrollTown": {
+        "title": "Scrolltown",
         "roles": [
             "Programming",
             "Terrible Models"

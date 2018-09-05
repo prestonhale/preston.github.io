@@ -63,6 +63,11 @@ body {
   padding: 50px 0px 100px 0px;
   color: #141414;
 }
+@media only screen and (max-width: 950px) {
+  #projects {
+    padding: 50px 0 0 0;
+  }
+}
 #projects .project {
   padding: 10px;
 }
@@ -80,12 +85,22 @@ body {
   background-color: #bcbcbc;
   padding: 15px;
 }
+@media only screen and (max-width: 950px) {
+  #projects #project-viewer {
+    padding: 0px;
+  }
+}
 #projects #project-viewer img {
   max-height: 400px;
 }
 #projects #project-viewer iframe {
   width: 645px;
   height: 400px;
+}
+@media only screen and (max-width: 950px) {
+  #projects #project-carousel {
+    margin: 0 -15px 0 -15px;
+  }
 }
 #projects .project-box {
   position: relative;
