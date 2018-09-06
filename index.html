@@ -48,11 +48,10 @@
 
         <div id="projects">
           <div class="row remove-margin-on-small-screen">
-            <div class="col-md-8 col-md-offset-2 col-sm-12">
+            <div class="col-md-8 col-md-offset-2 col-sm-12 remove-padding-on-small-screen">
             <div class="section-header">
             <div class="row">
               <div class="col-md-12" align="center">
-                <span class="dropdown-icon glyphicon glyphicon-menu-hamburger"></span>
                 <h2 class="force-inline-block section-title text-center">PROJECTS</h2>
               </div>
             </div>
@@ -63,38 +62,40 @@
             </div>
           </div>
           <div class="row is-flex">
-            <div class="project-selector col-md-3 col-sm-12">
+            <div id="project-box">
+                <div class="project-selector col-md-3 col-sm-12">
 
-              <div class="col-md-12 project-box selected" data-project="greatBear">
-                <div>
-                  <div class="project-overlay"></div>
-                  <img class="project-thumbnail" src="static/images/greatBear/thumbnail.png" />
+                <div class="col-md-12 project-box selected" data-project="greatBear">
+                    <div>
+                    <div class="project-overlay"></div>
+                    <img class="project-thumbnail" src="static/images/greatBear/thumbnail.png" />
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-md-12 project-box" data-project="dancemission">
-                <div class="project-overlay"></div>
-                <img class="project-thumbnail" src="static/images/dancemission/thumbnail.png">
-              </div>
+                <div class="col-md-12 project-box" data-project="dancemission">
+                    <div class="project-overlay"></div>
+                    <img class="project-thumbnail" src="static/images/dancemission/thumbnail.png">
+                </div>
 
-              <div class="col-md-12 project-box" data-project="keepItGroovy">
-                <div class="project-overlay"></div>
-                <img class="project-thumbnail" src="static/images/keepItGroovy/thumbnail.png">
-              </div>
+                <div class="col-md-12 project-box" data-project="keepItGroovy">
+                    <div class="project-overlay"></div>
+                    <img class="project-thumbnail" src="static/images/keepItGroovy/thumbnail.png">
+                </div>
 
-              <div class="col-md-12 project-box" data-project="priestSimulator">
-                <div class="project-overlay"></div>
-                <img class="project-thumbnail" src="static/images/priestSimulator/thumbnail.png">
-              </div>
-              
-              <div class="col-md-12 project-box" data-project="scrollTown">
-                <div class="project-overlay"></div>
-                <img class="project-thumbnail" src="static/images/scrolltown/thumbnail.png">
-              </div>
+                <div class="col-md-12 project-box" data-project="priestSimulator">
+                    <div class="project-overlay"></div>
+                    <img class="project-thumbnail" src="static/images/priestSimulator/thumbnail.png">
+                </div>
+                
+                <div class="col-md-12 project-box" data-project="scrollTown">
+                    <div class="project-overlay"></div>
+                    <img class="project-thumbnail" src="static/images/scrolltown/thumbnail.png">
+                </div>
 
-            </div>
+                </div>
 
-            <div class="col-md-9 col-sm-12" id="project-viewer">
+                <div class="col-md-9 col-sm-12" id="project-viewer">
+                </div>
             </div>
 
           </div>
@@ -170,7 +171,7 @@
     <div class="project">
       <!-- Main Content -->
       <!-- TODO: Clean up data model for this -->
-      <h3>{{ title }}</h3>
+      <h3 class="project-title">{{ title }}</h3>
 
       {{#if carousel_images}}
         <!-- Carousel -->

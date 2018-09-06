@@ -46,9 +46,9 @@ body {
     display: inline-block;
 }
 
-.remove-margin-on-small-screen {
+.remove-padding-on-small-screen {
     @media @small-screen {
-        margin: 0 -15px 0 -15px;
+        padding: 0px;
     }
 }
 
@@ -95,6 +95,10 @@ body {
       padding: 50px 0 0 0;
   }
 
+  #project-box {
+    box-shadow: 0 0 5px 2px grey;
+  }
+
   .project {
     padding: 10px;
   }
@@ -106,6 +110,13 @@ body {
     @media @small-screen{
         display: none;
     }
+  }
+
+  .project-title {
+      text-align: center;
+      @media @large-screen {
+          display: none;
+      }
   }
 
   #project-viewer {
@@ -129,7 +140,7 @@ body {
 
   #project-carousel {
       @media @small-screen {
-          margin: 0 -15px 0 -15px;
+          margin: 0 -10px 0 -10px;
       }
   }
 

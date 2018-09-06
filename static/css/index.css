@@ -24,8 +24,8 @@ body {
   display: inline-block;
 }
 @media only screen and (max-width: 950px) {
-  .remove-margin-on-small-screen {
-    margin: 0 -15px 0 -15px;
+  .remove-padding-on-small-screen {
+    padding: 0px;
   }
 }
 .section-header {
@@ -68,6 +68,9 @@ body {
     padding: 50px 0 0 0;
   }
 }
+#projects #project-box {
+  box-shadow: 0 0 5px 2px grey;
+}
 #projects .project {
   padding: 10px;
 }
@@ -78,6 +81,14 @@ body {
 }
 @media only screen and (max-width: 950px) {
   #projects .project-selector {
+    display: none;
+  }
+}
+#projects .project-title {
+  text-align: center;
+}
+@media only screen and (min-width: 1000px) {
+  #projects .project-title {
     display: none;
   }
 }
@@ -99,7 +110,7 @@ body {
 }
 @media only screen and (max-width: 950px) {
   #projects #project-carousel {
-    margin: 0 -15px 0 -15px;
+    margin: 0 -10px 0 -10px;
   }
 }
 #projects .project-box {
