@@ -100,16 +100,31 @@ body {
   }
 
   .project {
-    padding: 10px;
+    padding: 10px 10px 40px 10px;
     @media @small-screen {
-        padding: 0 10px 10px 10px;
+        padding: 0 10px 40px 10px;
     }
+  }
+
+  .project-header {
+    height: 220px;
+
+    .header-image {
+        height: 100%;
+    }
+
+    img {
+        height: 100%;
+        object-fit: fill;
+    }      
+
   }
 
   .project-selector {
     min-height: 800px;
     background-color: @background-color;
     padding: 0px;
+    height: 100%;
     @media @small-screen{
         display: none;
     }
@@ -161,6 +176,23 @@ body {
           bottom: 0;
           width: 100%;
           color: white;
+      }
+
+      .carousel-indicators {
+          bottom: -30px;
+
+          li {
+            border-radius: 0;
+            border: none;
+            background-color: grey;
+            height: 4px;
+            width: 25px;
+            cursor: auto;
+          }
+
+          li.active {
+              background-color: white;
+          }
       }
 
       .project-control-next {

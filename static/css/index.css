@@ -72,17 +72,28 @@ body {
   box-shadow: 0 0 5px 2px grey;
 }
 #projects .project {
-  padding: 10px;
+  padding: 10px 10px 40px 10px;
 }
 @media only screen and (max-width: 950px) {
   #projects .project {
-    padding: 0 10px 10px 10px;
+    padding: 0 10px 40px 10px;
   }
+}
+#projects .project-header {
+  height: 220px;
+}
+#projects .project-header .header-image {
+  height: 100%;
+}
+#projects .project-header img {
+  height: 100%;
+  object-fit: fill;
 }
 #projects .project-selector {
   min-height: 800px;
   background-color: #242424;
   padding: 0px;
+  height: 100%;
 }
 @media only screen and (max-width: 950px) {
   #projects .project-selector {
@@ -134,6 +145,20 @@ body {
   bottom: 0;
   width: 100%;
   color: white;
+}
+#projects .project-header .carousel-indicators {
+  bottom: -30px;
+}
+#projects .project-header .carousel-indicators li {
+  border-radius: 0;
+  border: none;
+  background-color: grey;
+  height: 4px;
+  width: 25px;
+  cursor: auto;
+}
+#projects .project-header .carousel-indicators li.active {
+  background-color: white;
 }
 #projects .project-header .project-control-next {
   position: absolute;
