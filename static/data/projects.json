@@ -37,7 +37,7 @@
           "gigantic game-breakers, e.g.  dialogue wasn't automatically bundled into the build and didn't work at all.",
           "<br>",
           "<br>",
-          "Releasing to, and being featured on, the Steam Workshop was an eye-opening experience in adapting to the",
+          "Releasing to, and being featured on, the Steam Workshop was an eye-opening experience in adapting to the ",
           "experiences and desires of a massive audience."
         ]
     },
@@ -168,7 +168,7 @@
         "download_link": "",
         "controller_warning": "",
         "carousel_images": [
-            "static/images/dancemission/game.png",
+            "static/images/dancemission/game.png"
         ],
         "duration": "1 month",
         "raw_content": [
@@ -178,7 +178,7 @@
         "description": [
             "Scrolltown is a quick project to test basic procedural generation techniques. The town generates ",
             "according to basic rules such as ensuring that city parks only appear in cities, and that mountain ",
-            "ranges are contiguous. Additionally, adorable little cars aimlessly navigate the town like busty ",
+            "ranges are contiguous. Additionally, adorable little cars aimlessly navigate the town like busy ",
             "ants. The rules for cars and city generation are easy to tweak to build cities that flow logically."
         ],
         "commentary": [
