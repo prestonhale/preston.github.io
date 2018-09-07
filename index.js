@@ -1,5 +1,6 @@
 var projectData;
 var handlebars;
+var index = 0;
 
 $(document).ready(function() {
     handlebars = require('handlebars');  // Templating
@@ -7,14 +8,16 @@ $(document).ready(function() {
 });
 
 function getProjectData() {
-    $.getJSON(
-        'static/data/projects.json',
-        function(data){
+    $.ajax({
+        dataType: "json",
+        url: 'static/data/projects.json',
+        mimeType: "application/json",
+        success: function(data) {
             projectData = data;
-            bindProjectDisplayEvents();
             displayProject('greatBear');
+            bindProjectDisplayEvents();
         }
-    );
+    });
 }
 
 function bindProjectDisplayEvents(){
@@ -27,6 +30,21 @@ function bindProjectDisplayEvents(){
         $(this).addClass("selected");
 
         displayProject(project);
+    })
+}
+
+function bindProjectCarouselEvents(){
+    let projectNames = Object.keys(projectData);
+    $('.project-control-next').on('click', function() {
+        index = (index + 1) % projectNames.length;
+        displayProject(projectNames[index]);
+    })
+    $('.project-control-prev').on('click', function() {
+        index = index - 1;
+        if (index < 0) {
+            index = projectNames.length - 1;
+        }
+        displayProject(projectNames[index]);
     })
 }
 
@@ -45,4 +63,6 @@ function displayProject(projectName){
 
     // Ensure carousel is active
     $('.carousel-inner .item:first').addClass('active');
+
+    bindProjectCarouselEvents();
 }
