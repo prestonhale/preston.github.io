@@ -102,11 +102,15 @@ body {
 }
 #projects .project-title {
   text-align: center;
+  background-image: linear-gradient(to top, #141414, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 @media only screen and (min-width: 1000px) {
   #projects .project-title {
     display: none;
   }
+}
+#projects .project-title h3 {
+  margin: 10px 0 10px 0;
 }
 #projects #project-viewer {
   background-color: #bcbcbc;

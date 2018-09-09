@@ -7,7 +7,6 @@ $(document).ready(function() {
     handlebars = require('handlebars');  // Templating
 
     handlebars.registerHelper('carousel-li', function(curIndex, activeIndex){
-        console.log(curIndex + "==" + activeIndex)
         if (curIndex == activeIndex){
             return new handlebars.SafeString(
                 '<li class="active"></li>'
@@ -35,7 +34,7 @@ function getProjectData() {
     });
 }
 
-function bindProjectDisplayEvents(){sdfasd
+function bindProjectDisplayEvents(){
     $('.project-box').on('click', function() {
         var project = this.dataset.project;
 

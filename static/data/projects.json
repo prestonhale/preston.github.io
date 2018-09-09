@@ -13,6 +13,8 @@
         ],
         "download_link": "https://steamcommunity.com/sharedfiles/filedetails/?id=285580543",
         "controller_warning": "",
+        "mobile_header_image": 
+            "static/images/greatBear/greatBearMobile.jpg",
         "carousel_images": [
             "static/images/greatBear/bigBear.jpg",
             "static/images/greatBear/freya.jpg",

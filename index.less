@@ -6,8 +6,12 @@
 @background-color: #242424;
 @secondary-color: #2a2a2a;
 @primary-color: #606060;
+
 @off-black: #141414;
+@75pc-off-black-transparent: rgba(0,0,0,0.75);
+
 @off-white: #f6f6f6;
+@full-transparent: rgba(0,0,0,0);
 
 
 // Responsiveness Variables
@@ -131,8 +135,12 @@ body {
 
   .project-title {
       text-align: center;
+      background-image: linear-gradient(to top, @off-black, @75pc-off-black-transparent, @full-transparent);
       @media @large-screen {
           display: none;
+      }
+      h3 {
+        margin: 10px 0 10px 0;
       }
   }
 
