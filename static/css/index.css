@@ -86,25 +86,48 @@ body {
 #projects .project.active {
   display: inline-block;
 }
-#projects .project.slide {
+#projects .project.slide-in-next {
   top: 0;
   left: -100%;
-  animation: slide 1s forwards;
+  animation: slide-in-next 0.3s linear forwards;
 }
-#projects .project.slide-out {
+#projects .project.slide-out-next {
   position: absolute;
+  display: inline-block;
   top: 0px;
   left: 0px;
-  animation: slide-out 1s forwards;
+  animation: slide-out-next 0.3s linear forwards;
 }
-@keyframes slide {
+#projects .project.slide-in-prev {
+  top: 0px;
+  left: 100%;
+  animation: slide-in-prev 0.3s linear forwards;
+}
+#projects .project.slide-out-prev {
+  position: absolute;
+  display: inline-block;
+  top: 0px;
+  left: 0px;
+  animation: slide-out-prev 0.3s linear forwards;
+}
+@keyframes slide-in-next {
   100% {
     left: 0;
   }
 }
-@keyframes slide-out {
+@keyframes slide-out-next {
   100% {
     left: 100%;
+  }
+}
+@keyframes slide-in-prev {
+  100% {
+    left: 0;
+  }
+}
+@keyframes slide-out-prev {
+  100% {
+    left: -100%;
   }
 }
 #projects .project-header {

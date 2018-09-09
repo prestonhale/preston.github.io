@@ -7881,50 +7881,74 @@ function bindProjectDisplayEvents(){
     })
 }
 
-function bindProjectCarouselEvents(){
-    $('.project-control-next').on('click', function() {
-        index = (index + 1) % projectNames.length;
-        displayProject(projectNames[index]);
-    })
-    $('.project-control-prev').on('click', function() {
-        index = index - 1;
-        if (index < 0) {
-            index = projectNames.length - 1;
-        }
-        displayProject(projectNames[index]);
+function bindProjectCarouselEvents(project){
+    project.find('.project-control-next').on('click', nextProject);
+    project.find('.project-control-prev').on('click', prevProject);
+}
+
+function bindProjectAnimationEvents(project){
+    var projects = $('.project')
+    project.on('animationend', function() {
+        projects.removeClass('slide-out-next slide-in-next slide-out-prev slide-in-prev');
     })
 }
 
+function nextProject(){
+    index = (index + 1) % projectNames.length;
+    var prevProject = $(".project.active");
+    var template = createTemplate(projectNames[index]);
+    template.addClass('slide-in-next active');
+    prevProject.addClass('slide-out-next');
+    prevProject.removeClass('active');
+}
+
+function prevProject(){
+    index = index - 1;
+    if (index < 0) {
+        index = projectNames.length - 1;
+    }
+    console.log(index);
+    var prevProject = $(".project.active");
+    var template = createTemplate(projectNames[index]);
+    template.addClass('slide-in-prev active');
+    prevProject.addClass('slide-out-prev');
+    prevProject.removeClass('active');
+}
+
 function displayProject(projectName){
+    var template = createTemplate(projectName);
+    $('#project-viewer').append(template);
+}
+
+function createTemplate(projectName){
+    var all = $(".project[data-name=" + projectName + "]");
+    var existingProject = all.first();
+    if (existingProject.length > 0){
+        return $(existingProject);
+    }
+
     project = projectData[projectName];
 
     var templateData = {};
     $.extend(true, templateData, project);
     templateData.description = templateData.description.reduce(function(x, y){return x + y;});
     templateData.commentary = templateData.commentary.reduce(function(x, y){return x + y;});
+    templateData.project_name = projectName;
     templateData.project_names = projectNames;
     templateData.index = index;
 
-    // TODO: This is essentially a lazy load. But we don't 
-    // memoize the new templates so we'll get loads of dupes. Whoops!
-    var prevProject = document.getElementsByClassName("project active")[0]
     var projectSource = document.getElementById("project-template").innerHTML;
     var projectTemplate = handlebars.compile(projectSource);
     var template = $(projectTemplate(templateData));
-    $('#project-viewer').prepend(template);
-    template.addClass('active');
 
     // Ensure carousel is active
     $('.carousel-inner .item:first').addClass('active');
+    $('#project-viewer').append(template)
 
-    // TODO: Revisit this, too many binds happening
-    bindProjectCarouselEvents();
+    bindProjectCarouselEvents(template);
+    bindProjectAnimationEvents(template);
+    
+    return template;
 
-    // Clean up
-    if (prevProject){
-        // prevProject.classList.remove('active');
-        prevProject.classList.remove('slide');
-        prevProject.classList.add('slide-out');
-    }
 }
 },{"handlebars":31}]},{},[43]);
