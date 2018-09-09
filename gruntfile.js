@@ -16,27 +16,27 @@ module.exports = function(grunt) {
 
         less: {
             development: {
-                files: {
-                    "static/css/index.css": "./index.less"
-                }
+                files: [
+                    {src: "./index.less", dest: "static/css/index.css"}
+                ]
             }
         },
         
         browserify: {
             development: {
-                files: {
-                    "static/js/index.js": "index.js"
-                }
+                files: [
+                    {src: "src/**/*.js", dest: "static/js/main.js"}
+                ]
             }
         },
 
         watch: {
             less: {
-                files: ["*.less"],
+                files: ["**/*.less"],
                 tasks: ["less"]
             },
             browserifywatcher: {
-                files: ['*.js'],
+                files: ['src/**/*.js'],
                 tasks: ['browserify']
             }
         },
@@ -50,4 +50,9 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['watch']);
+
+    grunt.registerTask('build', ['browserify', 'less']);
+    grunt.registerTask('test', 'Test task.', function() {
+        grunt.log.writeln('Test task ran successfully.');
+    });
 }

@@ -43,7 +43,7 @@
     },
 
     "keepItGroovy": {
-        "title": "Keep It Groovy",
+        "title": "",
         "roles": [
             "Programming"
         ],
@@ -120,7 +120,7 @@
     },
     
     "dancemission": {
-        "title": "Dancemission",
+        "title": "",
         "roles": [
             "Programming"
         ],
@@ -131,8 +131,8 @@
         "download_link": "static/executables/Dancemission.exe",
         "controller_warning": "2 Controllers Required",
         "carousel_images": [
-            "static/images/dancemission/game.png",
-            "static/images/dancemission/main.png"
+            "static/images/dancemission/main.png",
+            "static/images/dancemission/game.png"
         ],
         "duration": "2 Days",
         "description": [

@@ -35,7 +35,7 @@ function getProjectData() {
     });
 }
 
-function bindProjectDisplayEvents(){
+function bindProjectDisplayEvents(){sdfasd
     $('.project-box').on('click', function() {
         var project = this.dataset.project;
 
