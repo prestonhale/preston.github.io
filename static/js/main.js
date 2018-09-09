@@ -7905,14 +7905,26 @@ function displayProject(projectName){
     templateData.project_names = projectNames;
     templateData.index = index;
 
+    // TODO: This is essentially a lazy load. But we don't 
+    // memoize the new templates so we'll get loads of dupes. Whoops!
+    var prevProject = document.getElementsByClassName("project active")[0]
     var projectSource = document.getElementById("project-template").innerHTML;
     var projectTemplate = handlebars.compile(projectSource);
-    var template = projectTemplate(templateData);
-    document.getElementById('project-viewer').innerHTML = template;
+    var template = $(projectTemplate(templateData));
+    $('#project-viewer').prepend(template);
+    template.addClass('active');
 
     // Ensure carousel is active
     $('.carousel-inner .item:first').addClass('active');
 
+    // TODO: Revisit this, too many binds happening
     bindProjectCarouselEvents();
+
+    // Clean up
+    if (prevProject){
+        // prevProject.classList.remove('active');
+        prevProject.classList.remove('slide');
+        prevProject.classList.add('slide-out');
+    }
 }
 },{"handlebars":31}]},{},[43]);
