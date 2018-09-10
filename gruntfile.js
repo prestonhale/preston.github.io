@@ -31,6 +31,10 @@ module.exports = function(grunt) {
         },
 
         watch: {
+            handlebars: {
+                files: ["**/*.hbs"],
+                tasks: ["handlebars"]
+            },
             less: {
                 files: ["**/*.less"],
                 tasks: ["less"]
@@ -40,18 +44,26 @@ module.exports = function(grunt) {
                 tasks: ['browserify']
             }
         },
+
+        handlebars: {
+            all: {
+                files: {
+                    'static/templates/templatesCompiled.js': 'src/templates/*.handlebars'
+                }
+            }
+        }
     })
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-browserify');
-    grunt.loadNpmTasks('grunt-contrib-handlebars');
+    grunt.loadNpmTasks('grunt-handlebars-compiler');
 
     // Default task(s).
     grunt.registerTask('default', ['watch']);
 
-    grunt.registerTask('build', ['browserify', 'less']);
+    grunt.registerTask('build', ['browserify', 'less', 'handlebars']);
     grunt.registerTask('test', 'Test task.', function() {
         grunt.log.writeln('Test task ran successfully.');
     });

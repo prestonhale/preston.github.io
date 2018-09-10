@@ -4,15 +4,13 @@ var handlebars;
 var index = 0;
 
 $(document).ready(function() {
-    handlebars = require('handlebars');  // Templating
-
-    handlebars.registerHelper('carousel-li', function(curIndex, activeIndex){
+    Handlebars.registerHelper('carousel-li', function(curIndex, activeIndex){
         if (curIndex == activeIndex){
-            return new handlebars.SafeString(
+            return new Handlebars.SafeString(
                 '<li class="active"></li>'
             )
         }
-        return new handlebars.SafeString(
+        return new Handlebars.SafeString(
             '<li></li>'
         )
     })
@@ -73,7 +71,6 @@ function prevProject(){
     if (index < 0) {
         index = projectNames.length - 1;
     }
-    console.log(index);
     var prevProject = $(".project.active");
     var template = createTemplate(projectNames[index]);
     template.addClass('slide-in-prev active');
@@ -103,9 +100,7 @@ function createTemplate(projectName){
     templateData.project_names = projectNames;
     templateData.index = index;
 
-    var projectSource = document.getElementById("project-template").innerHTML;
-    var projectTemplate = handlebars.compile(projectSource);
-    var template = $(projectTemplate(templateData));
+    var template = $(Handlebars.templates.project(project));
 
     // Ensure carousel is active
     $('.carousel-inner .item:first').addClass('active');
