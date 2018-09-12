@@ -138,7 +138,7 @@ body {
 }
 #projects .project-header img {
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 #projects .project-selector {
   min-height: 800px;
