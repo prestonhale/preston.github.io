@@ -26,6 +26,7 @@ function getProjectData() {
         success: function(data) {
             projectData = data;
             projectNames = Object.keys(projectData);
+            bindProjectCarouselEvents();
             displayProject('greatBear');
             bindProjectDisplayEvents();
         }
@@ -46,8 +47,8 @@ function bindProjectDisplayEvents(){
 }
 
 function bindProjectCarouselEvents(project){
-    project.find('.project-control-next').on('click', nextProject);
-    project.find('.project-control-prev').on('click', prevProject);
+    $('.project-control-next').on('click', nextProject);
+    $('.project-control-prev').on('click', prevProject);
 }
 
 function bindProjectAnimationEvents(project){
@@ -100,13 +101,12 @@ function createTemplate(projectName){
     templateData.project_names = projectNames;
     templateData.index = index;
 
-    var template = $(Handlebars.templates.project(project));
+    var template = $(Handlebars.templates.project(templateData));
 
     // Ensure carousel is active
     $('.carousel-inner .item:first').addClass('active');
     $('#project-viewer').append(template)
 
-    bindProjectCarouselEvents(template);
     bindProjectAnimationEvents(template);
     
     return template;

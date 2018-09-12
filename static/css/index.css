@@ -176,9 +176,62 @@ body {
 #projects #project-viewer img {
   max-height: 400px;
 }
+@media only screen and (max-width: 950px) {
+  #projects #project-viewer img {
+    height: 220px;
+  }
+}
 #projects #project-viewer iframe {
   width: 645px;
   height: 400px;
+}
+#projects #project-viewer .carousel-indicators {
+  bottom: -30px;
+}
+#projects #project-viewer .carousel-indicators li {
+  border-radius: 0;
+  border: none;
+  background-color: grey;
+  height: 4px;
+  width: 25px;
+  cursor: auto;
+}
+#projects #project-viewer .carousel-indicators li.active {
+  background-color: white;
+}
+#projects #project-viewer #project-selector-carousel {
+  height: 220px;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+}
+#projects #project-viewer #project-selector-carousel .project-control-next {
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  top: 0;
+  right: 0;
+}
+#projects #project-viewer #project-selector-carousel .project-control-next .project-control-next-icon {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  font-size: 32px;
+  color: white;
+}
+#projects #project-viewer #project-selector-carousel .project-control-prev {
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  top: 0;
+  left: 0;
+}
+#projects #project-viewer #project-selector-carousel .project-control-prev .project-control-prev-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 32px;
+  color: white;
 }
 @media only screen and (max-width: 950px) {
   #projects #project-carousel {
@@ -200,48 +253,6 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  color: white;
-}
-#projects .project-header .carousel-indicators {
-  bottom: -30px;
-}
-#projects .project-header .carousel-indicators li {
-  border-radius: 0;
-  border: none;
-  background-color: grey;
-  height: 4px;
-  width: 25px;
-  cursor: auto;
-}
-#projects .project-header .carousel-indicators li.active {
-  background-color: white;
-}
-#projects .project-header .project-control-next {
-  position: absolute;
-  height: 100%;
-  width: 15%;
-  top: 0;
-  right: 0;
-}
-#projects .project-header .project-control-next .project-control-next-icon {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  font-size: 32px;
-  color: white;
-}
-#projects .project-header .project-control-prev {
-  position: absolute;
-  height: 100%;
-  width: 15%;
-  top: 0;
-  left: 0;
-}
-#projects .project-header .project-control-prev .project-control-prev-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 32px;
   color: white;
 }
 #projects .project-box {

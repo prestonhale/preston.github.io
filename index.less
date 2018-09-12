@@ -208,11 +208,70 @@ body {
 
     img {
       max-height: 400px;
+
+      @media @small-screen {
+          height: 220px;
+      }
     }
 
     iframe {
       width: 645px;
       height: 400px;
+    }
+    .carousel-indicators {
+        bottom: -30px;
+
+        li {
+        border-radius: 0;
+        border: none;
+        background-color: grey;
+        height: 4px;
+        width: 25px;
+        cursor: auto;
+        }
+
+        li.active {
+            background-color: white;
+        }
+    }
+
+    #project-selector-carousel {
+        height: 220px;
+        width: 100%;
+        position: absolute;
+        z-index: 10;
+
+        .project-control-next {
+            position: absolute;
+            height: 100%;
+            width: 15%;
+            top: 0;
+            right: 0;
+            
+            .project-control-next-icon {
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                font-size: 32px;
+                color: white;
+            }
+        }
+        
+        .project-control-prev {
+            position: absolute;
+            height: 100%;
+            width: 15%;
+            top: 0;
+            left: 0;
+
+            .project-control-prev-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                font-size: 32px;
+                color: white;
+            }
+        }
     }
 
   }
@@ -239,54 +298,6 @@ body {
           color: white;
       }
 
-      .carousel-indicators {
-          bottom: -30px;
-
-          li {
-            border-radius: 0;
-            border: none;
-            background-color: grey;
-            height: 4px;
-            width: 25px;
-            cursor: auto;
-          }
-
-          li.active {
-              background-color: white;
-          }
-      }
-
-      .project-control-next {
-          position: absolute;
-          height: 100%;
-          width: 15%;
-          top: 0;
-          right: 0;
-          
-          .project-control-next-icon {
-              position: absolute;
-              top: 50%;
-              right: 50%;
-              font-size: 32px;
-              color: white;
-          }
-      }
-      
-      .project-control-prev {
-          position: absolute;
-          height: 100%;
-          width: 15%;
-          top: 0;
-          left: 0;
-
-          .project-control-prev-icon {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              font-size: 32px;
-              color: white;
-          }
-      }
     }
       
   .project-box {
