@@ -37,7 +37,7 @@ templates['project'] = template({"1":function(container,depth0,helpers,partials,
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=helpers.helperMissing, alias2="function", alias3=container.escapeExpression;
 
-  return "<div class=\"project active\" data-name=\""
+  return "<div class=\"project\" data-name=\""
     + alias3(((helper = (helper = helpers.project_name || (depth0 != null ? depth0.project_name : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"project_name","hash":{},"data":data}) : helper)))
     + "\">\r\n    <!-- Main Content -->\r\n    <!-- TODO: Clean up data model for this -->\r\n    <div class=\"project-header\">\r\n        <div class=\"header-image\">\r\n            <img width=100% src=\""
     + alias3(container.lambda(((stack1 = (depth0 != null ? depth0.carousel_images : depth0)) != null ? stack1["0"] : stack1), depth0))

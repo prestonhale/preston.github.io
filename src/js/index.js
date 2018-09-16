@@ -61,10 +61,12 @@ function bindProjectAnimationEvents(project){
 function nextProject(){
     index = (index + 1) % projectNames.length;
     var prevProject = $(".project.active");
-    var template = createTemplate(projectNames[index]);
-    template.addClass('slide-in-next active');
+    var template = displayProject(projectNames[index]);
+    template.addClass('slide-in-next');
     prevProject.addClass('slide-out-next');
-    prevProject.removeClass('active');
+    prevProject.on('animationend', function(){
+        prevProject.removeClass('active');
+    });
 }
 
 function prevProject(){
@@ -73,15 +75,19 @@ function prevProject(){
         index = projectNames.length - 1;
     }
     var prevProject = $(".project.active");
-    var template = createTemplate(projectNames[index]);
-    template.addClass('slide-in-prev active');
+    var template = displayProject(projectNames[index]);
+    template.addClass('slide-in-prev');
     prevProject.addClass('slide-out-prev');
-    prevProject.removeClass('active');
+    prevProject.one('animationend', function(){
+        prevProject.removeClass('active');
+    });
 }
 
 function displayProject(projectName){
     var template = createTemplate(projectName);
+    template.addClass('active');
     $('#project-viewer').append(template);
+    return template;
 }
 
 function createTemplate(projectName){
