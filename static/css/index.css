@@ -167,6 +167,7 @@ body {
   position: relative;
   background-color: #bcbcbc;
   padding: 15px;
+  height: 100%;
 }
 @media only screen and (max-width: 950px) {
   #projects #project-viewer {
@@ -204,6 +205,11 @@ body {
   width: 100%;
   position: absolute;
   z-index: 10;
+}
+@media only screen and (min-width: 1000px) {
+  #projects #project-viewer #project-selector-carousel {
+    display: none;
+  }
 }
 #projects #project-viewer #project-selector-carousel .project-control-next {
   position: absolute;
