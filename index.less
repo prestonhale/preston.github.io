@@ -162,20 +162,6 @@ body {
 
   }
 
-  .project-header {
-    height: 220px;
-
-    .header-image {
-        height: 100%;
-    }
-
-    img {
-        height: 100%;
-        object-fit: cover;
-    }      
-
-  }
-
   .project-selector {
     min-height: 800px;
     background-color: @background-color;
@@ -184,17 +170,6 @@ body {
     @media @small-screen{
         display: none;
     }
-  }
-
-  .project-title {
-      text-align: center;
-      background-image: linear-gradient(to top, @off-black, @75pc-off-black-transparent, @full-transparent);
-      @media @large-screen {
-          display: none;
-      }
-      h3 {
-        margin: 10px 0 10px 0;
-      }
   }
 
   #project-viewer {
@@ -208,6 +183,10 @@ body {
     }
 
     .mobile-images {
+        @media @large-screen {
+            display: none;
+        }
+
         width: 100%;
         margin-top: 30px;
 
@@ -227,16 +206,17 @@ body {
       width: 645px;
       height: 400px;
     }
+
     .carousel-indicators {
         bottom: -30px;
 
         li {
-        border-radius: 0;
-        border: none;
-        background-color: grey;
-        height: 4px;
-        width: 25px;
-        cursor: auto;
+            border-radius: 0;
+            border: none;
+            background-color: grey;
+            height: 4px;
+            width: 25px;
+            margin: 0;
         }
 
         li.active {
@@ -288,29 +268,45 @@ body {
 
   }
 
-  #project-carousel {
+  .project-carousel {
       @media @small-screen {
           display: none;
       }
   }
 
-  .project-header {
+  .mobile-project-header {
       margin: 0 -10px 0 -10px;
       position: relative;
       display: block;
       text-align: center;
+      height: 220px;
       @media @large-screen {
           display: none;
       }
+    
+      .header-image {
+        height: 100%;
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }      
 
       .project-title {
           position: absolute;
           bottom: 0;
           width: 100%;
           color: white;
-      }
-
+          text-align: center;
+          background-image: linear-gradient(to top, @off-black, @75pc-off-black-transparent, @full-transparent);
+          
+          h3 {
+            margin: 10px 0 10px 0;
+          }
+        }
     }
+
       
   .project-box {
     position: relative;

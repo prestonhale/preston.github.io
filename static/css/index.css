@@ -130,16 +130,6 @@ body {
     left: -100%;
   }
 }
-#projects .project-header {
-  height: 220px;
-}
-#projects .project-header .header-image {
-  height: 100%;
-}
-#projects .project-header img {
-  height: 100%;
-  object-fit: cover;
-}
 #projects .project-selector {
   min-height: 800px;
   background-color: #242424;
@@ -150,18 +140,6 @@ body {
   #projects .project-selector {
     display: none;
   }
-}
-#projects .project-title {
-  text-align: center;
-  background-image: linear-gradient(to top, #141414, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-@media only screen and (min-width: 951px) {
-  #projects .project-title {
-    display: none;
-  }
-}
-#projects .project-title h3 {
-  margin: 10px 0 10px 0;
 }
 #projects #project-viewer {
   position: relative;
@@ -177,6 +155,11 @@ body {
 #projects #project-viewer .mobile-images {
   width: 100%;
   margin-top: 30px;
+}
+@media only screen and (min-width: 951px) {
+  #projects #project-viewer .mobile-images {
+    display: none;
+  }
 }
 #projects #project-viewer .mobile-images .full-width {
   padding: 0;
@@ -200,7 +183,7 @@ body {
   background-color: grey;
   height: 4px;
   width: 25px;
-  cursor: auto;
+  margin: 0;
 }
 #projects #project-viewer .carousel-indicators li.active {
   background-color: white;
@@ -245,26 +228,39 @@ body {
   color: white;
 }
 @media only screen and (max-width: 950px) {
-  #projects #project-carousel {
+  #projects .project-carousel {
     display: none;
   }
 }
-#projects .project-header {
+#projects .mobile-project-header {
   margin: 0 -10px 0 -10px;
   position: relative;
   display: block;
   text-align: center;
+  height: 220px;
 }
 @media only screen and (min-width: 951px) {
-  #projects .project-header {
+  #projects .mobile-project-header {
     display: none;
   }
 }
-#projects .project-header .project-title {
+#projects .mobile-project-header .header-image {
+  height: 100%;
+}
+#projects .mobile-project-header img {
+  height: 100%;
+  object-fit: cover;
+}
+#projects .mobile-project-header .project-title {
   position: absolute;
   bottom: 0;
   width: 100%;
   color: white;
+  text-align: center;
+  background-image: linear-gradient(to top, #141414, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+#projects .mobile-project-header .project-title h3 {
+  margin: 10px 0 10px 0;
 }
 #projects .project-box {
   position: relative;

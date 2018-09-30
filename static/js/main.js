@@ -5,14 +5,14 @@ var handlebars;
 var index = 0;
 
 $(document).ready(function() {
-    Handlebars.registerHelper('carousel-li', function(curIndex, activeIndex){
-        if (curIndex == activeIndex){
+    Handlebars.registerHelper('carousel-li', function(curIndex, active){
+        if (active){
             return new Handlebars.SafeString(
-                '<li class="active"></li>'
+                '<li data-target="#project-carousel-"' + curIndex + '" data-slide-to="' + curIndex + '" class="active"></li>'
             )
         }
         return new Handlebars.SafeString(
-            '<li></li>'
+            '<li data-target="#project-carousel-"' + curIndex +'" data-slide-to="' + curIndex + '"></li>'
         )
     })
 
@@ -28,7 +28,7 @@ function getProjectData() {
             projectData = data;
             projectNames = Object.keys(projectData);
             bindProjectCarouselEvents();
-            displayProject('greatBear');
+            displayProjectAtIndex(0);
             bindProjectDisplayEvents();
         }
     });
@@ -37,7 +37,7 @@ function getProjectData() {
 function bindProjectDisplayEvents(){
     $('.project-box').on('click', function() {
         var prevProject = $(".project.active");
-        var project = this.dataset.project;
+        var projectIndex = this.dataset.projectIndex;
 
         $(this).siblings().each(function(i, elem){
             $(elem).removeClass('selected');
@@ -45,7 +45,7 @@ function bindProjectDisplayEvents(){
         $(this).addClass("selected");
 
         prevProject.removeClass("active");
-        displayProject(project);
+        displayProjectAtIndex(projectIndex);
     })
 }
 
@@ -64,7 +64,7 @@ function bindProjectAnimationEvents(project){
 function nextProject(){
     index = (index + 1) % projectNames.length;
     var prevProject = $(".project.active");
-    var template = displayProject(projectNames[index]);
+    var template = displayProjectAtIndex(index);
     template.addClass('slide-in-next');
     prevProject.addClass('slide-out-next');
     prevProject.one('animationend', function(){
@@ -78,7 +78,7 @@ function prevProject(){
         index = projectNames.length - 1;
     }
     var prevProject = $(".project.active");
-    var template = displayProject(projectNames[index]);
+    var template = displayProjectAtIndex(index);
     template.addClass('slide-in-prev');
     prevProject.addClass('slide-out-prev');
     prevProject.one('animationend', function(){
@@ -86,14 +86,15 @@ function prevProject(){
     });
 }
 
-function displayProject(projectName){
-    var template = createTemplate(projectName);
+function displayProjectAtIndex(index){
+    console.log(index);
+    var template = createTemplate(index, projectNames[index]);
     template.addClass('active');
     $('#project-viewer').append(template);
     return template;
 }
 
-function createTemplate(projectName){
+function createTemplate(index, projectName){
     var all = $(".project[data-name=" + projectName + "]");
     var existingProject = all.first();
     if (existingProject.length > 0){
