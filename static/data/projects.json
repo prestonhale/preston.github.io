@@ -158,8 +158,7 @@
     "scrollTown": {
         "title": "Scrolltown",
         "roles": [
-            "Programming",
-            "Terrible Models"
+            "Programming"
         ],
         "technologies": [
             "Unity Engine",
@@ -167,8 +166,12 @@
         ],
         "download_link": "",
         "controller_warning": "",
-        "header_image": "dist/static/images/dancemission/m-game.jpg",
-        "images": [],
+        "header_image": "dist/static/images/scrolltown/thumbnail.png",
+        "images": [
+            "dist/static/images/scrolltown/m-scroll1.jpg",
+            "dist/static/images/scrolltown/m-scroll2.jpg",
+            "dist/static/images/scrolltown/m-scroll3.jpg"
+        ],
         "duration": "1 month",
         "raw_content": [
             "<iframe frameBorder=0 scrolling=no src='static/projects/scrolltown_webgl/index.html'>You have really old browser and can't see ",

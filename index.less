@@ -15,8 +15,8 @@
 
 
 // Responsiveness Variables
-@small-screen: ~"only screen and (max-width: 950px)";
-@large-screen: ~"only screen and (min-width: 951px)";
+@small-screen: ~"only screen and (max-width: 991px)";
+@large-screen: ~"only screen and (min-width: 992px)";
 
 body {
   margin: 0;
@@ -182,17 +182,17 @@ body {
         padding: 0px;
     }
 
-    .mobile-images {
+    .mobile-image-holder {
         @media @large-screen {
             display: none;
         }
 
         width: 100%;
         margin-top: 30px;
+        text-align: center;
 
-        .full-width {
-            padding: 0;
-            margin: 0;
+        .mobile-image {
+            display: inline-block
         }
 
         img {
@@ -222,6 +222,14 @@ body {
         li.active {
             background-color: white;
         }
+    }
+
+    .project-text {
+        margin: 30px 0 0 0 ;
+    }
+
+    .project-details {
+        overflow: hidden;
     }
 
     #project-selector-carousel {
