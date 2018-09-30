@@ -155,7 +155,7 @@ body {
   text-align: center;
   background-image: linear-gradient(to top, #141414, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 951px) {
   #projects .project-title {
     display: none;
   }
@@ -174,13 +174,18 @@ body {
     padding: 0px;
   }
 }
-#projects #project-viewer img {
-  max-height: 400px;
+#projects #project-viewer .mobile-images {
+  width: 100%;
+  margin-top: 30px;
 }
-@media only screen and (max-width: 950px) {
-  #projects #project-viewer img {
-    height: 220px;
-  }
+#projects #project-viewer .mobile-images .full-width {
+  padding: 0;
+  margin: 0;
+}
+#projects #project-viewer .mobile-images img {
+  padding: 5px 0 5px 0;
+  max-width: 100%;
+  max-height: 400px;
 }
 #projects #project-viewer iframe {
   width: 645px;
@@ -206,7 +211,7 @@ body {
   position: absolute;
   z-index: 10;
 }
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 951px) {
   #projects #project-viewer #project-selector-carousel {
     display: none;
   }
@@ -250,7 +255,7 @@ body {
   display: block;
   text-align: center;
 }
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 951px) {
   #projects .project-header {
     display: none;
   }

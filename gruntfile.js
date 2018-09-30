@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 
         watch: {
             handlebars: {
-                files: ["**/*.hbs"],
+                files: ["**/*.handlebars"],
                 tasks: ["handlebars"]
             },
             less: {
@@ -51,12 +51,39 @@ module.exports = function(grunt) {
                     'static/templates/templatesCompiled.js': 'src/templates/*.handlebars'
                 }
             }
+        },
+
+        imagemin: {
+            static: {
+                options: {
+                    optimizationLevel: 3,
+                    svgoPlugins: [{removeViewBox: false}],
+                },
+                files: {
+                    'dist/img.png': 'src/img.png',
+                    'dist/img.jpg': 'src/img.jpg',
+                    'dist/img.gif': 'src/img.gif'
+                }
+            },
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'static/images/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'dist/static/images/'
+                }],
+                options: {
+                    optimizationLevel: 1,
+                    svgoPlugins: [{removeViewBox: false}],
+                },
+            }
         }
     })
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-handlebars-compiler');
 
@@ -64,6 +91,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['watch']);
 
     grunt.registerTask('build', ['browserify', 'less', 'handlebars']);
+    grunt.registerTask('dmin', ['imagemin:dynamic']);
     grunt.registerTask('test', 'Test task.', function() {
         grunt.log.writeln('Test task ran successfully.');
     });

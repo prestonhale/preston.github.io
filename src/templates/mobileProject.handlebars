@@ -1,0 +1,54 @@
+<div class="project" data-name="{{ project_name }}">
+    <div class="project-header">
+        <div class="header-image">
+            <img width=100% src="{{header_image}}">
+            {{#if title}}
+                <div class="project-title">
+                    <h3>{{ title }}</h3>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Role</h3>
+            <p>
+            {{#each roles}}
+                {{ this }}<br>
+            {{/each}}
+            </p>
+            <h3>Technologies</h3>
+            <p>
+            {{#each technologies}}
+                {{this}}<br>
+            {{/each}}
+            </p>
+            <h3>Duration</h3>
+            <p>{{duration}}</p>
+        </div>
+        <div class="col-md-9">
+            {{#if download_link}}
+            <div class="download-link text-center">
+                <a href="{{download_link}}">
+                    <div class="interact-button download-button text-center">
+                        Download Game
+                    </div>
+                </a>
+                <span class="controller-warning">{{controller_warning}}
+            </div>
+            {{/if}}
+            <h3>Overview</h3>
+            {{{description}}}
+            <h3>Commentary</h3>
+            {{{commentary}}}
+        </div>
+        <div class="mobile-images">
+            {{#each images}}
+                <div class="full-width col-md-6">
+                    <img src={{this}}>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

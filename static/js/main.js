@@ -110,7 +110,7 @@ function createTemplate(projectName){
     templateData.project_names = projectNames;
     templateData.index = index;
 
-    var template = $(Handlebars.templates.project(templateData));
+    var template = $(Handlebars.templates.mobileProject(templateData));
 
     $('#project-viewer').append(template)
     
