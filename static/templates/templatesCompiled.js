@@ -81,7 +81,7 @@ templates['mobileProject'] = template({"1":function(container,depth0,helpers,par
     + ((stack1 = ((helper = (helper = helpers.commentary || (depth0 != null ? depth0.commentary : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"commentary","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\r\n        </div>\r\n\r\n        <!-- SMALL SCREEN -->\r\n            <div class=\"mobile-image-holder\">\r\n"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.images : depth0),{"name":"each","hash":{},"fn":container.program(14, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "            </div>\r\n    </div>\r\n</div>";
+    + "            </div>\r\n            <a href=\"#projects\">\r\n                <div class=\"mobile-next-project-button row\">\r\n                    <div class=\"next-project-button\">\r\n                            Next Project <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\r\n                    </div>\r\n                </div>\r\n            </a>\r\n    </div>\r\n</div>";
 },"useData":true});
 
 templates['project'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

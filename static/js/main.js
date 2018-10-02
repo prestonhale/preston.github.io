@@ -117,6 +117,7 @@ function createTemplate(index, projectName){
     
     // Ensure carousel is active
     template.find('.carousel-inner .item:first').addClass('active');
+    template.find('.next-project-button').on('click', nextProject);
 
     bindProjectAnimationEvents(template);
     

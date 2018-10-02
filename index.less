@@ -99,7 +99,7 @@ body {
   }
 
   #project-box {
-    box-shadow: 0 0 5px 2px grey;
+    box-shadow: 0 -2px 5px 1px grey;
   }
 
   .project {
@@ -360,10 +360,29 @@ body {
   }
 }
 
+.mobile-next-project-button {
+    margin: 30px -10px -40px -10px;
+    box-shadow: 0 -5px 5px 2px @accent-color;
+    color: white;
+    z-index: 1;
+    cursor: pointer;
+
+    @media @large-screen {
+        display: None
+    }
+
+    .next-project-button {
+        padding: 10px 0 15px 0;
+        width: 100%;
+        text-align: center;
+        background-color: @accent-color
+    }
+}
+
 #about {
   padding: 50px 0px 50px 0px;
   color: @light-font-color;
-  box-shadow: 0 0 5px 3px grey;
+  box-shadow: 0 3px 5px 3px @background-color;
   position: relative;
   z-index: 1;
 
