@@ -75,11 +75,11 @@ templates['mobileProject'] = template({"1":function(container,depth0,helpers,par
     + alias3(((helper = (helper = helpers.duration || (depth0 != null ? depth0.duration : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"duration","hash":{},"data":data}) : helper)))
     + "</p>\r\n        </div>\r\n        <div class=\"col-md-9\">\r\n"
     + ((stack1 = helpers["if"].call(depth0,(depth0 != null ? depth0.download_link : depth0),{"name":"if","hash":{},"fn":container.program(12, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "            <h3>Overview</h3>\r\n            "
+    + "            <h3>Overview</h3>\r\n            <p>"
     + ((stack1 = ((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"description","hash":{},"data":data}) : helper))) != null ? stack1 : "")
-    + "\r\n            <h3>Commentary</h3>\r\n            "
+    + "</p>\r\n            <h3>Commentary</h3>\r\n            <p>"
     + ((stack1 = ((helper = (helper = helpers.commentary || (depth0 != null ? depth0.commentary : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"commentary","hash":{},"data":data}) : helper))) != null ? stack1 : "")
-    + "\r\n        </div>\r\n\r\n        <!-- SMALL SCREEN -->\r\n            <div class=\"mobile-image-holder\">\r\n"
+    + "</p>\r\n        </div>\r\n\r\n        <!-- SMALL SCREEN -->\r\n            <div class=\"mobile-image-holder\">\r\n"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.images : depth0),{"name":"each","hash":{},"fn":container.program(14, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "            </div>\r\n            <a href=\"#projects\">\r\n                <div class=\"mobile-next-project-button row\">\r\n                    <div class=\"next-project-button\">\r\n                            Next Project <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\r\n                    </div>\r\n                </div>\r\n            </a>\r\n    </div>\r\n</div>";
 },"useData":true});
