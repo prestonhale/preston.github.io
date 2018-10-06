@@ -9,7 +9,7 @@ body {
 h3 {
   font-family: 'Roboto', sans-serif;
 }
-#body {
+.body {
   padding: 0;
   margin: 0;
 }
@@ -44,7 +44,7 @@ h3 {
 .section-title {
   margin-bottom: 0px;
 }
-#header {
+.header {
   background-color: #141414;
   padding-top: 15px;
   padding-bottom: 35px;
@@ -52,30 +52,30 @@ h3 {
   position: relative;
   z-index: 1;
 }
-#header .the {
+.header .the {
   font-size: 36px;
   color: #CE7800;
 }
-#header .preston {
+.header .preston {
   font-size: 64px;
 }
-#header img {
+.header img {
   max-width: 100%;
 }
-#projects {
+.projects {
   background-color: #f6f6f6;
   padding: 50px 0px 100px 0px;
   color: #141414;
 }
 @media only screen and (max-width: 991px) {
-  #projects {
+  .projects {
     padding: 50px 0 0 0;
   }
 }
-#projects #project-box {
+.projects .project-box {
   box-shadow: 0 -2px 5px 1px grey;
 }
-#projects .project {
+.projects .project {
   position: relative;
   display: none;
   padding: 10px 10px 40px 10px;
@@ -83,31 +83,31 @@ h3 {
   height: 100%;
 }
 @media only screen and (max-width: 991px) {
-  #projects .project {
+  .projects .project {
     padding: 0 10px 40px 10px;
   }
 }
-#projects .project.active {
+.projects .project.active {
   display: inline-block;
 }
-#projects .project.slide-in-next {
+.projects .project.slide-in-next {
   top: 0;
   left: -100%;
   animation: slide-in-next 0.3s linear forwards;
 }
-#projects .project.slide-out-next {
+.projects .project.slide-out-next {
   position: absolute;
   display: inline-block;
   top: 0px;
   left: 0px;
   animation: slide-out-next 0.3s linear forwards;
 }
-#projects .project.slide-in-prev {
+.projects .project.slide-in-prev {
   top: 0px;
   left: 100%;
   animation: slide-in-prev 0.3s linear forwards;
 }
-#projects .project.slide-out-prev {
+.projects .project.slide-out-prev {
   position: absolute;
   display: inline-block;
   top: 0px;
@@ -134,54 +134,54 @@ h3 {
     left: -100%;
   }
 }
-#projects .project-selector {
+.projects .project-selector {
   min-height: 800px;
   background-color: #242424;
   padding: 0px;
   height: 100%;
 }
 @media only screen and (max-width: 991px) {
-  #projects .project-selector {
+  .projects .project-selector {
     display: none;
   }
 }
-#projects #project-viewer {
+.projects .project-viewer {
   position: relative;
   background-color: #bcbcbc;
   padding: 15px;
   height: 100%;
 }
 @media only screen and (max-width: 991px) {
-  #projects #project-viewer {
+  .projects .project-viewer {
     padding: 0px;
   }
 }
-#projects #project-viewer .mobile-image-holder {
+.projects .project-viewer .mobile-image-holder {
   width: 100%;
   margin-top: 30px;
   text-align: center;
 }
 @media only screen and (min-width: 992px) {
-  #projects #project-viewer .mobile-image-holder {
+  .projects .project-viewer .mobile-image-holder {
     display: none;
   }
 }
-#projects #project-viewer .mobile-image-holder .mobile-image {
+.projects .project-viewer .mobile-image-holder .mobile-image {
   display: inline-block;
 }
-#projects #project-viewer .mobile-image-holder img {
+.projects .project-viewer .mobile-image-holder img {
   padding: 5px 0 5px 0;
   max-width: 100%;
   max-height: 400px;
 }
-#projects #project-viewer iframe {
+.projects .project-viewer iframe {
   width: 645px;
   height: 400px;
 }
-#projects #project-viewer .carousel-indicators {
+.projects .project-viewer .carousel-indicators {
   bottom: -30px;
 }
-#projects #project-viewer .carousel-indicators li {
+.projects .project-viewer .carousel-indicators li {
   border-radius: 0;
   border: none;
   background-color: grey;
@@ -189,48 +189,48 @@ h3 {
   width: 25px;
   margin: 0;
 }
-#projects #project-viewer .carousel-indicators li.active {
+.projects .project-viewer .carousel-indicators li.active {
   background-color: white;
 }
-#projects #project-viewer .project-text {
+.projects .project-viewer .project-text {
   margin: 30px 0 0 0 ;
 }
-#projects #project-viewer .project-details {
+.projects .project-viewer .project-details {
   overflow: hidden;
 }
-#projects #project-viewer #project-selector-carousel {
+.projects .project-viewer .project-selector-carousel {
   height: 220px;
   width: 100%;
   position: absolute;
   z-index: 10;
 }
 @media only screen and (min-width: 992px) {
-  #projects #project-viewer #project-selector-carousel {
+  .projects .project-viewer .project-selector-carousel {
     display: none;
   }
 }
-#projects #project-viewer #project-selector-carousel .project-control-next {
+.projects .project-viewer .project-selector-carousel .project-control-next {
   position: absolute;
   height: 100%;
   width: 15%;
   top: 0;
   right: 0;
 }
-#projects #project-viewer #project-selector-carousel .project-control-next .project-control-next-icon {
+.projects .project-viewer .project-selector-carousel .project-control-next .project-control-next-icon {
   position: absolute;
   top: 50%;
   right: 50%;
   font-size: 32px;
   color: white;
 }
-#projects #project-viewer #project-selector-carousel .project-control-prev {
+.projects .project-viewer .project-selector-carousel .project-control-prev {
   position: absolute;
   height: 100%;
   width: 15%;
   top: 0;
   left: 0;
 }
-#projects #project-viewer #project-selector-carousel .project-control-prev .project-control-prev-icon {
+.projects .project-viewer .project-selector-carousel .project-control-prev .project-control-prev-icon {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -238,11 +238,11 @@ h3 {
   color: white;
 }
 @media only screen and (max-width: 991px) {
-  #projects .project-carousel {
+  .projects .project-carousel {
     display: none;
   }
 }
-#projects .mobile-project-header {
+.projects .mobile-project-header {
   margin: 0 -10px 0 -10px;
   position: relative;
   display: block;
@@ -250,18 +250,18 @@ h3 {
   height: 220px;
 }
 @media only screen and (min-width: 992px) {
-  #projects .mobile-project-header {
+  .projects .mobile-project-header {
     display: none;
   }
 }
-#projects .mobile-project-header .header-image {
+.projects .mobile-project-header .header-image {
   height: 100%;
 }
-#projects .mobile-project-header img {
+.projects .mobile-project-header img {
   height: 100%;
   object-fit: cover;
 }
-#projects .mobile-project-header .project-title {
+.projects .mobile-project-header .project-title {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -269,36 +269,36 @@ h3 {
   text-align: center;
   background-image: linear-gradient(to top, #141414, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
-#projects .mobile-project-header .project-title h3 {
+.projects .mobile-project-header .project-title h3 {
   margin: 10px 0 10px 0;
 }
-#projects .project-box {
+.projects .project-box {
   position: relative;
   padding: 0px 0px 0px 8px;
   transition: filter 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
   filter: grayscale(100%);
 }
-#projects .project-box:hover {
+.projects .project-box:hover {
   filter: grayscale(0%);
   background-color: #606060;
 }
-#projects .project-box.selected {
+.projects .project-box.selected {
   filter: grayscale(0%);
   background-color: #CE7800;
 }
-#projects .project-box img {
+.projects .project-box img {
   max-width: 100%;
   max-height: 100%;
 }
-#projects .project-box > .project-title {
+.projects .project-box > .project-title {
   position: absolute;
   width: 100%;
   font-size: 24px;
   transition: opacity 0.5s ease;
   opacity: 0;
 }
-#projects .project-box > .project-overlay {
+.projects .project-box > .project-overlay {
   position: absolute;
   display: inline-block;
   border-radius: 10px;
@@ -326,14 +326,16 @@ h3 {
   text-align: center;
   background-color: #CE7800;
 }
-#about {
+/* ==================== About =================== */
+.about {
   padding: 50px 0px 50px 0px;
   color: #bcbcbc;
   box-shadow: 0 3px 5px 3px #242424;
   position: relative;
   z-index: 1;
 }
-#contact {
+/* ==================== Contact =================== */
+.contact {
   padding: 25px 0px 25px 0px;
   color: #bcbcbc;
   background-color: #141414;
@@ -341,20 +343,20 @@ h3 {
   position: relative;
   z-index: 1;
 }
-#contact .fa-lg {
+.contact .fa-lg {
   margin-right: 5px;
 }
-#contact a:link,
-#contact a:visited,
-#contact a:hover,
-#contact a:active {
+.contact a:link,
+a:visited,
+a:hover,
+a:active {
   text-decoration: none;
   color: #bcbcbc;
 }
-#contact span {
+.contact span {
   margin-right: 40px;
 }
-#contact i {
+.contact i {
   color: #CE7800;
 }
 .centered-column {
@@ -367,7 +369,7 @@ h3 {
   height: 15px;
   width: 100%;
 }
-#title {
+.title {
   font-family: "Trajan Pro", Times, serif;
   color: #606060;
 }

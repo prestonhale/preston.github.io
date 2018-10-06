@@ -7,11 +7,11 @@ $(document).ready(function() {
     Handlebars.registerHelper('carousel-li', function(curIndex, active){
         if (active){
             return new Handlebars.SafeString(
-                '<li data-target="#project-carousel-"' + curIndex + '" data-slide-to="' + curIndex + '" class="active"></li>'
+                '<li data-target=".project-carousel-"' + curIndex + '" data-slide-to="' + curIndex + '" class="active"></li>'
             )
         }
         return new Handlebars.SafeString(
-            '<li data-target="#project-carousel-"' + curIndex +'" data-slide-to="' + curIndex + '"></li>'
+            '<li data-target=".project-carousel-"' + curIndex +'" data-slide-to="' + curIndex + '"></li>'
         )
     })
 
@@ -86,10 +86,9 @@ function prevProject(){
 }
 
 function displayProjectAtIndex(index){
-    console.log(index);
     var template = createTemplate(index, projectNames[index]);
     template.addClass('active');
-    $('#project-viewer').append(template);
+    $('.project-viewer').append(template);
     return template;
 }
 
@@ -104,6 +103,7 @@ function createTemplate(index, projectName){
 
     var templateData = {};
     $.extend(true, templateData, project);
+    console.log(templateData);
     templateData.description = templateData.description.reduce(function(x, y){return x + y;});
     templateData.commentary = templateData.commentary.reduce(function(x, y){return x + y;});
     templateData.project_name = projectName;
@@ -112,7 +112,7 @@ function createTemplate(index, projectName){
 
     var template = $(Handlebars.templates.mobileProject(templateData));
 
-    $('#project-viewer').append(template)
+    $('.project-viewer').append(template)
     
     // Ensure carousel is active
     template.find('.carousel-inner .item:first').addClass('active');

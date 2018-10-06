@@ -1,70 +1,70 @@
 <div class="project" data-name="{{ project_name }}">
     <!-- SMALL SCREEN -->
-        <div class="mobile-project-header">
-            <div class="header-image">
-                <img width=100% src="{{header_image}}">
-                {{#if title}}
-                    <div class="project-title">
-                        <h3>{{ title }}</h3>
-                    </div>
-                {{/if}}
+    <div class="mobile-project-header">
+        <div class="header-image">
+            <img width=100% src="{{header_image}}">
+            {{#if title}}
+            <div class="project-title">
+                <h3>{{ title }}</h3>
             </div>
+            {{/if}}
         </div>
+    </div>
 
     <!-- LARGE SCREEN -->
-        {{#if images}}
-            <!-- Carousel -->
-            <div id="project-carousel-{{index}}" class="project-carousel carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    {{carousel-li 0 true}}
-                    {{#each images}}
-                        {{carousel-li @index false}}
-                    {{/each}}
-                </ol>
-                
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="carousel-item item">
-                        <img width=900 height=500 src="{{header_image}}">
-                    </div>
-                    {{#each images}}
-                        <div class="carousel-item item">
-                            <img width=900 height=500 src="{{this}}">
-                        </div>
-                    {{/each}}
-                </div>
-                
-                <!-- Left and right controls -->
-                <a class="left carousel-control carousel-control-prev" href="#project-carousel-{{index}}" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control carousel-control-next" href="#project-carousel-{{index}}" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+    {{#if images}}
+    <!-- Carousel -->
+    <div id="project-carousel-{{index}}" class="project-carousel carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            {{carousel-li 0 true}}
+            {{#each images}}
+            {{carousel-li @index false}}
+            {{/each}}
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item item">
+                <img width=900 height=500 src="{{header_image}}">
             </div>
-        {{/if}}
+            {{#each images}}
+            <div class="carousel-item item">
+                <img width=900 height=500 src="{{this}}">
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control carousel-control-prev" href="#project-carousel-{{index}}" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control carousel-control-next" href="#project-carousel-{{index}}" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    {{/if}}
 
     {{#if raw_content}}
-        <!-- Raw Content TODO: Make scrolltown invisible on mobile-->
-        <!-- {{{raw_content}}} -->
+    <!-- Raw Content TODO: Make scrolltown invisible on mobile-->
+    <!-- {{{raw_content}}} -->
     {{/if}}
 
     <div class="project-text row">
         <div class="project-details col-md-3">
             <h3>Role</h3>
             <p>
-            {{#each roles}}
+                {{#each roles}}
                 {{ this }}<br>
-            {{/each}}
+                {{/each}}
             </p>
             <h3>Technologies</h3>
             <p>
-            {{#each technologies}}
+                {{#each technologies}}
                 {{this}}<br>
-            {{/each}}
+                {{/each}}
             </p>
             <h3>Duration</h3>
             <p>{{duration}}</p>
@@ -87,19 +87,19 @@
         </div>
 
         <!-- SMALL SCREEN -->
-            <div class="mobile-image-holder">
-                {{#each images}}
-                    <div class="mobile-image col-md-6">
-                        <img src={{this}}>
-                    </div>
-                {{/each}}
+        <div class="mobile-image-holder">
+            {{#each images}}
+            <div class="mobile-image col-md-6">
+                <img src={{this}}>
             </div>
-            <a href="#projects">
-                <div class="mobile-next-project-button row">
-                    <div class="next-project-button">
-                            Next Project <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    </div>
+            {{/each}}
+        </div>
+        <a href="#projects">
+            <div class="mobile-next-project-button row">
+                <div class="next-project-button">
+                    Next Project <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 </div>
-            </a>
+            </div>
+        </a>
     </div>
 </div>
