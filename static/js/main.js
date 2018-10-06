@@ -35,14 +35,14 @@ function getProjectData() {
 }
 
 function bindProjectDisplayEvents(){
-    $('.project-box').on('click', function() {
+    $('.project-title-card').on('click', function() {
         var prevProject = $(".project.active");
         var projectIndex = this.dataset.projectIndex;
 
         $(this).siblings().each(function(i, elem){
-            $(elem).removeClass('selected');
+            $(elem).removeClass('is-selected');
         })
-        $(this).addClass("selected");
+        $(this).addClass("is-selected");
 
         prevProject.removeClass("active");
         displayProjectAtIndex(projectIndex);

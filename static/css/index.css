@@ -9,6 +9,7 @@ body {
 h3 {
   font-family: 'Roboto', sans-serif;
 }
+/* ==================== Bootstrap Tweaks =================== */
 .body {
   padding: 0;
   margin: 0;
@@ -44,6 +45,7 @@ h3 {
 .section-title {
   margin-bottom: 0px;
 }
+/* ==================== Header =================== */
 .header {
   background-color: #141414;
   padding-top: 15px;
@@ -62,20 +64,11 @@ h3 {
 .header img {
   max-width: 100%;
 }
-.projects {
-  background-color: #f6f6f6;
-  padding: 50px 0px 100px 0px;
-  color: #141414;
-}
-@media only screen and (max-width: 991px) {
-  .projects {
-    padding: 50px 0 0 0;
-  }
-}
-.projects .project-box {
+/* ==================== Projects =================== */
+.projects-inlay {
   box-shadow: 0 -2px 5px 1px grey;
 }
-.projects .project {
+.project {
   position: relative;
   display: none;
   padding: 10px 10px 40px 10px;
@@ -83,31 +76,31 @@ h3 {
   height: 100%;
 }
 @media only screen and (max-width: 991px) {
-  .projects .project {
+  .project {
     padding: 0 10px 40px 10px;
   }
 }
-.projects .project.active {
+.project.active {
   display: inline-block;
 }
-.projects .project.slide-in-next {
+.project.slide-in-next {
   top: 0;
   left: -100%;
   animation: slide-in-next 0.3s linear forwards;
 }
-.projects .project.slide-out-next {
+.project.slide-out-next {
   position: absolute;
   display: inline-block;
   top: 0px;
   left: 0px;
   animation: slide-out-next 0.3s linear forwards;
 }
-.projects .project.slide-in-prev {
+.project.slide-in-prev {
   top: 0px;
   left: 100%;
   animation: slide-in-prev 0.3s linear forwards;
 }
-.projects .project.slide-out-prev {
+.project.slide-out-prev {
   position: absolute;
   display: inline-block;
   top: 0px;
@@ -134,15 +127,14 @@ h3 {
     left: -100%;
   }
 }
-.projects .project-selector {
-  min-height: 800px;
-  background-color: #242424;
-  padding: 0px;
-  height: 100%;
+.projects {
+  background-color: #f6f6f6;
+  padding: 50px 0px 100px 0px;
+  color: #141414;
 }
 @media only screen and (max-width: 991px) {
-  .projects .project-selector {
-    display: none;
+  .projects {
+    padding: 50px 0 0 0;
   }
 }
 .projects .project-viewer {
@@ -155,28 +147,6 @@ h3 {
   .projects .project-viewer {
     padding: 0px;
   }
-}
-.projects .project-viewer .mobile-image-holder {
-  width: 100%;
-  margin-top: 30px;
-  text-align: center;
-}
-@media only screen and (min-width: 992px) {
-  .projects .project-viewer .mobile-image-holder {
-    display: none;
-  }
-}
-.projects .project-viewer .mobile-image-holder .mobile-image {
-  display: inline-block;
-}
-.projects .project-viewer .mobile-image-holder img {
-  padding: 5px 0 5px 0;
-  max-width: 100%;
-  max-height: 400px;
-}
-.projects .project-viewer iframe {
-  width: 645px;
-  height: 400px;
 }
 .projects .project-viewer .carousel-indicators {
   bottom: -30px;
@@ -192,57 +162,7 @@ h3 {
 .projects .project-viewer .carousel-indicators li.active {
   background-color: white;
 }
-.projects .project-viewer .project-text {
-  margin: 30px 0 0 0 ;
-}
-.projects .project-viewer .project-details {
-  overflow: hidden;
-}
-.projects .project-viewer .project-selector-carousel {
-  height: 220px;
-  width: 100%;
-  position: absolute;
-  z-index: 10;
-}
-@media only screen and (min-width: 992px) {
-  .projects .project-viewer .project-selector-carousel {
-    display: none;
-  }
-}
-.projects .project-viewer .project-selector-carousel .project-control-next {
-  position: absolute;
-  height: 100%;
-  width: 15%;
-  top: 0;
-  right: 0;
-}
-.projects .project-viewer .project-selector-carousel .project-control-next .project-control-next-icon {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  font-size: 32px;
-  color: white;
-}
-.projects .project-viewer .project-selector-carousel .project-control-prev {
-  position: absolute;
-  height: 100%;
-  width: 15%;
-  top: 0;
-  left: 0;
-}
-.projects .project-viewer .project-selector-carousel .project-control-prev .project-control-prev-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 32px;
-  color: white;
-}
-@media only screen and (max-width: 991px) {
-  .projects .project-carousel {
-    display: none;
-  }
-}
-.projects .mobile-project-header {
+.mobile-project-header {
   margin: 0 -10px 0 -10px;
   position: relative;
   display: block;
@@ -250,18 +170,18 @@ h3 {
   height: 220px;
 }
 @media only screen and (min-width: 992px) {
-  .projects .mobile-project-header {
+  .mobile-project-header {
     display: none;
   }
 }
-.projects .mobile-project-header .header-image {
+.mobile-project-header .header-image {
   height: 100%;
 }
-.projects .mobile-project-header img {
+.mobile-project-header img {
   height: 100%;
   object-fit: cover;
 }
-.projects .mobile-project-header .project-title {
+.mobile-project-header .project-title {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -269,44 +189,106 @@ h3 {
   text-align: center;
   background-image: linear-gradient(to top, #141414, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
-.projects .mobile-project-header .project-title h3 {
+.mobile-project-header .project-title h3 {
   margin: 10px 0 10px 0;
 }
-.projects .project-box {
+.project-selector {
+  min-height: 800px;
+  background-color: #242424;
+  padding: 0px;
+  height: 100%;
+}
+@media only screen and (max-width: 991px) {
+  .project-selector {
+    display: none;
+  }
+}
+.project-title-card {
   position: relative;
   padding: 0px 0px 0px 8px;
   transition: filter 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
   filter: grayscale(100%);
 }
-.projects .project-box:hover {
+.project-title-card:hover {
   filter: grayscale(0%);
   background-color: #606060;
 }
-.projects .project-box.selected {
+.project-title-card.is-selected {
   filter: grayscale(0%);
   background-color: #CE7800;
 }
-.projects .project-box img {
+.project-title-card img {
   max-width: 100%;
   max-height: 100%;
 }
-.projects .project-box > .project-title {
-  position: absolute;
-  width: 100%;
-  font-size: 24px;
-  transition: opacity 0.5s ease;
-  opacity: 0;
+@media only screen and (max-width: 991px) {
+  .project-image-carousel {
+    display: none;
+  }
 }
-.projects .project-box > .project-overlay {
-  position: absolute;
-  display: inline-block;
-  border-radius: 10px;
-  height: 100%;
+.project-text {
+  margin: 30px 0 0 0 ;
+}
+.project-details {
+  overflow: hidden;
+}
+.project-mobile-image-holder {
   width: 100%;
-  background-color: #CE7800;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  margin-top: 30px;
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  .project-mobile-image-holder {
+    display: none;
+  }
+}
+.project-mobile-image-holder .project-mobile-image {
+  display: inline-block;
+}
+.project-mobile-image-holder img {
+  padding: 5px 0 5px 0;
+  max-width: 100%;
+  max-height: 400px;
+}
+.project-selector-carousel {
+  height: 220px;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+}
+@media only screen and (min-width: 992px) {
+  .project-selector-carousel {
+    display: none;
+  }
+}
+.project-control-next {
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  top: 0;
+  right: 0;
+}
+.project-control-next-icon {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  font-size: 32px;
+  color: white;
+}
+.project-control-prev {
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  top: 0;
+  left: 0;
+}
+.project-control-prev-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 32px;
+  color: white;
 }
 .mobile-next-project-button {
   margin: 30px -10px -40px -10px;
@@ -334,6 +316,35 @@ h3 {
   position: relative;
   z-index: 1;
 }
+.about .download-resume {
+  margin: 10px 60px;
+}
+.about .interact-button {
+  border: 2px solid #CE7800;
+  border-radius: 5px;
+  padding: 10px;
+  color: #CE7800;
+  transition: all 0.3s ease;
+}
+.interact-button:hover {
+  color: #606060;
+  background-color: #CE7800;
+}
+.download-link {
+  position: relative;
+  float: right;
+  top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.download-link .download-button {
+  width: 140px;
+  height: 40px;
+}
+.about .about-me-info .col-md-3 {
+  float: none;
+  display: inline-block;
+}
 /* ==================== Contact =================== */
 .contact {
   padding: 25px 0px 25px 0px;
@@ -359,6 +370,7 @@ a:active {
 .contact i {
   color: #CE7800;
 }
+/* ==================== Components =================== */
 .centered-column {
   width: 960px;
   float: none;
@@ -373,7 +385,6 @@ a:active {
   font-family: "Trajan Pro", Times, serif;
   color: #606060;
 }
-/* Short Bar */
 .short-bar {
   background-color: #CE7800;
   height: 4px;
@@ -387,41 +398,12 @@ a:active {
   position: relative;
   left: -33px;
 }
-/* About Me */
-.download-resume {
-  margin: 10px 60px;
-}
-.interact-button {
-  border: 2px solid #CE7800;
-  border-radius: 5px;
-  padding: 10px;
-  color: #CE7800;
-  transition: all 0.3s ease;
-}
-.interact-button:hover {
-  color: #606060;
-  background-color: #CE7800;
-}
-.download-link {
-  position: relative;
-  float: right;
-  top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-}
-.download-link .download-button {
-  width: 140px;
-  height: 40px;
-}
-.download-link .controller-warning {
+.controller-warning {
   font-size: 11px;
 }
+/* About Me */
 a:hover {
   text-decoration: none;
-}
-.about-me-info .col-md-3 {
-  float: none;
-  display: inline-block;
 }
 .container {
   display: table;

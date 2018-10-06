@@ -14,7 +14,7 @@
     <!-- LARGE SCREEN -->
     {{#if images}}
     <!-- Carousel -->
-    <div id="project-carousel-{{index}}" class="project-carousel carousel slide" data-ride="carousel">
+    <div id="project-carousel-{{index}}" class="project-image-carousel carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             {{carousel-li 0 true}}
@@ -87,9 +87,9 @@
         </div>
 
         <!-- SMALL SCREEN -->
-        <div class="mobile-image-holder">
+        <div class="project-mobile-image-holder">
             {{#each images}}
-            <div class="mobile-image col-md-6">
+            <div class="project-mobile-image col-md-6">
                 <img src={{this}}>
             </div>
             {{/each}}
