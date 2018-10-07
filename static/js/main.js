@@ -4,15 +4,15 @@ var projectNames
 var handlebars;
 var index = 0;
 
-$(document).ready(function() {
-    Handlebars.registerHelper('carousel-li', function(curIndex, active){
-        if (active){
+$(document).ready(function () {
+    Handlebars.registerHelper('carousel-li', function (curIndex, active) {
+        if (active) {
             return new Handlebars.SafeString(
                 '<li data-target=".project-carousel-"' + curIndex + '" data-slide-to="' + curIndex + '" class="active"></li>'
             )
         }
         return new Handlebars.SafeString(
-            '<li data-target=".project-carousel-"' + curIndex +'" data-slide-to="' + curIndex + '"></li>'
+            '<li data-target=".project-carousel-"' + curIndex + '" data-slide-to="' + curIndex + '"></li>'
         )
     })
 
@@ -24,7 +24,7 @@ function getProjectData() {
         dataType: "json",
         url: 'static/data/projects.json',
         mimeType: "application/json",
-        success: function(data) {
+        success: function (data) {
             projectData = data;
             projectNames = Object.keys(projectData);
             bindProjectCarouselEvents();
@@ -34,69 +34,69 @@ function getProjectData() {
     });
 }
 
-function bindProjectDisplayEvents(){
-    $('.project-title-card').on('click', function() {
-        var prevProject = $(".project.active");
+function bindProjectDisplayEvents() {
+    $('.projectTitleCard').on('click', function () {
+        var prevProject = $(".project.is-active");
         var projectIndex = this.dataset.projectIndex;
 
-        $(this).siblings().each(function(i, elem){
+        $(this).siblings().each(function (i, elem) {
             $(elem).removeClass('is-selected');
         })
         $(this).addClass("is-selected");
 
-        prevProject.removeClass("active");
+        prevProject.removeClass("is-active");
         displayProjectAtIndex(projectIndex);
     })
 }
 
-function bindProjectCarouselEvents(project){
-    $('.project-control-next').on('click', nextProject);
-    $('.project-control-prev').on('click', prevProject);
+function bindProjectCarouselEvents(project) {
+    $('.projectControl-next').on('click', nextProject);
+    $('.projectControl-prev').on('click', prevProject);
 }
 
-function bindProjectAnimationEvents(project){
+function bindProjectAnimationEvents(project) {
     var projects = $('.project')
-    project.on('animationend', function() {
+    project.on('animationend', function () {
         projects.removeClass('slide-out-next slide-in-next slide-out-prev slide-in-prev');
     })
 }
 
-function nextProject(){
+function nextProject() {
     index = (index + 1) % projectNames.length;
-    var prevProject = $(".project.active");
+    var prevProject = $(".project.is-active");
     var template = displayProjectAtIndex(index);
     template.addClass('slide-in-next');
     prevProject.addClass('slide-out-next');
-    prevProject.one('animationend', function(){
-        prevProject.removeClass('active');
+    prevProject.one('animationend', function () {
+        prevProject.removeClass('is-active');
     });
 }
 
-function prevProject(){
+function prevProject() {
     index = index - 1;
     if (index < 0) {
         index = projectNames.length - 1;
     }
-    var prevProject = $(".project.active");
+    var prevProject = $(".project.is-active");
     var template = displayProjectAtIndex(index);
     template.addClass('slide-in-prev');
     prevProject.addClass('slide-out-prev');
-    prevProject.one('animationend', function(){
-        prevProject.removeClass('active');
+    prevProject.one('animationend', function () {
+        prevProject.removeClass('is-active');
     });
 }
 
-function displayProjectAtIndex(index){
+function displayProjectAtIndex(index) {
     var template = createTemplate(index, projectNames[index]);
-    template.addClass('active');
+    template.addClass('is-active');
     $('.project-viewer').append(template);
     return template;
 }
 
-function createTemplate(index, projectName){
+function createTemplate(index, projectName) {
     var all = $(".project[data-name=" + projectName + "]");
     var existingProject = all.first();
-    if (existingProject.length > 0){
+    if (existingProject.length > 0) {
         return $(existingProject);
     }
 
@@ -104,9 +104,8 @@ function createTemplate(index, projectName){
 
     var templateData = {};
     $.extend(true, templateData, project);
-    console.log(templateData);
-    templateData.description = templateData.description.reduce(function(x, y){return x + y;});
-    templateData.commentary = templateData.commentary.reduce(function(x, y){return x + y;});
+    templateData.description = templateData.description.reduce(function (x, y) { return x + y; });
+    templateData.commentary = templateData.commentary.reduce(function (x, y) { return x + y; });
     templateData.project_name = projectName;
     templateData.project_names = projectNames;
     templateData.index = index;
@@ -114,13 +113,13 @@ function createTemplate(index, projectName){
     var template = $(Handlebars.templates.mobileProject(templateData));
 
     $('.project-viewer').append(template)
-    
+
     // Ensure carousel is active
     template.find('.carousel-inner .item:first').addClass('active');
     template.find('.next-project-button').on('click', nextProject);
 
     bindProjectAnimationEvents(template);
-    
+
     return template;
 
 }

@@ -9,6 +9,30 @@ body {
 h3 {
   font-family: 'Roboto', sans-serif;
 }
+a:hover {
+  text-decoration: none;
+}
+/* ==================== Keyframes =================== */
+@keyframes slide-in-next {
+  100% {
+    left: 0;
+  }
+}
+@keyframes slide-out-next {
+  100% {
+    left: 100%;
+  }
+}
+@keyframes slide-in-prev {
+  100% {
+    left: 0;
+  }
+}
+@keyframes slide-out-prev {
+  100% {
+    left: -100%;
+  }
+}
 /* ==================== Bootstrap Tweaks =================== */
 .body {
   padding: 0;
@@ -33,17 +57,25 @@ h3 {
     padding: 0px;
   }
 }
-.section-header {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  padding: 0 0 45px 0;
-}
-@media only screen and (max-width: 991px) {
-  .section-header {
-    padding: 0 0 15px 0;
-  }
-}
 .section-title {
   margin-bottom: 0px;
+}
+.container {
+  display: table;
+  width: 100%;
+  margin-top: -50px;
+  padding: 50px 0 0 0;
+  /*set left/right padding according to needs*/
+  box-sizing: border-box;
+}
+.row .no-float {
+  display: table-cell;
+  float: none;
+}
+.centered-column {
+  width: 960px;
+  float: none;
+  margin: auto;
 }
 /* ==================== Header =================== */
 .header {
@@ -53,21 +85,34 @@ h3 {
   box-shadow: 0px 0px 5px 3px grey;
   position: relative;
   z-index: 1;
+  font-family: "Trajan Pro", Times, serif;
+  color: #606060;
 }
-.header .the {
+.header-image {
+  max-width: 100%;
+}
+.header-sub {
   font-size: 36px;
   color: #CE7800;
 }
-.header .preston {
+.header-main {
   font-size: 64px;
-}
-.header img {
-  max-width: 100%;
 }
 /* ==================== Projects =================== */
 .projects-inlay {
   box-shadow: 0 -2px 5px 1px grey;
 }
+.projects {
+  background-color: #f6f6f6;
+  padding: 50px 0px 100px 0px;
+  color: #141414;
+}
+@media only screen and (max-width: 991px) {
+  .projects {
+    padding: 50px 0 0 0;
+  }
+}
+/* ==================== Project =================== */
 .project {
   position: relative;
   display: none;
@@ -80,7 +125,7 @@ h3 {
     padding: 0 10px 40px 10px;
   }
 }
-.project.active {
+.project.is-active {
   display: inline-block;
 }
 .project.slide-in-next {
@@ -107,51 +152,51 @@ h3 {
   left: 0px;
   animation: slide-out-prev 0.3s linear forwards;
 }
-@keyframes slide-in-next {
-  100% {
-    left: 0;
-  }
+.project-controllerWarning {
+  font-size: 11px;
 }
-@keyframes slide-out-next {
-  100% {
-    left: 100%;
-  }
-}
-@keyframes slide-in-prev {
-  100% {
-    left: 0;
-  }
-}
-@keyframes slide-out-prev {
-  100% {
-    left: -100%;
-  }
-}
-.projects {
-  background-color: #f6f6f6;
-  padding: 50px 0px 100px 0px;
-  color: #141414;
-}
-@media only screen and (max-width: 991px) {
-  .projects {
-    padding: 50px 0 0 0;
-  }
-}
-.projects .project-viewer {
+/* ==================== projectViewer =================== */
+.project-viewer {
   position: relative;
   background-color: #bcbcbc;
   padding: 15px;
   height: 100%;
 }
 @media only screen and (max-width: 991px) {
-  .projects .project-viewer {
+  .project-viewer {
     padding: 0px;
   }
 }
-.projects .project-viewer .carousel-indicators {
+/* ==================== projectTitleCard=================== */
+.projectTitleCard {
+  position: relative;
+  padding: 0px 0px 0px 8px;
+  transition: filter 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+.projectTitleCard:hover {
+  filter: grayscale(0%);
+  background-color: #606060;
+}
+.projectTitleCard.is-selected {
+  filter: grayscale(0%);
+  background-color: #CE7800;
+}
+.projectTitleCard img {
+  max-width: 100%;
+  max-height: 100%;
+}
+/* ==================== projectImageCarousel =================== */
+@media only screen and (max-width: 991px) {
+  .projectImageCarousel {
+    display: none;
+  }
+}
+.projectImageCarousel-indicators {
   bottom: -30px;
 }
-.projects .project-viewer .carousel-indicators li {
+.projectImageCarousel-indicators li {
   border-radius: 0;
   border: none;
   background-color: grey;
@@ -159,10 +204,15 @@ h3 {
   width: 25px;
   margin: 0;
 }
-.projects .project-viewer .carousel-indicators li.active {
+/* Need to leave 'active' here for bootstrap to recognize it */
+/* Need to specify w and h here to override bootstrap */
+.projectImageCarousel-indicators li.active {
   background-color: white;
+  height: 4px;
+  width: 25px;
 }
-.mobile-project-header {
+/* ==================== mobileProjectHeader =================== */
+.mobileProjectHeader {
   margin: 0 -10px 0 -10px;
   position: relative;
   display: block;
@@ -170,18 +220,18 @@ h3 {
   height: 220px;
 }
 @media only screen and (min-width: 992px) {
-  .mobile-project-header {
+  .mobileProjectHeader {
     display: none;
   }
 }
-.mobile-project-header .header-image {
+.mobileProjectHeader-image {
   height: 100%;
 }
-.mobile-project-header img {
+.mobileProjectHeader-image img {
   height: 100%;
   object-fit: cover;
 }
-.mobile-project-header .project-title {
+.mobileProjectHeader-title {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -189,8 +239,46 @@ h3 {
   text-align: center;
   background-image: linear-gradient(to top, #141414, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
-.mobile-project-header .project-title h3 {
+.mobileProjectHeader-title h3 {
   margin: 10px 0 10px 0;
+}
+/* ==================== mobileProjectImages =================== */
+.mobileProjectImages {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  .mobileProjectImages {
+    display: none;
+  }
+}
+.mobileProjectImages .project-mobile-image {
+  display: inline-block;
+}
+.mobileProjectImages img {
+  padding: 5px 0 5px 0;
+  max-width: 100%;
+  max-height: 400px;
+}
+/* ==================== mobileNextProjectBtn =================== */
+.mobileNextProject {
+  margin: 30px -10px -40px -10px;
+  box-shadow: 0 -5px 5px 2px #CE7800;
+  z-index: 1;
+  cursor: pointer;
+}
+@media only screen and (min-width: 992px) {
+  .mobileNextProject {
+    display: None;
+  }
+}
+.mobileNextProject-btn {
+  color: white;
+  padding: 10px 0 15px 0;
+  width: 100%;
+  text-align: center;
+  background-color: #CE7800;
 }
 .project-selector {
   min-height: 800px;
@@ -203,112 +291,60 @@ h3 {
     display: none;
   }
 }
-.project-title-card {
-  position: relative;
-  padding: 0px 0px 0px 8px;
-  transition: filter 0.3s ease, background-color 0.3s ease;
-  cursor: pointer;
-  filter: grayscale(100%);
-}
-.project-title-card:hover {
-  filter: grayscale(0%);
-  background-color: #606060;
-}
-.project-title-card.is-selected {
-  filter: grayscale(0%);
-  background-color: #CE7800;
-}
-.project-title-card img {
-  max-width: 100%;
-  max-height: 100%;
-}
-@media only screen and (max-width: 991px) {
-  .project-image-carousel {
-    display: none;
-  }
-}
 .project-text {
   margin: 30px 0 0 0 ;
 }
 .project-details {
   overflow: hidden;
 }
-.project-mobile-image-holder {
-  width: 100%;
-  margin-top: 30px;
-  text-align: center;
-}
-@media only screen and (min-width: 992px) {
-  .project-mobile-image-holder {
-    display: none;
-  }
-}
-.project-mobile-image-holder .project-mobile-image {
-  display: inline-block;
-}
-.project-mobile-image-holder img {
-  padding: 5px 0 5px 0;
-  max-width: 100%;
-  max-height: 400px;
-}
-.project-selector-carousel {
+/* ==================== projectControl =================== */
+.projectControl {
   height: 220px;
   width: 100%;
   position: absolute;
   z-index: 10;
 }
 @media only screen and (min-width: 992px) {
-  .project-selector-carousel {
+  .projectControl {
     display: none;
   }
 }
-.project-control-next {
+.projectControl-next {
   position: absolute;
   height: 100%;
   width: 15%;
   top: 0;
   right: 0;
 }
-.project-control-next-icon {
+.projectControl-nextIcon {
   position: absolute;
   top: 50%;
   right: 50%;
   font-size: 32px;
   color: white;
 }
-.project-control-prev {
+.projectControl-prev {
   position: absolute;
   height: 100%;
   width: 15%;
   top: 0;
   left: 0;
 }
-.project-control-prev-icon {
+.projectControl-prevIcon {
   position: absolute;
   top: 50%;
   left: 50%;
   font-size: 32px;
   color: white;
 }
-.mobile-next-project-button {
-  margin: 30px -10px -40px -10px;
-  box-shadow: 0 -5px 5px 2px #CE7800;
-  color: white;
-  z-index: 1;
-  cursor: pointer;
+.project-downloadLink {
+  position: relative;
+  float: right;
+  top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
-@media only screen and (min-width: 992px) {
-  .mobile-next-project-button {
-    display: None;
-  }
-}
-.mobile-next-project-button .next-project-button {
-  padding: 10px 0 15px 0;
-  width: 100%;
-  text-align: center;
-  background-color: #CE7800;
-}
-/* ==================== About =================== */
+/* ==================== about =================== */
 .about {
   padding: 50px 0px 50px 0px;
   color: #bcbcbc;
@@ -316,36 +352,30 @@ h3 {
   position: relative;
   z-index: 1;
 }
+.about col-md-3 {
+  float: none;
+  display: inline-block;
+}
 .about .download-resume {
   margin: 10px 60px;
 }
-.about .interact-button {
+/* ==================== customBtn =================== */
+.customBtn {
   border: 2px solid #CE7800;
   border-radius: 5px;
   padding: 10px;
   color: #CE7800;
   transition: all 0.3s ease;
 }
-.interact-button:hover {
+.customBtn:hover {
   color: #606060;
   background-color: #CE7800;
 }
-.download-link {
-  position: relative;
-  float: right;
-  top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-}
-.download-link .download-button {
+.customBtn--small {
   width: 140px;
   height: 40px;
 }
-.about .about-me-info .col-md-3 {
-  float: none;
-  display: inline-block;
-}
-/* ==================== Contact =================== */
+/* ==================== contact =================== */
 .contact {
   padding: 25px 0px 25px 0px;
   color: #bcbcbc;
@@ -370,57 +400,25 @@ a:active {
 .contact i {
   color: #CE7800;
 }
-/* ==================== Components =================== */
-.centered-column {
-  width: 960px;
-  float: none;
-  margin: auto;
+/* ==================== sectionHeader =================== */
+.sectionHeader {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding: 0 0 45px 0;
 }
-.color-line {
-  background-color: #CE7800;
-  height: 15px;
-  width: 100%;
+@media only screen and (max-width: 991px) {
+  .sectionHeader {
+    padding: 0 0 15px 0;
+  }
 }
-.title {
-  font-family: "Trajan Pro", Times, serif;
-  color: #606060;
-}
-.short-bar {
+.sectionHeader-letterUnderline {
+  position: relative;
   background-color: #CE7800;
   height: 4px;
   width: 40px;
 }
-.short-bar.project-bar {
-  position: relative;
+.sectionHeader-letterUnderline--projects {
   left: -57px;
 }
-.short-bar.about-bar {
-  position: relative;
+.sectionHeader-letterUnderline--about {
   left: -33px;
-}
-.controller-warning {
-  font-size: 11px;
-}
-/* About Me */
-a:hover {
-  text-decoration: none;
-}
-.container {
-  display: table;
-  width: 100%;
-  margin-top: -50px;
-  padding: 50px 0 0 0;
-  /*set left/right padding according to needs*/
-  box-sizing: border-box;
-}
-.row .no-float {
-  display: table-cell;
-  float: none;
-}
-.small-divider {
-  display: block;
-  margin: 9px auto;
-  height: 2px;
-  width: 70px;
-  background-color: #CE7800;
 }

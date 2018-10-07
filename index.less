@@ -13,7 +13,6 @@
 @off-white: #f6f6f6;
 @full-transparent: rgba(0,0,0,0);
 
-
 // Responsiveness Variables
 @small-screen: ~"only screen and (max-width: 991px)";
 @large-screen: ~"only screen and (min-width: 992px)";
@@ -26,11 +25,26 @@ body {
   color: @light-font-color;
   line-height: 1.5;
 }
-
 h3 {
     font-family: 'Roboto', sans-serif;
 }
+a:hover {
+  text-decoration: none;
+}
 
+/* ==================== Keyframes =================== */
+@keyframes slide-in-next {
+    100% { left: 0; }
+}
+@keyframes slide-out-next {
+    100% { left: 100%; }
+}
+@keyframes slide-in-prev {
+    100% { left: 0; }
+}
+@keyframes slide-out-prev {
+    100% { left: -100%; }
+}
 
 /* ==================== Bootstrap Tweaks =================== */
 .body {
@@ -56,15 +70,24 @@ h3 {
         padding: 0px;
     }
 }
-.section-header {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  padding: 0 0 45px 0;
-  @media @small-screen {
-      padding: 0 0 15px 0;
-  }
-}
 .section-title {
   margin-bottom: 0px;
+}
+.container {
+  display:table;
+  width: 100%;
+  margin-top: -50px;
+  padding: 50px 0 0 0; /*set left/right padding according to needs*/
+  box-sizing: border-box;
+}
+.row .no-float {
+  display: table-cell;
+  float: none;
+}
+.centered-column {
+  width:960px;
+  float:none;
+  margin: auto;
 }
 
 /* ==================== Header =================== */
@@ -75,22 +98,34 @@ h3 {
   box-shadow: 0px 0px 5px 3px grey;
   position: relative;
   z-index: 1;
+  font-family: "Trajan Pro", Times, serif;
+  color: @primary-color;
 }
-.header .the {
+.header-image {
+  max-width: 100%;
+}
+.header-sub {
   font-size: 36px;
   color: @accent-color
 }
-.header .preston {
+.header-main {
   font-size: 64px;
-}
-.header img {
-  max-width: 100%;
 }
 
 /* ==================== Projects =================== */
 .projects-inlay {
   box-shadow: 0 -2px 5px 1px grey;
 }
+.projects {
+  background-color: @off-white;
+  padding: 50px 0px 100px 0px;
+  color: @dark-font-color;
+  @media @small-screen {
+      padding: 50px 0 0 0;
+  }
+}
+
+/* ==================== Project =================== */
 .project {
   position: relative;
   display: none;
@@ -101,7 +136,7 @@ h3 {
       padding: 0 10px 40px 10px
   }
 }
-.project&.active {
+.project&.is-active {
   display: inline-block;
 }
 .project&.slide-in-next {
@@ -128,52 +163,69 @@ h3 {
   left: 0px;
   animation: slide-out-prev .3s linear forwards;
 }
-@keyframes slide-in-next {
-    100% { left: 0; }
+.project-controllerWarning {
+  font-size: 11px;
 }
-@keyframes slide-out-next {
-    100% { left: 100%; }
-}
-@keyframes slide-in-prev {
-    100% { left: 0; }
-}
-@keyframes slide-out-prev {
-    100% { left: -100%; }
-}
-.projects {
-  background-color: @off-white;
-  padding: 50px 0px 100px 0px;
-  color: @dark-font-color;
+
+/* ==================== projectViewer =================== */
+.project-viewer {
+  position: relative;
+  background-color: @light-font-color;
+  padding: 15px;
+  height: 100%;
   @media @small-screen {
-      padding: 50px 0 0 0;
-  }
-
-  .project-viewer {
-    position: relative;
-    background-color: @light-font-color;
-    padding: 15px;
-    height: 100%;
-    @media @small-screen {
-        padding: 0px;
-    }
-    .carousel-indicators {
-      bottom: -30px;
-      li {
-          border-radius: 0;
-          border: none;
-          background-color: grey;
-          height: 4px;
-          width: 25px;
-          margin: 0;
-      }
-      li.active {
-          background-color: white;
-      }
-    }
+    padding: 0px;
   }
 }
 
-.mobile-project-header {
+/* ==================== projectTitleCard=================== */
+.projectTitleCard {
+  position: relative;
+  padding: 0px 0px 0px 8px;
+  transition: filter 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+.projectTitleCard&:hover {
+  filter: grayscale(0%);
+  background-color: @primary-color;
+}
+.projectTitleCard&.is-selected {
+  filter: grayscale(0%);
+  background-color: @accent-color;
+}
+.projectTitleCard img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* ==================== projectImageCarousel =================== */
+.projectImageCarousel {
+    @media @small-screen {
+        display: none;
+    }
+}
+.projectImageCarousel-indicators {
+  bottom: -30px;
+}
+.projectImageCarousel-indicators li {
+  border-radius: 0;
+  border: none;
+  background-color: grey;
+  height: 4px;
+  width: 25px;
+  margin: 0;
+}
+/* Need to leave 'active' here for bootstrap to recognize it */
+/* Need to specify w and h here to override bootstrap */
+.projectImageCarousel-indicators li.active{
+  background-color: white;
+  height: 4px;
+  width: 25px;
+}
+
+/* ==================== mobileProjectHeader =================== */
+.mobileProjectHeader{
   margin: 0 -10px 0 -10px;
   position: relative;
   display: block;
@@ -182,30 +234,62 @@ h3 {
   @media @large-screen {
       display: none;
   }
-
-  .header-image {
-    height: 100%;
-  }
-
-  img {
-    height: 100%;
-    object-fit: cover;
-  }      
-
-  .project-title {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    background-image: linear-gradient(to top, @off-black, @75pc-off-black-transparent, @full-transparent);
-    
-    h3 {
-      margin: 10px 0 10px 0;
-    }
-  }
 }
-      
+.mobileProjectHeader-image {
+  height: 100%;
+}
+.mobileProjectHeader-image img{
+  height: 100%;
+  object-fit: cover;
+}      
+.mobileProjectHeader-title{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-image: linear-gradient(to top, @off-black, @75pc-off-black-transparent, @full-transparent);
+}
+.mobileProjectHeader-title h3{
+  margin: 10px 0 10px 0;
+}
+
+/* ==================== mobileProjectImages =================== */
+.mobileProjectImages {
+  @media @large-screen {
+      display: none;
+  }
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+.mobileProjectImages .project-mobile-image {
+  display: inline-block
+}
+.mobileProjectImages img {
+  padding: 5px 0 5px 0;
+  max-width: 100%;
+  max-height: 400px;
+}
+
+/* ==================== mobileNextProjectBtn =================== */
+.mobileNextProject {
+    margin: 30px -10px -40px -10px;
+    box-shadow: 0 -5px 5px 2px @accent-color;
+    z-index: 1;
+    cursor: pointer;
+    @media @large-screen {
+        display: None
+    }
+}
+.mobileNextProject-btn {
+    color: white;
+    padding: 10px 0 15px 0;
+    width: 100%;
+    text-align: center;
+    background-color: @accent-color
+}
+
 .project-selector {
   min-height: 800px;
   background-color: @background-color;
@@ -215,63 +299,16 @@ h3 {
       display: none;
   }
 }
-.project-title-card {
-  position: relative;
-  padding: 0px 0px 0px 8px;
-  transition: filter 0.3s ease, background-color 0.3s ease;
-  cursor: pointer;
-  filter: grayscale(100%);
-}
-.project-title-card&:hover {
-  filter: grayscale(0%);
-  background-color: @primary-color;
-}
-.project-title-card&.is-selected {
-  filter: grayscale(0%);
-  background-color: @accent-color;
-}
-.project-title-card img {
-  max-width: 100%;
-  max-height: 100%;
-}
-// .project-title-card>.project-overlay {
-//   position: absolute;
-//   display: inline-block;
-//   border-radius: 10px;
-//   height: 100%;
-//   width: 100%;
-//   background-color: @accent-color;
-//   opacity: 0;
-//   transition: opacity 0.5s ease;
-// }
-.project-image-carousel {
-    @media @small-screen {
-        display: none;
-    }
-}
 .project-text {
   margin: 30px 0 0 0 ;
 }
 .project-details {
   overflow: hidden;
 }
-.project-mobile-image-holder {
-  @media @large-screen {
-      display: none;
-  }
-  width: 100%;
-  margin-top: 30px;
-  text-align: center;
-}
-.project-mobile-image-holder .project-mobile-image {
-  display: inline-block
-}
-.project-mobile-image-holder img {
-  padding: 5px 0 5px 0;
-  max-width: 100%;
-  max-height: 400px;
-}
-.project-selector-carousel {
+
+
+/* ==================== projectControl =================== */
+.projectControl {
   @media @large-screen {
       display: none;
   }
@@ -280,55 +317,43 @@ h3 {
   position: absolute;
   z-index: 10;
 }
-.project-control-next {
+.projectControl-next {
     position: absolute;
     height: 100%;
     width: 15%;
     top: 0;
     right: 0;
 }
-.project-control-next-icon {
+.projectControl-nextIcon {
     position: absolute;
     top: 50%;
     right: 50%;
     font-size: 32px;
     color: white;
 }
-.project-control-prev {
+.projectControl-prev {
     position: absolute;
     height: 100%;
     width: 15%;
     top: 0;
     left: 0;
 }
-.project-control-prev-icon {
+.projectControl-prevIcon {
     position: absolute;
     top: 50%;
     left: 50%;
     font-size: 32px;
     color: white;
 }
-
-.mobile-next-project-button {
-    margin: 30px -10px -40px -10px;
-    box-shadow: 0 -5px 5px 2px @accent-color;
-    color: white;
-    z-index: 1;
-    cursor: pointer;
-
-    @media @large-screen {
-        display: None
-    }
-
-    .next-project-button {
-        padding: 10px 0 15px 0;
-        width: 100%;
-        text-align: center;
-        background-color: @accent-color
-    }
+.project-downloadLink {
+  position: relative;
+  float: right;
+  top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
-/* ==================== About =================== */
+/* ==================== about =================== */
 .about {
   padding: 50px 0px 50px 0px;
   color: @light-font-color;
@@ -336,37 +361,32 @@ h3 {
   position: relative;
   z-index: 1;
 }
+.about col-md-3 {
+  float: none;
+  display: inline-block;
+}
 .about .download-resume {
   margin: 10px 60px;
 }
-.about .interact-button {
+
+/* ==================== customBtn =================== */
+.customBtn {
   border: 2px solid @accent-color;
   border-radius: 5px;
   padding: 10px;
   color: @accent-color;
   transition: all 0.3s ease;
 }
-.interact-button:hover {
+.customBtn:hover{
   color: @primary-color;
   background-color: @accent-color;
 }
-.download-link {
-  position: relative;
-  float: right;
-  top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-}
-.download-link .download-button {
+.customBtn--small {
   width: 140px;
   height: 40px;
 }
-.about .about-me-info .col-md-3 {
-  float: none;
-  display: inline-block;
-}
 
-/* ==================== Contact =================== */
+/* ==================== contact =================== */
 .contact {
   padding: 25px 0px 25px 0px;
   color: @light-font-color;
@@ -389,62 +409,24 @@ h3 {
   color: @accent-color;
 }
 
-/* ==================== Components =================== */
-.centered-column {
-  width:960px;
-  float:none;
-  margin: auto;
+/* ==================== sectionHeader =================== */
+.sectionHeader {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding: 0 0 45px 0;
+  @media @small-screen {
+      padding: 0 0 15px 0;
+  }
 }
-.color-line {
-  background-color: @accent-color;
-  height: 15px;
-  width: 100%;
-}
-.title {
-  font-family: "Trajan Pro", Times, serif;
-  color: @primary-color;
-}
-.short-bar {
+.sectionHeader-letterUnderline{
+  position: relative;
   background-color: @accent-color;
   height: 4px;
   width: 40px;
 }
-.short-bar&.project-bar {
-  position: relative;
+.sectionHeader-letterUnderline--projects{
   left: -57px;
 }
-.short-bar&.about-bar {
-  position: relative;
+.sectionHeader-letterUnderline--about {
   left: -33px;
 }
   
-.controller-warning {
-  font-size: 11px;
-}
-  
-/* About Me */
-a:hover {
-  text-decoration: none;
-}
-
-
-.container {
-  display:table;
-  width: 100%;
-  margin-top: -50px;
-  padding: 50px 0 0 0; /*set left/right padding according to needs*/
-  box-sizing: border-box;
-}
-
-.row .no-float {
-  display: table-cell;
-  float: none;
-}
-
-.small-divider {
-  display: block;
-  margin: 9px auto;
-  height: 2px;
-  width: 70px;
-  background-color: @accent-color;
-}

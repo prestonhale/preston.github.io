@@ -1,10 +1,10 @@
 <div class="project" data-name="{{ project_name }}">
     <!-- SMALL SCREEN -->
-    <div class="mobile-project-header">
-        <div class="header-image">
+    <div class="mobileProjectHeader">
+        <div class="mobileProjectHeader-image">
             <img width=100% src="{{header_image}}">
             {{#if title}}
-            <div class="project-title">
+            <div class="mobileProjectHeader-title">
                 <h3>{{ title }}</h3>
             </div>
             {{/if}}
@@ -14,9 +14,9 @@
     <!-- LARGE SCREEN -->
     {{#if images}}
     <!-- Carousel -->
-    <div id="project-carousel-{{index}}" class="project-image-carousel carousel slide" data-ride="carousel">
+    <div id="project-carousel-{{index}}" class="projectImageCarousel carousel slide" data-ride="carousel">
         <!-- Indicators -->
-        <ol class="carousel-indicators">
+        <ol class="carousel-indicators projectImageCarousel-indicators">
             {{carousel-li 0 true}}
             {{#each images}}
             {{carousel-li @index false}}
@@ -71,13 +71,13 @@
         </div>
         <div class="col-md-9">
             {{#if download_link}}
-            <div class="download-link text-center">
+            <div class="project-downloadLink text-center">
                 <a href="{{download_link}}">
-                    <div class="interact-button download-button text-center">
+                    <div class="customBtn customBtn--small text-center">
                         Download Game
                     </div>
                 </a>
-                <span class="controller-warning">{{controller_warning}}
+                <span class="project-controllerWarning">{{controller_warning}}
             </div>
             {{/if}}
             <h3>Overview</h3>
@@ -87,19 +87,19 @@
         </div>
 
         <!-- SMALL SCREEN -->
-        <div class="project-mobile-image-holder">
+        <div class="mobileProjectImages">
             {{#each images}}
-            <div class="project-mobile-image col-md-6">
+            <div class="mobileProjectImages-image col-md-6">
                 <img src={{this}}>
             </div>
             {{/each}}
         </div>
-        <a href="#projects">
-            <div class="mobile-next-project-button row">
-                <div class="next-project-button">
+        <div class="mobileNextProject row">
+            <a href="#projects">
+                <div class="mobileNextProject-btn">
                     Next Project <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 </div>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 </div>
