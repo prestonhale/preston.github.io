@@ -50,8 +50,8 @@ function bindProjectDisplayEvents() {
 }
 
 function bindProjectCarouselEvents(project) {
-    $('.projectControl-next').on('click', nextProject);
-    $('.projectControl-prev').on('click', prevProject);
+    $('.projectControl-next').on('click', animatedNextProject);
+    $('.projectControl-prev').on('click', animatedPrevProject);
 }
 
 function bindProjectAnimationEvents(project) {
@@ -61,7 +61,14 @@ function bindProjectAnimationEvents(project) {
     })
 }
 
-function nextProject() {
+function nextProject(){
+    index = (index + 1) % projectNames.length;
+    var prevProject = $(".project.is-active");
+    displayProjectAtIndex(index);
+    prevProject.removeClass('is-active');
+}
+
+function animatedNextProject() {
     index = (index + 1) % projectNames.length;
     var prevProject = $(".project.is-active");
     var template = displayProjectAtIndex(index);
@@ -72,7 +79,16 @@ function nextProject() {
     });
 }
 
-function prevProject() {
+function prevProject(){
+    if (index < 0) {
+        index = projectNames.length - 1;
+    }
+    var prevProject = $(".project.is-active");
+    displayProjectAtIndex(index);
+    prevProject.removeClass('is-active');
+}
+
+function animatedPrevProject() {
     index = index - 1;
     if (index < 0) {
         index = projectNames.length - 1;
@@ -116,7 +132,7 @@ function createTemplate(index, projectName) {
 
     // Ensure carousel is active
     template.find('.carousel-inner .item:first').addClass('active');
-    template.find('.next-project-button').on('click', nextProject);
+    template.find('.mobileNextProject-btn').on('click', nextProject);
 
     bindProjectAnimationEvents(template);
 
