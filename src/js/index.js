@@ -2,6 +2,7 @@ var projectData;
 var projectNames
 var handlebars;
 var index = 0;
+var projectAnimating = false;
 
 $(document).ready(function () {
     Handlebars.registerHelper('carousel-li', function (curIndex, active) {
@@ -48,7 +49,7 @@ function bindProjectDisplayEvents() {
     })
 }
 
-function bindProjectCarouselEvents(project) {
+function bindProjectCarouselEvents() {
     $('.projectControl-next').on('click', animatedNextProject);
     $('.projectControl-prev').on('click', animatedPrevProject);
 }
@@ -65,9 +66,14 @@ function nextProject(){
     var prevProject = $(".project.is-active");
     displayProjectAtIndex(index);
     prevProject.removeClass('is-active');
+    bindProjectCarouselEvents();
 }
 
 function animatedNextProject() {
+    if (projectAnimating){
+        return;
+    }
+    projectAnimating = true;
     index = (index + 1) % projectNames.length;
     var prevProject = $(".project.is-active");
     var template = displayProjectAtIndex(index);
@@ -75,6 +81,8 @@ function animatedNextProject() {
     prevProject.addClass('slide-out-next');
     prevProject.one('animationend', function () {
         prevProject.removeClass('is-active');
+        bindProjectCarouselEvents();
+        projectAnimating = false;
     });
 }
 
@@ -85,9 +93,14 @@ function prevProject(){
     var prevProject = $(".project.is-active");
     displayProjectAtIndex(index);
     prevProject.removeClass('is-active');
+    bindProjectCarouselEvents();
 }
 
 function animatedPrevProject() {
+    if (projectAnimating){
+        return;
+    }
+    projectAnimating = true;
     index = index - 1;
     if (index < 0) {
         index = projectNames.length - 1;
@@ -98,6 +111,8 @@ function animatedPrevProject() {
     prevProject.addClass('slide-out-prev');
     prevProject.one('animationend', function () {
         prevProject.removeClass('is-active');
+        bindProjectCarouselEvents();
+        projectAnimating = false;
     });
 }
 
