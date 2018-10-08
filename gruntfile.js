@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         less: {
             development: {
                 files: [
-                    {src: "./index.less", dest: "static/css/index.css"}
+                    {src: "./index.less", dest: "dist/static/css/index.css"}
                 ]
             }
         },
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
         browserify: {
             development: {
                 files: [
-                    {src: "src/**/*.js", dest: "static/js/main.js"}
+                    {src: "src/**/*.js", dest: "dist/static/js/main.js"}
                 ]
             }
         },
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         handlebars: {
             all: {
                 files: {
-                    'static/templates/templatesCompiled.js': 'src/templates/*.handlebars'
+                    'dist/static/templates/templatesCompiled.js': 'src/templates/*.handlebars'
                 }
             }
         },
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'static/images/',
+                    cwd: 'src/images/',
                     src: ['**/*.{png,jpg,gif}'],
                     dest: 'dist/static/images/'
                 }],

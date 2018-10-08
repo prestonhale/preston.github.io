@@ -13,8 +13,8 @@
         ],
         "download_link": "https://steamcommunity.com/sharedfiles/filedetails/?id=285580543",
         "controller_warning": "",
-        "thumbnail_image": "static/images/greatBear/m-selector.jpg",
-        "header_image": "static/images/greatBear/m-bigBear.jpg",
+        "thumbnail_image": "dist/static/images/greatBear/m-selector.jpg",
+        "header_image": "dist/static/images/greatBear/m-bigBear.jpg",
         "images": [
             "dist/static/images/greatBear/m-freya.jpg",
             "dist/static/images/greatBear/m-cave.jpg"
@@ -54,8 +54,8 @@
         ],
         "download_link": "https://globalgamejam.org/2017/games/keep-it-groovy",
         "controller_warning": "4 Controllers Required",
-        "thumbnail_image": "static/images/keepItGroovy/m-selector.jpg",
-        "header_image": "static/images/keepItGroovy/m-title.jpg",
+        "thumbnail_image": "dist/static/images/keepItGroovy/m-selector.jpg",
+        "header_image": "dist/static/images/keepItGroovy/m-title.jpg",
         "images": [
             "dist/static/images/keepItGroovy/m-straight.jpg",
             "dist/static/images/keepItGroovy/m-twisted.jpg"
@@ -98,7 +98,7 @@
         ],
         "download_link": "https://globalgamejam.org/2017/games/rpg-priest-simulator",
         "controller_warning": "",
-        "thumbnail_image": "static/images/priestSimulator/m-selector.jpg",
+        "thumbnail_image": "dist/static/images/priestSimulator/m-selector.jpg",
         "header_image": "dist/static/images/priestSimulator/m-title.jpg",
         "images": [
             "dist/static/images/priestSimulator/m-insurance.jpg",
@@ -131,9 +131,9 @@
             "Unity Engine",
             "C#"
         ],
-        "download_link": "static/executables/Dancemission.exe",
+        "download_link": "executables/Dancemission.exe",
         "controller_warning": "2 Controllers Required",
-        "thumbnail_image": "static/images/dancemission/m-selector.jpg",
+        "thumbnail_image": "dist/static/images/dancemission/m-selector.jpg",
         "header_image": "dist/static/images/dancemission/m-main.jpg",
         "images": [
             "dist/static/images/dancemission/m-game.jpg"
@@ -170,7 +170,7 @@
         ],
         "download_link": "",
         "controller_warning": "",
-        "thumbnail_image": "static/images/scrolltown/m-selector.jpg",
+        "thumbnail_image": "dist/static/images/scrolltown/m-selector.jpg",
         "header_image": "dist/static/images/scrolltown/thumbnail.png",
         "images": [
             "dist/static/images/scrolltown/m-scroll1.jpg",

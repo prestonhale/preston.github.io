@@ -23,7 +23,7 @@ $(document).ready(function () {
 function getProjectData() {
     $.ajax({
         dataType: "json",
-        url: 'static/data/projects.json',
+        url: 'projects.json',
         mimeType: "application/json",
         success: function (data) {
             projectData = data;
