@@ -237,6 +237,11 @@ a:hover {
   width: 25px;
   margin: 0;
 }
+/* This is another bootstrap override */
+.projectImageCarousel .carousel-inner img {
+  height: 450px;
+  background-size: cover;
+}
 /* Need to leave 'active' here for bootstrap to recognize it */
 /* Need to specify w and h here to override bootstrap */
 .projectImageCarousel-indicators li.active{
@@ -365,10 +370,6 @@ a:hover {
   box-shadow: 0 3px 5px 3px @background-color;
   position: relative;
   z-index: 1;
-}
-.about col-md-3 {
-  float: none;
-  display: inline-block;
 }
 .about .download-resume {
   margin: 10px 60px;
