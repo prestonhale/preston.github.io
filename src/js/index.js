@@ -27,11 +27,24 @@ function getProjectData() {
         success: function (data) {
             projectData = data;
             projectNames = Object.keys(projectData);
+            displayProjectTitleCards();
             bindProjectCarouselEvents();
             displayProjectAtIndex(0);
             bindProjectDisplayEvents();
         }
     });
+}
+
+function displayProjectTitleCards(){
+    var index = 0;
+    for (var projectName in projectData){
+        var project = projectData[projectName];
+        var titleCard = $('.projectTitleCardTemplate').clone();
+        titleCard.find('img').attr('src', project.thumbnail_image)
+        titleCard.find('.projectTitleCard').attr("data-project-index", index)
+        $('.projectSelector').append(titleCard.html());
+        index += 1;
+    }
 }
 
 function bindProjectDisplayEvents() {

@@ -99,9 +99,6 @@ a:hover {
   font-size: 64px;
 }
 /* ==================== Projects =================== */
-.projects-inlay {
-  box-shadow: 0 -2px 5px 1px grey;
-}
 .projects {
   background-color: #f6f6f6;
   padding: 50px 0px 100px 0px;
@@ -111,6 +108,27 @@ a:hover {
   .projects {
     padding: 50px 0 0 0;
   }
+}
+.projects-inlay {
+  box-shadow: 0 -2px 5px 1px grey;
+}
+/* ==================== projectSelector =================== */
+.projectSelector {
+  min-height: 800px;
+  background-color: #242424;
+  padding: 0px;
+  height: 100%;
+}
+@media only screen and (max-width: 991px) {
+  .projectSelector {
+    display: none;
+  }
+}
+.project-text {
+  margin: 30px 0 0 0 ;
+}
+.project-details {
+  overflow: hidden;
 }
 /* ==================== Project =================== */
 .project {
@@ -186,6 +204,9 @@ a:hover {
 .projectTitleCard img {
   max-width: 100%;
   max-height: 100%;
+}
+.projectTitleCardTemplate {
+  display: none;
 }
 /* ==================== projectImageCarousel =================== */
 @media only screen and (max-width: 991px) {
@@ -279,23 +300,6 @@ a:hover {
   width: 100%;
   text-align: center;
   background-color: #CE7800;
-}
-.project-selector {
-  min-height: 800px;
-  background-color: #242424;
-  padding: 0px;
-  height: 100%;
-}
-@media only screen and (max-width: 991px) {
-  .project-selector {
-    display: none;
-  }
-}
-.project-text {
-  margin: 30px 0 0 0 ;
-}
-.project-details {
-  overflow: hidden;
 }
 /* ==================== projectControl =================== */
 .projectControl {
