@@ -237,10 +237,11 @@ a:hover {
   width: 25px;
   margin: 0;
 }
-/* This is another bootstrap override */
+/* Specifying 'carousel-inner' is necessary to override bootstrap*/
 .projectImageCarousel .carousel-inner img {
   height: 450px;
-  background-size: cover;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 /* Need to leave 'active' here for bootstrap to recognize it */
 /* Need to specify w and h here to override bootstrap */
@@ -371,6 +372,7 @@ a:hover {
   position: relative;
   z-index: 1;
 }
+
 .about .download-resume {
   margin: 10px 60px;
 }
