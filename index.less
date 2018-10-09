@@ -121,10 +121,12 @@ a:hover {
       padding: 50px 0 0 0;
   }
 }
-.projectsInlay {
-  box-shadow: 0 -2px 5px 1px grey;
+.projectsContainer {
   max-width: 950px;
   margin: 0 auto;
+}
+.projectsContainer-inlay {
+  box-shadow: 0 -2px 5px 1px grey;
 }
 
 /* ==================== projectSelector =================== */
@@ -440,3 +442,14 @@ a:hover {
   left: -33px;
 }
   
+/* ==================== sectionTab =================== */
+.sectionTabs {
+    width: 94%;
+    margin: 0 auto;
+}
+.sectionTab {
+    flex-direction: row;
+    box-shadow: 0 -5px 5px 2px @primary-color;
+}
+.sectionTab&is-selected {
+}
