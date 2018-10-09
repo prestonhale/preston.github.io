@@ -67,9 +67,9 @@ templates['mobileProject'] = template({"1":function(container,depth0,helpers,par
     + ((stack1 = helpers["if"].call(depth0,(depth0 != null ? depth0.images : depth0),{"name":"if","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "\r\n"
     + ((stack1 = helpers["if"].call(depth0,(depth0 != null ? depth0.raw_content : depth0),{"name":"if","hash":{},"fn":container.program(8, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "\r\n    <div class=\"project-text row\">\r\n        <div class=\"project-details col-md-3\">\r\n            <h3>Role</h3>\r\n            <p>\r\n"
+    + "\r\n    <div class=\"project-text row\">\r\n        <div class=\"projectDetails col-md-3\">\r\n            <h3>Role</h3>\r\n            <p>\r\n"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.roles : depth0),{"name":"each","hash":{},"fn":container.program(10, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "            </p>\r\n            <h3>Technologies</h3>\r\n            <p>\r\n"
+    + "            </p>\r\n            <h3 class=\"projectDetails-techHeader\">Tech</h3>\r\n            <p>\r\n"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.technologies : depth0),{"name":"each","hash":{},"fn":container.program(10, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "            </p>\r\n            <h3>Duration</h3>\r\n            <p>"
     + alias3(((helper = (helper = helpers.duration || (depth0 != null ? depth0.duration : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"duration","hash":{},"data":data}) : helper)))
