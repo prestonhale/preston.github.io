@@ -449,6 +449,14 @@ a:active {
 .sectionTab {
   flex-grow: 1;
   flex-basis: 0;
+  text-align: center;
+  color: grey;
+}
+.sectionTab-textContainer {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
 }
 .sectionTab.is-active {
   color: black;
@@ -458,13 +466,11 @@ a:active {
   position: relative;
   background-color: #CE7800;
   height: 4px;
-  width: 40px;
+  width: 43px;
+  top: -12px;
 }
 .sectionTab-letterUnderline.is-active {
   display: inline-block;
-}
-.sectionTab-letterUnderline--projects {
-  left: -57px;
 }
 .sectionTab-letterUnderline--about {
   left: -33px;
