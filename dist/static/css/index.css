@@ -435,10 +435,41 @@ a:active {
 }
 /* ==================== sectionTab =================== */
 .sectionTabs {
-  width: 94%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: lightgrey;
+  padding: 0 0 45px 0;
+}
+@media only screen and (max-width: 991px) {
+  .sectionTabs {
+    padding: 0 0 15px 0;
+  }
 }
 .sectionTab {
-  flex-direction: row;
-  box-shadow: 0 -5px 5px 2px #606060;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.sectionTab.is-active {
+  color: black;
+}
+.sectionTab-letterUnderline {
+  display: none;
+  position: relative;
+  background-color: #CE7800;
+  height: 4px;
+  width: 40px;
+}
+.sectionTab-letterUnderline.is-active {
+  display: inline-block;
+}
+.sectionTab-letterUnderline--projects {
+  left: -57px;
+}
+.sectionTab-letterUnderline--about {
+  left: -33px;
+}
+.sectionTabDivider {
+  background-image: linear-gradient(to top, white 0, lightgrey 10%, lightgrey 90%, white 100%);
+  width: 3px;
 }
