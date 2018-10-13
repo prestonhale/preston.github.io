@@ -44,10 +44,14 @@ function displayProjectTitleCards(){
     var index = 0;
     for (var projectName in projectData){
         var project = projectData[projectName];
-        var titleCard = $('.projectTitleCardTemplate').clone();
+        var titleCardClone = $('.projectTitleCardTemplate').clone();
+        var titleCard = titleCardClone.find('.projectTitleCard')
         titleCard.find('img').attr('src', project.thumbnail_image)
-        titleCard.find('.projectTitleCard').attr("data-project-index", index)
-        $('.projectSelector').append(titleCard.html());
+        titleCard.attr("data-project-index", index)
+        if (index === 0){
+            titleCard.addClass('is-selected');
+        }
+        $('.projectSelector').append(titleCardClone.html());
         index += 1;
     }
 }
