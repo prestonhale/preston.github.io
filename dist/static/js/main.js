@@ -18,6 +18,7 @@ $(document).ready(function () {
     })
 
     getProjectData();
+    bindTabEvents();
 });
 
 function getProjectData() {
@@ -34,6 +35,10 @@ function getProjectData() {
             bindProjectDisplayEvents();
         }
     });
+}
+
+function bindTabEvents(){
+    $('.sectionTab').on('click', activateTab);
 }
 
 function displayProjectTitleCards(){
@@ -165,6 +170,18 @@ function createTemplate(index, projectName) {
     bindProjectAnimationEvents(template);
 
     return template;
+}
 
+function activateTab(event){
+    event.preventDefault();
+    event.stopPropagation();
+    var tab = $(event.currentTarget);
+    tab.siblings().removeClass('is-active');
+    tab.addClass('is-active');
+    performTabActiveActions(tab);
+}
+
+function performTabActiveActions(tab){
+    console.log(tab.data('tab-name'));
 }
 },{}]},{},[1]);
