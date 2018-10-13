@@ -182,6 +182,14 @@ function activateTab(event){
 }
 
 function performTabActiveActions(tab){
-    console.log(tab.data('tab-name'));
+    var tabName = tab.data('tab-name');
+    centralContainerChildren = $('.centralContainer').children();
+    var activeTabContent = centralContainerChildren.filter('[data-container-name='+tabName+']')[0];
+    if (activeTabContent){
+        centralContainerChildren.removeClass('is-active');
+        $(activeTabContent).addClass('is-active');
+    } else {
+        console.log('No content found.');
+    }
 }
 },{}]},{},[1]);
