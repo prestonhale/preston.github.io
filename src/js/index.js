@@ -53,7 +53,7 @@ function getWritingData() {
             try {
                 writingData = yaml.safeLoad(data);
                 writingIndex = writingData.length - 1;
-                renderWritingIndex(writingIndex);
+                setupWritingContainer();
             } catch (e) {
                 console.log(e);
             }
@@ -221,12 +221,25 @@ function performTabActiveActions(tab){
     }
 }
 
+function setupWritingContainer(){
+    var mostRecentPostIndex = writingData.length - 1;
+    $('.writingContainer-mostRecent').on('click', function(){
+        renderWritingIndex(mostRecentPostIndex);
+    })
+    renderWritingIndex(mostRecentPostIndex);
+}
+
 function renderWritingIndex(index){
     writingIndex = index;
     var firstWriting = writingData[writingIndex]
     $('.writingContainer-title').html(firstWriting['title']);
     $('.writingContainer-date').html(firstWriting['date']);
     $('.writingContainer-content').html(firstWriting['content']);
+    if (index === writingData.length - 1){
+        $('.writingContainer-mostRecent').removeClass('is-active');
+    } else {
+        $('.writingContainer-mostRecent').addClass('is-active');
+    }
     renderPreviousPosts();
 }
 

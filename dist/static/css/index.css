@@ -149,6 +149,12 @@ h3 {
 .writingContainer-postLink {
   display: block;
 }
+.writingContainer-mostRecent {
+  display: none;
+}
+.writingContainer-mostRecent.is-active {
+  display: inline-block;
+}
 /* ==================== Projects =================== */
 .projectsContainer {
   position: relative;
