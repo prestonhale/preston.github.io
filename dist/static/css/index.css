@@ -118,6 +118,20 @@ a:hover {
 .tabContainer.is-active {
   display: block;
 }
+/* ==================== writingContainer =================== */
+.writingContainer {
+  background-color: #bcbcbc;
+  padding: 40px;
+}
+@media only screen and (max-width: 991px) {
+  .writingContainer {
+    padding: 25px;
+  }
+}
+.writingContainer-title {
+  text-align: center;
+  margin: 0 0 20px 0;
+}
 /* ==================== Projects =================== */
 .projectsContainer {
   position: relative;

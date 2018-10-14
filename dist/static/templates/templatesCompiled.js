@@ -1,6 +1,6 @@
 (function() {
 var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['mobileProject'] = template({"1":function(container,depth0,helpers,partials,data) {
+templates['project'] = template({"1":function(container,depth0,helpers,partials,data) {
     var helper;
 
   return "            <div class=\"mobileProjectHeader-title\">\r\n                <h3>"
@@ -82,9 +82,5 @@ templates['mobileProject'] = template({"1":function(container,depth0,helpers,par
     + "</p>\r\n        </div>\r\n\r\n        <!-- SMALL SCREEN -->\r\n        <div class=\"mobileProjectImages\">\r\n"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.images : depth0),{"name":"each","hash":{},"fn":container.program(14, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "        </div>\r\n        <div class=\"mobileNextProject row\">\r\n            <a href=\"#projects\">\r\n                <div class=\"mobileNextProject-btn\">\r\n                    Next Project <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\r\n                </div>\r\n            </a>\r\n        </div>\r\n    </div>\r\n</div>";
-},"useData":true});
-
-templates['project'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "";
 },"useData":true});
 }());

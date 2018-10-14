@@ -1,7 +1,13 @@
-var projectData;
-var projectNames
+var yaml = require('js-yaml');
+
 var handlebars;
-var index = 0;
+var writingData;
+var writingIndex;
+var prevPosts = 4;
+
+var projectData;
+var projectNames;
+var projectIndex = 0;
 var projectAnimating = false;
 
 $(document).ready(function () {
@@ -17,6 +23,7 @@ $(document).ready(function () {
     })
 
     getProjectData();
+    getWritingData();
     bindTabEvents();
 });
 
@@ -32,6 +39,24 @@ function getProjectData() {
             bindProjectCarouselEvents();
             displayProjectAtIndex(0);
             bindProjectDisplayEvents();
+        }
+    });
+}
+
+function getWritingData() {
+    console.log("off we go");
+    $.ajax({
+        dataType: "text",
+        url: 'writing.yml',
+        mimeType: "text/x-yaml",
+        success: function (data){
+            try {
+                writingData = yaml.safeLoad(data);
+                writingIndex = writingData.length - 1;
+                renderWritingIndex(writingIndex);
+            } catch (e) {
+                console.log(e);
+            }
         }
     });
 }
@@ -84,9 +109,9 @@ function bindProjectAnimationEvents(project) {
 }
 
 function nextProject(){
-    index = (index + 1) % projectNames.length;
+    projectIndex = (projectIndex + 1) % projectNames.length;
     var prevProject = $(".project.is-active");
-    displayProjectAtIndex(index);
+    displayProjectAtIndex(projectIndex);
     prevProject.removeClass('is-active');
     bindProjectCarouselEvents();
 }
@@ -96,9 +121,9 @@ function animatedNextProject() {
         return;
     }
     projectAnimating = true;
-    index = (index + 1) % projectNames.length;
+    projectIndex = (projectIndex + 1) % projectNames.length;
     var prevProject = $(".project.is-active");
-    var template = displayProjectAtIndex(index);
+    var template = displayProjectAtIndex(projectIndex);
     template.addClass('slide-in-next');
     prevProject.addClass('slide-out-next');
     prevProject.one('animationend', function () {
@@ -109,11 +134,11 @@ function animatedNextProject() {
 }
 
 function prevProject(){
-    if (index < 0) {
-        index = projectNames.length - 1;
+    if (projectIndex < 0) {
+        projectIndex = projectNames.length - 1;
     }
     var prevProject = $(".project.is-active");
-    displayProjectAtIndex(index);
+    displayProjectAtIndex(projectIndex);
     prevProject.removeClass('is-active');
     bindProjectCarouselEvents();
 }
@@ -123,12 +148,12 @@ function animatedPrevProject() {
         return;
     }
     projectAnimating = true;
-    index = index - 1;
-    if (index < 0) {
-        index = projectNames.length - 1;
+    projectIndex = projectIndex - 1;
+    if (projectIndex < 0) {
+        projectIndex = projectNames.length - 1;
     }
     var prevProject = $(".project.is-active");
-    var template = displayProjectAtIndex(index);
+    var template = displayProjectAtIndex(projectIndex);
     template.addClass('slide-in-prev');
     prevProject.addClass('slide-out-prev');
     prevProject.one('animationend', function () {
@@ -162,7 +187,7 @@ function createTemplate(index, projectName) {
     templateData.project_names = projectNames;
     templateData.index = index;
 
-    var template = $(Handlebars.templates.mobileProject(templateData));
+    var template = $(Handlebars.templates.project(templateData));
 
     $('.project-viewer').append(template)
 
@@ -194,4 +219,24 @@ function performTabActiveActions(tab){
     } else {
         console.log('No content found.');
     }
+}
+
+function renderWritingIndex(index){
+    writingIndex = index;
+    var firstWriting = writingData[writingIndex]
+    $('.writingContainer-title').html(firstWriting['title']);
+    $('.writingContainer-content').html(firstWriting['content']);
+    renderPreviousPosts();
+}
+
+function renderPreviousPosts(){
+    var titles = "";
+    for (var i = 1; i <= prevPosts; i ++){
+        var postIndex = writingIndex - i;
+        var title = writingData[postIndex]['title']
+        var html = "<div data-writing-index=" + postIndex + ">" + title + "</div>"
+        titles += html;
+    }
+    console.log(titles);
+    $('.writingContainer-prevPosts').html(titles);
 }
