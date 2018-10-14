@@ -25,11 +25,11 @@ body {
   color: @light-font-color;
   line-height: 1.5;
 }
+.content{
+  position: relative;
+}
 h3 {
     font-family: 'Roboto', sans-serif;
-}
-a:hover {
-//   text-decoration: none;
 }
 
 /* ==================== Keyframes =================== */
@@ -101,8 +101,10 @@ a:hover {
   font-family: "Trajan Pro", Times, serif;
   color: @primary-color;
 }
-.header-image {
+.headerImage {
   max-width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 .header-sub {
   font-size: 36px;
@@ -428,6 +430,7 @@ a:hover {
   box-shadow: 0 3px 5px 3px @background-color;
   position: relative;
   z-index: 1;
+  background-color: @background-color;
 }
 
 .about .download-resume {
@@ -553,4 +556,9 @@ a:hover {
 .sectionTabDivider {
   background-image: linear-gradient(to top, white 0, lightgrey 10%, lightgrey 90%, white 100%);
   width: 3px;
+}
+
+
+/* ==================== footer =================== */
+.footer {
 }
