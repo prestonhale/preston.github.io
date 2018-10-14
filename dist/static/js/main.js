@@ -9487,13 +9487,24 @@ function renderWritingIndex(index){
 
 function renderPreviousPosts(){
     var titles = "";
+    if (writingIndex === 0){
+        titles = "No Previous Posts";
+    }
     for (var i = 1; i <= prevPosts; i ++){
         var postIndex = writingIndex - i;
+        if (postIndex < 0) break;
         var title = writingData[postIndex]['title']
-        var html = "<div data-writing-index=" + postIndex + ">" + title + "</div>"
+        var html = "<a class=\"writingContainer-postLink\" href=\"#projects\" data-writing-index=" + postIndex + ">" + title + "</a>"
         titles += html;
     }
-    console.log(titles);
-    $('.writingContainer-prevPosts').html(titles);
+    $('.writingContainer-prevPostsContent').html(titles);
+    bindPostLinks();
+}
+
+function bindPostLinks(){
+    $('.writingContainer-postLink').on('click', function(event){
+        var postIndex = $(event.currentTarget).data('writing-index');
+        renderWritingIndex(postIndex);
+    })
 }
 },{"js-yaml":6}]},{},[35]);
