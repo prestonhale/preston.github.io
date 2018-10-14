@@ -134,22 +134,33 @@ a:hover {
 
 /* ==================== writingContainer =================== */
 .writingContainer {
-    background-color: @light-font-color;
-    padding: 40px;
-    @media @small-screen {
-        padding: 25px;
-    }
+  background-color: @light-font-color;
+  padding: 40px;
+  @media @small-screen {
+      padding: 25px;
+  }
 }
 .writingContainer-title{
-    text-align: center;
-    font-weight: bold;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+.writingContainer-date{
+  @media @large-screen {
+    position: absolute;
+    right: 60px;
+    top: 40px;
+  }
+  @media @small-screen {
     margin: 0 0 20px 0;
+    text-align: center;
+  }
 }
 .writingContainer-prevPosts{
-    margin: 40px 0 20px 0;
+  margin: 40px 0 20px 0;
 }
 .writingContainer-postLink {
-    display: block;
+  display: block;
 }
 /* ==================== Projects =================== */
 .projectsContainer {

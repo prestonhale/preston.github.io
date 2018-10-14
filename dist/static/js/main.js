@@ -9481,6 +9481,7 @@ function renderWritingIndex(index){
     writingIndex = index;
     var firstWriting = writingData[writingIndex]
     $('.writingContainer-title').html(firstWriting['title']);
+    $('.writingContainer-date').html(firstWriting['date']);
     $('.writingContainer-content').html(firstWriting['content']);
     renderPreviousPosts();
 }

@@ -130,6 +130,19 @@ h3 {
   font-weight: bold;
   margin: 0 0 20px 0;
 }
+@media only screen and (min-width: 992px) {
+  .writingContainer-date {
+    position: absolute;
+    right: 60px;
+    top: 40px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .writingContainer-date {
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
+}
 .writingContainer-prevPosts {
   margin: 40px 0 20px 0;
 }
